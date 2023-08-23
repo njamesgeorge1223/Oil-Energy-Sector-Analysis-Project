@@ -12,10 +12,11 @@
  #      This Python script, PyAPIFunctions.py, contains Python functions for API
  #      data retrieval related to Week #7, Project #1.  Here is the list:
  #
- #      ReturnTradingValuesAsSeries
+ #      ReturnTradingPricesAsSeries
  #      ReturnCompleteTickerListFromYahooFinance
  #      ReturnAllCovidDataFromWHO
  #      ReturnOilEnergySectorCompanies
+ #      ReturnFormattedAddressString
  #      ReturnOilSectorMarketIndexSeries
  #
  #
@@ -111,7 +112,7 @@ def ReturnTradingPricesAsSeries \
             
     except:
         
-        print('The function, ReturnHistoricalPricesSeries, '
+        print('The function, ReturnTradingPricesAsSeries, '
               + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
               + 'was unable retrieve historical prices for the '
               + f'ticker, {tickerStringParameter}.\n')
@@ -264,7 +265,7 @@ def ReturnAllCovidDataFromWHO():
 
 #*******************************************************************************************
  #
- #  Function Name:  ReturnOilEnergySectorStockTickers
+ #  Function Name:  ReturnOilEnergySectorCompanies
  #
  #  Function Description:
  #      This function receives a list of tickers and returns those for companies

@@ -30,14 +30,17 @@ CONSTANT_LOCAL_FILE_NAME \
 # In[3]:
 
 
+# This constant is the global debug flag for any program.
 CONSTANT_DEBUG_FLAG \
     = False
 
 
+# This is a global constant for setting coefficient precision for equations.
 EQUATION_COEFFICIENT_PRECISION \
     = 4
 
 
+# These constants are generic formats for Strings.
 GENERAL_TEXT_FORMAT \
     = '{:}'
 

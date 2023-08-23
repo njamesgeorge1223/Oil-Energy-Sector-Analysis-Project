@@ -1350,9 +1350,49 @@ def DisplayOneLineGraphFromSeries \
 # In[14]:
 
 
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayLinesGraph
+ #
+ #  Subroutine Description:
+ #      This subroutine displays a multiple line graph based on an input Dictionary
+ #      and formatting parameters.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Dictionary
+ #          frameDictionaryParameter
+ #                          This parameter is the input Series as a Dictionary.
+ #  List of Strings
+ #          colorListParameter
+ #                          This parameter is a List of colors for the lines.
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the chart title.
+ #  String
+ #          xLabelStringParameter
+ #                          This optional parameter is the x-axis label.
+ #  String
+ #          yLabelStringParameter
+ #                          This optional parameter is the y-axis label.
+ #  Integer
+ #          rotationIntegerParameter
+ #                          This optional parameter is the angle of rotation
+ #                          for the x-axis tick labels.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/22/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/ 
+
 def DisplayLinesGraph \
         (frameDictionaryParameter,
-         colorDictionaryParameter,
+         colorListParameter,
          captionStringParameter,
          xlabelStringParameter = '',
          ylabelStringParameter = '',
@@ -1387,7 +1427,7 @@ def DisplayLinesGraph \
                  fontsize \
                     = 14, 
                  y \
-                    = 1.0)
+                    = 0.99)
     
 
         plt \

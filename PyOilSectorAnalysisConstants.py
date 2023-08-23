@@ -6,11 +6,11 @@
 
 #*******************************************************************************************
  #
- #  File Name:  PySubroutines.py
+ #  File Name:  PyOilSectorAnalysisConstants.py
  #
  #  File Description:
- #      This Python script, PySubroutines.py, contains Python subroutines for Week 7,
- #      Project #1, tasks.
+ #      This Python script, PySubroutines.py, contains constants and enumerations 
+ #      for Week 7, Project #1, tasks.
  #
  #
  #  Date            Description                             Programmer

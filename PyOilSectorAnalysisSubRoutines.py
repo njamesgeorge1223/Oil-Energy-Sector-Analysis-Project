@@ -45,7 +45,7 @@ def DisplaySeriesCountAndRedundancies \
 
     numberOfRedundanciesIntegerVariable \
         = function \
-            .NumberOfRedundanciesInSeries \
+            .ReturnNumberOfRedundanciesInSeries \
                 (inputSeriesParameter)
 
     print \
@@ -54,7 +54,7 @@ def DisplaySeriesCountAndRedundancies \
          + f'redundancies in {seriesDescriptionStringParameter}.')
 
 
-# In[4]:
+# In[ ]:
 
 
 

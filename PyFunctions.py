@@ -33,11 +33,11 @@
  #      ReturnPearsonCorrelation
  #
  #      ConvertSeriesValuesToPercentChange
- #      ConvertSeriesTimestampIndexesToDateStrings
  #      ConvertSeriesFromDateStringsToDateObjects
  #
- #      NumberOfRedundanciesInSeries
+ #      ReturnNumberOfRedundanciesInSeries
  #      DisplaySummaryStatistics
+ #      ReturnCorrelationTableStandardFormat
  #
  #
  #  Date            Description                             Programmer
@@ -99,7 +99,10 @@ def DebugReturnObject \
         return objectUnknownTypeParameter
     else:
         return None
-    
+
+
+# In[4]:
+
 
 #*******************************************************************************************
  #
@@ -169,10 +172,7 @@ def ReturnCSVFileAsDataFrame \
         dataDataFrame
 
 
-def ReturnCSVFileAsDataFrameFromURL \
-        (urlStringParameter):
-    
-    response = requests.get(url)
+# In[5]:
 
 
 #*******************************************************************************************
@@ -247,8 +247,11 @@ def ReturnMergedDataFrame \
         
         return \
             None
-    
-    
+
+
+# In[6]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnStylerObjectStandardFormat
@@ -365,8 +368,11 @@ def ReturnStylerObjectStandardFormat \
         
         return \
             None
-    
-    
+
+
+# In[7]:
+
+
 #********************************************************************************************
  #
  #  Function Name:  ReturnStylerObjectPercentChangeStandardFormat
@@ -447,7 +453,11 @@ def ReturnStylerObjectPercentChangeStandardFormat \
         
         return \
             None
-    
+
+
+# In[8]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnStylerObjectBackgroundGradientFormat
@@ -518,13 +528,17 @@ def ReturnStylerObjectBackgroundGradientFormat \
     except:
             
         print \
-            (f'The function, returnStylerObjectStandardFormat, '
+            (f'The function, ReturnStylerObjectBackgroundGradientFormat, '
              + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
              + f'was unable to format a DataFrame as a Styler object.')
         
         return \
             None
-    
+
+
+# In[9]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnNumberOfUniqueElementsInColumn
@@ -574,8 +588,11 @@ def ReturnNumberOfUniqueElementsInColumn \
         
         return \
             None
-    
-    
+
+
+# In[10]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnDuplicateRowsAsDataFrame
@@ -629,7 +646,11 @@ def ReturnDuplicateRowsAsDataFrame \
         
         return \
             None
-    
+
+
+# In[11]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnDataFrameRowsWithValue
@@ -691,7 +712,10 @@ def ReturnDataFrameRowsWithValue \
         
         return \
             None
-    
+
+
+# In[12]:
+
 
 #*******************************************************************************************
  #
@@ -755,7 +779,10 @@ def ReturnDataFrameRowsWithoutValue \
         
         return \
             None
-    
+
+
+# In[13]:
+
 
 #*******************************************************************************************
  #
@@ -865,7 +892,10 @@ def ReturnSummaryStatisticsAsDataFrame \
         return \
             None
 
-    
+
+# In[14]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnRegressionModelEquationList
@@ -926,7 +956,10 @@ def ReturnRegressionModelEquationList \
         return \
             None
 
-    
+
+# In[15]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnPolynomialLineSeries
@@ -983,7 +1016,10 @@ def ReturnPolynomialLineSeries \
         return \
             None
 
-    
+
+# In[16]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnRSquaredValue
@@ -1072,6 +1108,9 @@ def ReturnRSquaredValue \
         
         return \
             None
+
+
+# In[17]:
 
 
 #*******************************************************************************************
@@ -1166,8 +1205,11 @@ def ReturnEquationAsString \
     
         return \
             None
-    
-    
+
+
+# In[18]:
+
+
 #*******************************************************************************************
  #
  #  Function Name:  ReturnPearsonCorrelation
@@ -1223,7 +1265,10 @@ def ReturnPearsonCorrelation \
     
         return \
             None
-    
+
+
+# In[19]:
+
 
 #*******************************************************************************************
  #
@@ -1304,7 +1349,10 @@ def ConvertSeriesValuesToPercentChange \
         return \
             None
 
-    
+
+# In[20]:
+
+
 #******************************************************************************************
  #
  #  Function Name:  ConvertSeriesTimestampIndexesToDateObjects
@@ -1365,13 +1413,16 @@ def ConvertSeriesTimestampIndexesToDateObjects \
         
         
         print \
-            ('The function, ConvertSeriesTimestampIndexesToDateStrings, '
+            ('The function, ConvertSeriesTimestampIndexesToDateObjects, '
              + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
              + 'was unable to convert the timestamp indices in a Series '
              + 'to date objects.\n')
         
         return \
             None
+
+
+# In[21]:
 
 
 #******************************************************************************************
@@ -1415,18 +1466,21 @@ def ConvertSeriesFromDateStringsToDateObjects \
     except:
         
         print \
-            ('The function, ReturnSeriesConvertFromDateStringToDateObject, '
+            ('The function, ConvertSeriesFromDateStringsToDateObjects, '
              + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
              + 'was unable to convert the date Strings in a Series '
              + 'to date objects.\n')
         
         return \
             None
-    
+
+
+# In[22]:
+
 
 #******************************************************************************************
  #
- #  Function Name:  NumberOfRedundanciesInSeries
+ #  Function Name:  ReturnNumberOfRedundanciesInSeries
  #
  #  Function Description:
  #      This function receives a Series, calculates the number of redundancies, and
@@ -1448,7 +1502,7 @@ def ConvertSeriesFromDateStringsToDateObjects \
  #
  #******************************************************************************************/
     
-def NumberOfRedundanciesInSeries \
+def ReturnNumberOfRedundanciesInSeries \
         (inputSeriesParameter):
     
     try:
@@ -1466,7 +1520,17 @@ def NumberOfRedundanciesInSeries \
         
         return \
             None
-    
+
+
+# In[ ]:
+
+
+
+
+
+# In[23]:
+
+
 #******************************************************************************************
  #
  #  Function Name:  DisplaySummaryStatistics
@@ -1579,8 +1643,34 @@ def DisplaySummaryStatistics \
             .hide()
 
 
-# In[ ]:
+# In[24]:
 
+
+#******************************************************************************************
+ #
+ #  Function Name:  ReturnCorrelationTableStandardFormat
+ #
+ #  Function Description:
+ #      This function receives a DataFrame and displays a formatted correlation table.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrameParameter
+ #                          This parameter is the input DataFrame
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the table's title.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/22/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
 def ReturnCorrelationTableStandardFormat \
         (inputDataFrameParameter,
