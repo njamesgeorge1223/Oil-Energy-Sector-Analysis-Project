@@ -1174,7 +1174,7 @@ def DisplayStackedSubplots \
                 subPlot \
                     .tick_params \
                         (axis = 'x', 
-                         rotation = 90)
+                         rotation = 90.0)
             
             subPlot \
                 .set_ylabel \
@@ -1238,7 +1238,7 @@ def DisplaySummaryStatisticsBoxPlot \
                  fontsize \
                      = 12,
                  rot \
-                     = 0,
+                     = 0.0,
                  grid \
                      = True,
                  figsize \
@@ -1399,64 +1399,82 @@ def DisplayLinesGraph \
          colorDictionaryParameter,
          captionStringParameter,
          percentFlagBooleanParameter = False,
-         rotationIntegerParameter = 0):
+         rotationIntegerParameter = 0.0):
         
-    lineDataFrame \
-        = pd \
-            .DataFrame \
-                (frameDictionaryParameter)
-    
-    
-    lineDataFrame \
-        .plot \
-            (kind \
-                 = 'line',
-             figsize \
-                 = (9,6),
-             grid \
-                 = True, 
-             legend \
-                 = True, 
-             fontsize \
-                 = 12,
-             rot \
-                 = 90,
-             color \
-                 = colorDictionaryParameter)
-
-    plt \
-        .suptitle \
-            (captionStringParameter, 
-             fontsize \
-                = 'xx-large',
-             fontstyle \
-                 = 'italic',
-             fontweight \
-                 = 'bold', 
-             y \
-                = 0.95)
-    
-
-    plt \
-        .xlabel('', 
-            fontsize \
-                = 12)
-    
-    
-    if percentFlagBooleanParameter == False:
+    try:
         
+        lineDataFrame \
+            = pd \
+                .DataFrame \
+                    (frameDictionaryParameter)
+    
+    
+        lineDataFrame \
+            .plot \
+                (kind \
+                     = 'line',
+                 figsize \
+                     = (9,6),
+                 grid \
+                     = True, 
+                 legend \
+                     = True, 
+                 fontsize \
+                     = 12,
+                 rot \
+                     = 90.0,
+                 color \
+                     = colorDictionaryParameter)
+
         plt \
-            .ylabel('Price (USD)', \
-                    fontsize \
+            .suptitle \
+                (captionStringParameter, 
+                 fontsize \
+                    = 'xx-large',
+                 fontstyle \
+                     = 'italic',
+                 fontweight \
+                     = 'bold', 
+                 y \
+                    = 0.95)
+    
+
+        plt \
+            .xlabel \
+                ('', 
+                 fontsize \
+                    = 12)
+    
+    
+        if percentFlagBooleanParameter == False:
+        
+            plt \
+                .ylabel \
+                    ('Price (USD)',
+                      fontsize \
                         = 12)
         
-    elif percentFlagBooleanParameter == True:
+        elif percentFlagBooleanParameter == True:
         
-        plt \
-            .ylabel('% Change In Price', \
-                    fontsize \
+            plt \
+                .ylabel \
+                    ('% Change In Price', \
+                     fontsize \
                         = 12)
         
-    plt \
-        .show()  
+        plt \
+            .show()
+        
+    except:
+        
+        print \
+            (f'The subroutine, DisplayLinesGraph, '
+             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+             + f'was unable to create a lines graph.')
+
+
+# In[ ]:
+
+
+
 

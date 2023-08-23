@@ -12,7 +12,7 @@
  #      This Python script, PyAPIFunctions.py, contains Python functions for API
  #      data retrieval related to Week #7, Project #1.  Here is the list:
  #
- #      ReturnHistoricalPricesSeries
+ #      ReturnTradingValuesAsSeries
  #      ReturnCompleteTickerListFromYahooFinance
  #      ReturnAllCovidDataFromWHO
  #      ReturnOilEnergySectorCompanies
@@ -50,11 +50,11 @@ CONSTANT_LOCAL_FILE_NAME \
 
 #*******************************************************************************************
  #
- #  Function Name:  ReturnHistoricalPricesSeries
+ #  Function Name:  ReturnTradingPricesAsSeries
  #
  #  Function Description:
  #      This function receives a Yahoo Finance ticker and returns a Series containing
- #      historical prices for the analysis period.
+ #      trading values for the analysis period.
  #
  #
  #  Function Parameters:
@@ -73,7 +73,7 @@ CONSTANT_LOCAL_FILE_NAME \
  #
  #******************************************************************************************/ 
     
-def ReturnHistoricalPricesSeries \
+def ReturnTradingPricesAsSeries \
         (tickerStringParameter):
     
     try:
@@ -355,7 +355,7 @@ def ReturnOilEnergySectorCompanies \
             
             if anaylysisStartDateTime < firstTradingDateTime:
                 
-                print (f'The historical stock trading for the oil company, {ticker}, begins '
+                print (f'Trading for the ticker, {ticker}, begins ' \
                        + 'after the first day of the analysis period.')
                 
                 print()
@@ -459,7 +459,7 @@ def ReturnOilEnergySectorCompanies \
         except:
         
             print \
-                (f'This company, {ticker}, does not have the required company information.'
+                (f'This ticker, {ticker}, does not have the required information.'
                  + '  Skipping...\n')
         
 

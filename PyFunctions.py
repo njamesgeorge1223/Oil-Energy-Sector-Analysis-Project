@@ -42,7 +42,7 @@
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
- #  08/20/2023      Initial Development                     Nicholas George
+ #  08/20/2023      Initial Development                     N. James George
  #
  #******************************************************************************************/
 
@@ -1582,5 +1582,52 @@ def DisplaySummaryStatistics \
 # In[ ]:
 
 
-
+def ReturnCorrelationTableStandardFormat \
+        (inputDataFrameParameter,
+         captionStringParameter):
+    
+    try:
+        
+        inputDataFrame \
+            = inputDataFrameParameter.copy()
+        
+        return \
+            inputDataFrame \
+                .corr() \
+                .style \
+                .set_caption \
+                    (captionStringParameter) \
+                .set_table_styles \
+                    ([dict \
+                        (selector \
+                             = 'caption',
+                         props \
+                             = [('color', 'black'),
+                                ('font-size', '20px'),
+                                ('font-style', 'bold'),
+                                ('text-align', 'center')])]) \
+                .set_properties \
+                    (**{'text-align':
+                     'center',
+                     'border':
+                     '1.3px solid red',
+                     'color':
+                     'blue'}) \
+                .format \
+                    (precision \
+                        = 6, 
+                     thousands \
+                        = ',', 
+                     decimal \
+                        = '.')
+        
+    except:
+        
+        print \
+            (f'The subroutine, DisplayFormattedCorrelationTableStandardFormat, '
+             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+             + f'was unable to display a formatted correlation table.')
+        
+        return \
+            None
 
