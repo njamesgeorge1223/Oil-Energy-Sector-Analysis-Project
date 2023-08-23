@@ -160,22 +160,14 @@ def DisplayPandasBarChartFromSeries \
                 (inputSeries.name,
                  fontdict \
                     = {'fontsize': 
-                            12.0, 
-                       'fontstyle': 
-                            'italic', 
-                       'fontweight': 
-                            'bold'})
+                            12})
 
         plt \
             .ylabel \
                 (yLabelStringParameter,
                  fontdict \
                     = {'fontsize': 
-                            12.0, 
-                       'fontstyle': 
-                            'italic', 
-                       'fontweight': 
-                            'bold'})
+                            12})
         
         plt \
             .grid \
@@ -294,11 +286,7 @@ def DisplayMatplotlibBarChartFromSeries \
                 (inputSeries.name,
                  fontdict \
                     = {'fontsize': 
-                            12.0, 
-                       'fontstyle': 
-                            'italic', 
-                       'fontweight': 
-                            'bold'})
+                            12.0})
 
         plt \
             .ylabel \
@@ -424,9 +412,7 @@ def DisplayPandasPieChartFromSeries \
                 (captionStringParameter,
                  pad = 5, 
                  fontdict \
-                     = {'fontsize' : 14.0, 
-                        'fontstyle' : 'normal', 
-                        'fontweight' : 'bold'})
+                     = {'fontsize' : 14.0})
         
         plt \
             .show()
@@ -636,22 +622,14 @@ def DisplayMatplotlibBoxPlotFromSeriesList \
                 (xLabelStringParameter,
                  fontdict \
                      = {'fontsize': 
-                            12.0, 
-                        'fontstyle': 
-                            'italic', 
-                        'fontweight': 
-                            'bold'})
+                            12.0})
 
         ax \
             .set_ylabel \
                 (yLabelStringParameter,
                  fontdict \
                      = {'fontsize': 
-                            12.0, 
-                        'fontstyle': 
-                            'italic', 
-                        'fontweight': 
-                            'bold'})
+                            12.0})
         
         
         ticksIndexList \
@@ -781,23 +759,15 @@ def DisplayMatplotlibLineChartFromXYSeries \
             .xlabel \
                 (xLabelStringParameter,
                  fontdict \
-                     = {'fontsize': 
-                            12.0, 
-                        'fontstyle': 
-                            'italic', 
-                        'fontweight': 
-                            'bold'})
+                     = {'fontsize':
+                            12.0})
 
         plt \
             .ylabel \
                 (yLabelStringParameter,
                  fontdict \
                      = {'fontsize': 
-                            12.0, 
-                        'fontstyle': 
-                            'italic', 
-                        'fontweight': 
-                            'bold'})
+                            12.0})
 
         plt \
             .grid()
@@ -943,7 +913,7 @@ def DisplayRegressionLine \
              + f'was unable to calculate and display a regression line.')
 
 
-# In[10]:
+# In[15]:
 
 
 #*******************************************************************************************
@@ -1033,14 +1003,10 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
         plt \
             .title \
                 (captionStringParameter, 
-                 pad = 15, 
+                 pad = 20, 
                  fontdict \
                     = {'fontsize': 
-                           14.0, 
-                       'fontstyle': 
-                           'normal', 
-                       'fontweight':
-                           'bold'})
+                           14.0})
     
         plt \
             .xlabel \
@@ -1048,11 +1014,7 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
                      .name,
                  fontdict \
                      = {'fontsize': 
-                            12.0, 
-                        'fontstyle': 
-                            'italic', 
-                        'fontweight': 
-                            'bold'})
+                            12.0})
 
         plt \
             .ylabel \
@@ -1060,11 +1022,7 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
                      .name,
                  fontdict \
                      = {'fontsize': 
-                            12.0, 
-                        'fontstyle': 
-                            'italic', 
-                        'fontweight': 
-                            'bold'})
+                            12.0})
         
         plt \
             .grid()
@@ -1118,6 +1076,9 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
  #  List of Strings
  #          colorListParameter
  #                          This parameter is the list of colors for the subplots.
+ #  String
+ #          xLabelStringParameter
+ #                          This parameter is the title for the x-axis.
  #
  #
  #  Date                Description                                 Programmer
@@ -1129,7 +1090,8 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
 def DisplayStackedSubplots \
         (frameDictionaryParameter,
          captionStringParameter,
-         colorListParameter):
+         colorListParameter,
+         xLabelStringParameter = ''):
     
     try:
         
@@ -1175,6 +1137,10 @@ def DisplayStackedSubplots \
                     .tick_params \
                         (axis = 'x', 
                          rotation = 90.0)
+                
+                subPlot \
+                    .set_xlabel \
+                        (xLabelStringParameter)
             
             subPlot \
                 .set_ylabel \
@@ -1257,11 +1223,7 @@ def DisplaySummaryStatisticsBoxPlot \
             .suptitle \
                 (captionStringParameter, 
                  fontsize \
-                     = 'xx-large',
-                 fontstyle \
-                     = 'italic',
-                 fontweight \
-                     = 'bold', 
+                     = 14, 
                  y \
                     = 1.01)
     
@@ -1345,8 +1307,6 @@ def DisplayOneLineGraphFromSeries \
                      = 'line', 
                  color \
                      = colorStringParameter, 
-                 figsize \
-                     = (9,6),
                  grid \
                      = True, 
                  legend \
@@ -1359,13 +1319,9 @@ def DisplayOneLineGraphFromSeries \
             .suptitle \
                 (captionStringParameter, 
                  fontsize \
-                    = 'xx-large',
-                 fontstyle \
-                     = 'italic',
-                 fontweight \
-                     = 'bold', 
+                    = 14, 
                  y \
-                    = 0.95)
+                    = 1.0)
     
         plt \
             .xlabel \
@@ -1398,7 +1354,8 @@ def DisplayLinesGraph \
         (frameDictionaryParameter,
          colorDictionaryParameter,
          captionStringParameter,
-         percentFlagBooleanParameter = False,
+         xlabelStringParameter = '',
+         ylabelStringParameter = '',
          rotationIntegerParameter = 0.0):
         
     try:
@@ -1413,8 +1370,6 @@ def DisplayLinesGraph \
             .plot \
                 (kind \
                      = 'line',
-                 figsize \
-                     = (9,6),
                  grid \
                      = True, 
                  legend \
@@ -1430,36 +1385,21 @@ def DisplayLinesGraph \
             .suptitle \
                 (captionStringParameter, 
                  fontsize \
-                    = 'xx-large',
-                 fontstyle \
-                     = 'italic',
-                 fontweight \
-                     = 'bold', 
+                    = 14, 
                  y \
-                    = 0.95)
+                    = 1.0)
     
 
         plt \
             .xlabel \
-                ('', 
+                (xlabelStringParameter, 
                  fontsize \
                     = 12)
-    
-    
-        if percentFlagBooleanParameter == False:
         
-            plt \
-                .ylabel \
-                    ('Price (USD)',
-                      fontsize \
-                        = 12)
-        
-        elif percentFlagBooleanParameter == True:
-        
-            plt \
-                .ylabel \
-                    ('% Change In Price', \
-                     fontsize \
+        plt \
+            .ylabel \
+                (ylabelStringParameter,
+                    fontsize \
                         = 12)
         
         plt \
