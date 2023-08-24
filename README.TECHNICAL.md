@@ -1,14 +1,23 @@
 The Jupyter Notebook, PyOilSectorAnalysis.ipynb, requires the following Python scripts with it in the same folder:
 
 PyConstants.py
+
 PyFunctions.py
+
 PyLogConstants.py
+
 PyLogFunctions.py
+
 PyLogSubRoutines.py
+
 PyOilSectorAnalysisAPIFunctions.py
+
 PyOilSectorAnalysisConfig.py
+
 PyOilSectorAnalysisConstants.py
+
 PyOilSectorAnalysisFunctions.py
+
 PySubroutines.py
 
 If the computer has Anaconda and a recent version of Python, the Jupyter notebook already has the following dependencies 
@@ -20,10 +29,15 @@ matplotlib, requests_html, yahoo_fin, yfinance.
 Here are the requisite Terminal commands:
 
 pip install hvplot
+
 pip install numpy
+
 pip install matplotlib
+
 pip install requests_html
+
 pip install yahoo_fin
+
 pip install yfinance
 
 If the folders, Resources and Logs, are not present, the Jupyter Notebook will create them.  If the CSV file, 
