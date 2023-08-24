@@ -23,8 +23,6 @@
 
 import PyFunctions as function
 
-import matplotlib.pyplot as plt
-
 
 # In[2]:
 

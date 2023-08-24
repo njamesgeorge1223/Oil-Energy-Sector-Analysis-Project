@@ -32,12 +32,11 @@
 import PyConstants as constant
 import PyFunctions as function
 
+import PyOilSectorAnalysisAPIFunctions as api_function
 import PyOilSectorAnalysisConstants as local_constant
     
 import datetime
 
-
-import numpy as np
 import pandas as pd
 
 
@@ -1231,4 +1230,97 @@ def ReturnOilSectorIndicesStandardFormat \
         
         return \
             None
+
+
+# In[13]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ConvertOilCompanyToGeoDataFrame
+ #
+ #  Function Description:
+ #      This function receives an inputDataFrame, and creates a geoDataFrame from it.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          frameDictionaryParameter
+ #                          This parameter is a input DataFrame.
+ #  String
+ #          addressFieldStringParameter
+ #                          This parameter is the column name for the address information.
+ #  String
+ #          sizeFieldStringParameter
+ #                          This parameter is the column name for the marker size information.
+ #  Integer
+ #          sizeOrderFactorIntegerParameter
+ #                          This optional parameter is the order of magnitude to reduce
+ #                          the marker size parameter.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/23/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ConvertOilCompanyToGeoDataFrame \
+        (inputDataFrameParameter,
+         addressFieldStringParameter,
+         sizeFieldStringParameter,
+         sizeOrderFactorIntegerParameter \
+            = 1):
+
+    try:
+        
+        frameDictionary \
+            = {'Ticker': 
+                    inputDataFrameParameter \
+                       ['Ticker'], 
+               'Company Name': 
+                    inputDataFrameParameter \
+                       ['Company Name'], 
+               'Industry': 
+                    inputDataFrameParameter \
+                       ['Industry'], 
+               'Marker Size': 
+                    inputDataFrameParameter \
+                       [sizeFieldStringParameter], 
+               'Address': 
+                    inputDataFrameParameter \
+                       ['Address']}
+
+
+        geoDataFrame \
+            = api_function \
+                .ReturnGeoDataFrame \
+                     (frameDictionary,
+                      addressFieldStringParameter,
+                      'Marker Size',
+                      sizeOrderFactorIntegerParameter)
+        
+
+        return \
+            geoDataFrame
+        
+    except:
+        
+        print \
+            ('The function, ConvertOilCompanyToGeoDataFrame, ' \
+             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, ' \
+             + 'was unable to convert an oil company DataFrame ' \
+             + 'to a GeoDataFrame.')
+        
+        return \
+            None 
+
+
+# In[ ]:
+
+
+
 

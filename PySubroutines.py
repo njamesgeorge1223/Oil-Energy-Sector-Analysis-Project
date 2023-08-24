@@ -1347,7 +1347,7 @@ def DisplayOneLineGraphFromSeries \
              + f'was unable to create a one line graph.')
 
 
-# In[14]:
+# In[16]:
 
 
 #*******************************************************************************************
@@ -1399,13 +1399,13 @@ def DisplayLinesGraph \
          rotationIntegerParameter = 0.0):
         
     try:
-        
+
         lineDataFrame \
             = pd \
                 .DataFrame \
                     (frameDictionaryParameter)
     
-    
+
         lineDataFrame \
             .plot \
                 (kind \
@@ -1419,7 +1419,7 @@ def DisplayLinesGraph \
                  rot \
                      = 90.0,
                  color \
-                     = colorDictionaryParameter)
+                     = colorListParameter)
 
         plt \
             .suptitle \
@@ -1435,22 +1435,22 @@ def DisplayLinesGraph \
                 (xlabelStringParameter, 
                  fontsize \
                     = 12)
-        
+
         plt \
             .ylabel \
                 (ylabelStringParameter,
                     fontsize \
                         = 12)
-        
+
         plt \
             .show()
-        
+
     except:
         
         print \
             (f'The subroutine, DisplayLinesGraph, '
              + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to create a lines graph.')
+             + f'was unable to create a line graph.')
 
 
 # In[ ]:

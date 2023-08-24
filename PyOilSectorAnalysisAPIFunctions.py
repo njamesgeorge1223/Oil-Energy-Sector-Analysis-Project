@@ -18,25 +18,29 @@
  #      ReturnOilEnergySectorCompanies
  #      ReturnFormattedAddressString
  #      ReturnOilSectorMarketIndexSeries
+ #      ReturnGeoDataFrame
  #
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
- #  08/14/2023      Initial Development                     N. James George
+ #  08/22/2023      Initial Development                     N. James George
  #
  #******************************************************************************************/
 
 import PyFunctions as function
 import PyOilSectorAnalysisConstants as local_constant
-
-import datetime
-
 import pandas as pd
 import yfinance as yf
 import yahoo_fin.stock_info as stock_info
 
+import datetime
+import hvplot.pandas
+import hvplot.xarray
+import json
 import requests
+
 from io import StringIO
+from config import geoapify_key
 
 
 # In[2]:
@@ -720,4 +724,157 @@ def ReturnOilSectorMarketIndexSeries \
         
     return \
         marketIndexSeries
+
+
+# In[ ]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnGeoDataFrame
+ #
+ #  Function Description:
+ #      This function receives a Frame Dictionary, appends latitude and longitude onto
+ #      a copy of the input DataFrame, and returns the copy to the caller.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  List of Strings
+ #          frameDictionaryParameter
+ #                          This parameter is a input Frame Dictionary.
+ #  String
+ #          addressFieldStringParameter
+ #                          This parameter is the column name for the address information.
+ #  String
+ #          sizeFieldStringParameter
+ #                          This parameter is the column name for the marker size information.
+ #  Integer
+ #          sizeOrderFactorIntegerParameter
+ #                          This optional parameter is the order of magnitude to reduce
+ #                          the marker size parameter.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/23/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnGeoDataFrame \
+        (frameDictionaryParameter,
+         addressFieldStringParameter,
+         sizeFieldStringParameter,
+         sizeOrderFactorIntegerParameter \
+            = 1):
+
+    if sizeOrderFactorIntegerParameter == 0:
+        
+        sizeOrderFactorIntegerParameter = 1
+    
+    
+    inputDataFrame \
+        = pd \
+            .DataFrame \
+                (frameDictionaryParameter)
+    
+    inputDataFrame \
+        [sizeFieldStringParameter] \
+            = inputDataFrame \
+                [sizeFieldStringParameter] \
+              / sizeOrderFactorIntegerParameter
+    
+    
+    latitudeFloatList \
+        = []
+    
+    longitudeFloatList \
+        = []
+    
+    
+    print \
+        ('\nRetrieving latitudes and longitudes for addresses...\n')
+    
+    
+    for index, company in inputDataFrame.iterrows():
+        
+        companyAddressStringVariable \
+            = company[addressFieldStringParameter]
+
+        urlStringVariable \
+            = 'https://api.geoapify.com/v1/geocode/search?text=' \
+              + f'{companyAddressStringVariable}&apiKey={geoapify_key}'
+
+        try:
+
+            geoResponse \
+                = requests \
+                    .get \
+                        (urlStringVariable)
+
+            geoResponse \
+                .raise_for_status()
+
+            informationDictionary \
+                = geoResponse \
+                    .json()
+
+            
+            latitudeFloatVariable \
+                = informationDictionary \
+                        ['features'] \
+                            [0] \
+                                ['properties'] \
+                                    ['lat']
+
+            longitudeFloatVariable \
+                = informationDictionary \
+                        ['features'] \
+                            [0] \
+                                ['properties'] \
+                                    ['lon']
+            
+            
+            print(f'\nLatitude: {latitudeFloatVariable}')
+            
+            print(f'Longitude:  {longitudeFloatVariable}\n')
+            
+            
+            latitudeFloatList \
+                .append \
+                    (latitudeFloatVariable)
+            
+            longitudeFloatList \
+                .append \
+                    (longitudeFloatVariable)
+
+        except:
+            
+            print \
+                ('\nThe function, ReturnGeoDataFrame, ' \
+                  + f'in file, {CONSTANT_LOCAL_FILE_NAME}, ' \
+                  + 'did not find the requested address.  ' \
+                  + 'Skipping...\n')
+            
+            
+    tempDataFrame \
+        = pd \
+            .DataFrame \
+                (list \
+                    (zip \
+                        (latitudeFloatList, 
+                         longitudeFloatList)),
+                         columns \
+                            = ['Latitude', 
+                               'Longitude'])
+    
+    return \
+        pd \
+            .concat \
+                ([inputDataFrame, 
+                  tempDataFrame], 
+                 axis \
+                     = 1)
 
