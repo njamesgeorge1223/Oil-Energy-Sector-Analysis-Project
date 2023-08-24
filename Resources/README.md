@@ -1,1 +1,1 @@
-README.md
+This folder contains the CSV file, AllOilCompanies.csv.  This Jupyter Notebook, generates the file by sorting through the entire Yahoo Finance database and takes approximately an hour to complete.  For future runs, the Jupyter Notebook reads the csv file to save time.
