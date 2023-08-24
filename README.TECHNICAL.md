@@ -44,6 +44,6 @@ If the folders, Resources and Logs, are not present, the Jupyter Notebook will c
 AllOilCompanies.csv, is not present in the Resources folder, it will use a variety of APIs to generate it.  
 This process will take approximately an hour.
 
-To place the Jupyter Notebook in debug mode, set the variable, log_constant.DEBUG_FLAG, equal to zero.  In debug 
-mode, the program displays the debug information and writes it to a debug file in the Logs folder; otherwise, 
+To place the Jupyter Notebook in debug mode, set the variable in cell #2, log_constant.DEBUG_FLAG, equal to zero.  
+In debug mode, the program displays the debug information and writes it to a debug file in the Logs folder; otherwise, 
 the program writes the information to the logs file in the Logs folder.
