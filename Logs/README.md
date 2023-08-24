@@ -1,1 +1,1 @@
-This folder holds the log files for two runs of the Jupyter Notebook, PyOilSectorAnalysis.ipynb: one using the API to collect oil company data, and one reading the oil company data from the csv file in the Resources Folder.
+This folder holds the log files for two runs of the Jupyter Notebook, PyOilSectorAnalysis.ipynb: one using the API to collect oil company data from the Yahoo Finance API and writing it to the csv file, AllOilCompanies.csv, in the Resources folder; and one reading the csv file to save time with program execution.
