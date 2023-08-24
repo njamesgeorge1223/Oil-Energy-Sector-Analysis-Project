@@ -22,6 +22,7 @@
  #      DisplayMatplotlibScatterPlotFromXYSeries
  #      DisplaySummaryStatisticsBoxPlot
  #      DisplayOneLineGraphFromSeries
+ #      DisplaySeriesCountAndRedundancies
  #
  #
  #  Date            Description                             Programmer
@@ -1456,5 +1457,52 @@ def DisplayLinesGraph \
 # In[ ]:
 
 
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplaySeriesCountAndRedundancies
+ #
+ #  Subroutine Description:
+ #      This subroutine displays a multiple line graph based on an input Dictionary
+ #      and formatting parameters.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          inputSeriesParameter
+ #                          This parameter is the input Series.
+ #  String
+ #          whatIsItStringParameter
+ #                          This parameter is the what the Series holds.
+ #  String
+ #          whereIsItStringParameter
+ #                          This parameter is where the values came from.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/23/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/ 
 
+def DisplaySeriesCountAndRedundancies \
+        (inputSeriesParameter,
+         whatIsItStringParameter,
+         whereIsItStringParameter):
+    
+    numberOfTickersIntegerVariable \
+        = inputSeriesParameter.count()
+
+    numberOfRedundanciesIntegerVariable \
+        = function \
+            .ReturnNumberOfRedundanciesInSeries \
+                (inputSeriesParameter)
+
+    print \
+        (f'There are now {numberOfTickersIntegerVariable} '
+         + f'{whatIsItStringParameter} '
+         + f'with {numberOfRedundanciesIntegerVariable} '
+         + f'redundancies in {whereIsItStringParameter}.')
 
