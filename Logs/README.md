@@ -1,1 +1,1 @@
-README.md
+This folder holds the log files for two runs of the Jupyter Notebook, PyOilSectorAnalysis.ipynb: one using the API to collect oil company data, and one reading the oil company data from the csv file in the Resources Folder.
