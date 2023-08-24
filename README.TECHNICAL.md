@@ -46,4 +46,4 @@ This process will take approximately an hour.
 
 To place the Jupyter Notebook in debug mode, set the variable in cell #2, log_constant.DEBUG_FLAG, equal to zero.  
 In debug mode, the program displays the debug information and writes it to a debug file in the Logs folder; otherwise,  
-the program writes the information to the logs file in the Logs folder.
+the program writes the information to the log file in the Logs folder.
