@@ -23,6 +23,7 @@
  #      DisplaySummaryStatisticsBoxPlot
  #      DisplayOneLineGraphFromSeries
  #      DisplaySeriesCountAndRedundancies
+ #      DisplayTwoByTwoHistograms
  #
  #
  #  Date            Description                             Programmer
@@ -1533,4 +1534,156 @@ def DisplaySeriesCountAndRedundancies \
              + f'{whatIsItStringParameter} '
              + f'with {numberOfRedundanciesIntegerVariable} '
              + f'redundancies in {whereIsItStringParameter}.')
+
+
+# In[16]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayLinesGraph
+ #
+ #  Subroutine Description:
+ #      This subroutine displays a two-by-two plot of four histograms from 
+ #      a Frame Dictionary.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Dictionary
+ #          frameDictionaryParameter
+ #                          This parameter is the input Series as a Dictionary.
+ #  String
+ #          figureTitleStringParameter
+ #                          This parameter is the figure title.
+ #  String
+ #          figureXLabelStringParameter
+ #                          This parameter is the figure x-axis label.
+ #  String
+ #          figureYLabelStringParameter
+ #                          This parameter is the figure y-axis label.
+ #  Integer
+ #          numberOfBinsIntegerParameter
+ #                          This optional parameter is the number of bins
+ #                          for the histogram.
+ #  Float
+ #          alphaFloatParameter
+ #                          This parameter is the alpha value (transparency level)
+ #                          of the histogram bars.
+ #  List of Strings
+ #          colorListParameter
+ #                          This parameter is a List of colors for the four histograms.
+ #  Tuple of Integers
+ #          figSizeTupleOfIntegersParamete
+ #                          This parameter is the length and width of the figure.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/24/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/ 
+
+def DisplayTwoByTwoHistograms \
+        (frameDictionaryParameter,
+         figureTitleStringParameter \
+             = '',
+         figureXLabelStringParameter \
+             = '',
+         figureYLabelStringParameter \
+             = '',
+         numberOfBinsIntegerParameter \
+             = 10,
+         alphaFloatParameter \
+             = 0.8,
+         colorListOfStringsParameter \
+             = ['darkgreen', 
+                'darkorange', 
+                'darkblue', 
+                'firebrick'],
+         figSizeTupleOfIntegersParameter \
+             = (9,6)):
+
+    try:
+        
+        inputDataFrame \
+            = pd \
+                .DataFrame \
+                    (frameDictionaryParameter)
+        
+        fig, axs \
+            = plt \
+                .subplots \
+                    (2, 2,
+                     figsize \
+                        = figSizeTupleOfIntegersParameter,
+                     sharey \
+                         = True, 
+                     tight_layout \
+                         = True)
+        
+        index \
+            = 0
+        
+        for row in range(2):
+            for column in range(2):
+    
+                inputDataFrame \
+                    .hist \
+                        (column \
+                             = inputDataFrame.keys()[index], 
+                         ax \
+                             = axs \
+                                 [row, column], 
+                         bins \
+                             = numberOfBinsIntegerParameter, 
+                         alpha \
+                             = alphaFloatParameter, 
+                         color \
+                             = colorListOfStringsParameter \
+                                 [index])
+                
+                axs[row, column] \
+                    .set_title \
+                        (inputDataFrame.keys() \
+                             [index])
+                
+                index \
+                    += 1
+
+
+        fig \
+            .suptitle \
+                (figureTitleStringParameter,
+                 fontsize = 14)
+
+        fig \
+            .supxlabel \
+                (figureXLabelStringParameter,
+                 fontsize = 12)
+
+        fig \
+            .supylabel \
+                (figureYLabelStringParameter,
+                 fontsize = 12)
+
+        
+        plt.show()
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayTwoByTwoHistograms, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {figureTitleStringParameter},\n'
+                 + f'was unable to create a two-by-two set of four histograms.')
+
+
+# In[ ]:
+
+
+
 

@@ -31,7 +31,10 @@ CONSTANT_LOCAL_FILE_NAME \
 
 
 DEBUG_FLAG \
-    = None
+    = False
+
+LOG_FLAG \
+    = False
 
 
 LOGS_DIRECTORY_PATH \

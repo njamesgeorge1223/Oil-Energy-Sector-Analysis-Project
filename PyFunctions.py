@@ -37,6 +37,7 @@
  #      ReturnNumberOfRedundanciesInSeries
  #      DisplaySummaryStatistics
  #      ReturnCorrelationTableStandardFormat
+ #      DisplayHVPlotFromDataFrame
  #
  #
  #  Date            Description                             Programmer
@@ -1694,6 +1695,101 @@ def ReturnCorrelationTableStandardFormat \
                 (f'The subroutine, DisplayFormattedCorrelationTableStandardFormat, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to display a formatted correlation table.')
+        
+        return \
+            None
+
+
+# In[24]:
+
+
+#******************************************************************************************
+ #
+ #  Function Name:  DisplayHVPlotFromDataFrame
+ #
+ #  Function Description:
+ #      This function receives a DataFrame and displays a formatted correlation table.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrameParameter
+ #                          This parameter is the input DataFrame
+ #  String
+ #          colorKeyStringParameter
+ #                          This parameter is the key to the DataFrame column 
+ #                          of colors.
+ #  String
+ #          sizeKeyStringParameter
+ #                          This parameter the key to the DataFrame column of 
+ #                          marker sizes.
+ #  Tuple of Integers
+ #          xlimitTupleParameter
+ #                          This parameter the HVPlot limits for the x-axis.
+ #  Tuple of Integers
+ #          ylimitTupleParameter
+ #                          This parameter the HVPlot limits for the y-axis.
+ #  Float
+ #          alphaFloatParameter
+ #                          This parameter the alpha value (transparency level) 
+ #                          for the markers.
+ #  String
+ #          tilesStringParameter
+ #                          This parameter indicates the type of map (OSM, ESRI, etc.).
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/25/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayHVPlotFromDataFrame \
+        (inputDataFrameParameter,
+         colorKeyStringParameter,
+         sizeKeyStringParameter,
+         xlimitTupleParameter \
+             = (-180, 180), 
+         ylimitTupleParameter \
+             = (-55, 75),
+         alphaFloatParameter \
+             = 0.7,
+         tilesStringParameter \
+             = 'OSM'):
+    
+    try:
+        
+        return \
+        inputDataFrameParameter \
+            .hvplot \
+            .points \
+                ('Longitude', 
+                 'Latitude', 
+                 geo \
+                     = True, 
+                 color \
+                     = colorKeyStringParameter, 
+                 size \
+                     = sizeKeyStringParameter,
+                 xlim \
+                     = xlimitTupleParameter, 
+                ylim \
+                     = ylimitTupleParameter,
+                 alpha \
+                     = alphaFloatParameter, 
+                 tiles \
+                      = tilesStringParameter)
+    
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayHVPlotDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to display a formatted HVPlot.')
         
         return \
             None

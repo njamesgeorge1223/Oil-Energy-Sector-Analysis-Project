@@ -153,7 +153,7 @@ def DebugReturnObjectWriteObject \
         return \
             inputObjectParameter
     
-    else:
+    elif log_constant.LOG_FLAG == True:
         
         log_constant \
             .logTxtFile \

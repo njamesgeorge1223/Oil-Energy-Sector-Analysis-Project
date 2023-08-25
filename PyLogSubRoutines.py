@@ -19,6 +19,8 @@
  #      PrintAllWriteText
  #      BeginProgramExecution
  #      EndProgramExecution
+ #      SetDebugMode
+ #      SetLogMode
  #
  #
  #  Date            Description                             Programmer
@@ -145,11 +147,13 @@ def OpenLogAndDebugFiles \
                 + log_constant.BASE_DEBUG_FILE_NAME
         
         
-        log_constant \
-            .logTxtFile \
-                = open \
-                    (log_constant.LOG_FILE_PATH, 
-                     'a')
+        if log_constant.LOG_FLAG == True:
+        
+            log_constant \
+                .logTxtFile \
+                    = open \
+                        (log_constant.LOG_FILE_PATH, 
+                         'a')
         
         if log_constant.DEBUG_FLAG == True:
         
@@ -203,10 +207,12 @@ def PrintAndLogWriteText \
             .ReturnTimePointMessage \
                 (messageStringParameter)
     
-    log_constant \
-        .logTxtFile \
-            .write \
-                (timePointMessageStringVariable)    
+    if log_constant.LOG_FLAG == True:
+    
+        log_constant \
+            .logTxtFile \
+                .write \
+                    (timePointMessageStringVariable)    
 
 
 # In[6]:
@@ -256,7 +262,7 @@ def PrintAndDebugWriteText \
                 .write \
                     (timePointMessageStringVariable)
         
-    else:
+    elif log_constant.LOG_FLAG == True:
         
         log_constant \
             .logTxtFile \
@@ -305,10 +311,12 @@ def PrintAllWriteText \
                 (messageStringParameter)
 
     
-    log_constant \
-        .logTxtFile \
-            .write \
-                (timePointMessageStringVariable)   
+    if log_constant.LOG_FLAG == True:
+    
+        log_constant \
+            .logTxtFile \
+                .write \
+                    (timePointMessageStringVariable)   
 
     if log_constant.DEBUG_FLAG == True:
     
@@ -415,10 +423,12 @@ def EndProgramExecution():
         PrintAllWriteText \
             (messageStringVariable)
         
-
-        log_constant \
-            .logTxtFile \
-                .close()
+        
+        if log_constant.LOG_FLAG == True:
+            
+            log_constant \
+                .logTxtFile \
+                    .close()
 
         if log_constant.DEBUG_FLAG == True:
 
@@ -435,6 +445,42 @@ def EndProgramExecution():
 
 
 # In[10]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  SetLogMode
+ #
+ #  Subroutine Description:
+ #      This subroutine sets the value for the global debug flag (True/False).
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Boolean
+ #          modeFlagBooleanParameter
+ #                          This parameter is the desired Boolean value for the global 
+ #                          debug flag.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/24/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def SetLogMode \
+        (modeFlagBooleanParameter \
+            = True):
+    
+    log_constant \
+        .LOG_FLAG \
+            = modeFlagBooleanParameter
+
+
+# In[11]:
 
 
 #*******************************************************************************************
