@@ -15,6 +15,7 @@
  #      ReturnCurrentDateAsString
  #      ReturnCurrentTimestampAsString
  #      DebugReturnObjectWriteObject
+ #      ReturnTimePointMessage
  #
  #
  #  Date            Description                             Programmer
@@ -139,12 +140,15 @@ def ReturnCurrentTimestampAsString():
 def DebugReturnObjectWriteObject \
         (inputObjectParameter):
     
+    messageStringVariable \
+        = f'\n\n' + str(inputObjectParameter) + f'\n\n'
+    
     if log_constant.DEBUG_FLAG == True:
         
         log_constant \
             .debugTxtFile \
                 .write \
-                    (f'\n\n' + str(inputObjectParameter) + f'\n\n')
+                    (messageStringVariable)
             
         return \
             inputObjectParameter
@@ -154,5 +158,52 @@ def DebugReturnObjectWriteObject \
         log_constant \
             .logTxtFile \
                 .write \
-                    (f'\n\n' + str(inputObjectParameter) + f'\n\n')
+                    (messageStringVariable)
+
+
+# In[6]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnTimePointMessage
+ #
+ #  Function Description:
+ #      This function takes a message, formats it with a timestamp, and returns it 
+ #      to the caller.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  String
+ #          messageStringParameter
+ #                          This parameter is the message that the function formats 
+ #                          with a timestamp.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/24/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnTimePointMessage \
+        (messageStringParameter \
+            = ''):
+    
+    currentTimeStampStringVariable \
+        = ReturnCurrentTimestampAsString()
+    
+    timePointMessageStringVariable \
+        = f'\nTimepoint: {currentTimeStampStringVariable}\n'
+    
+    timePointMessageStringVariable \
+        = timePointMessageStringVariable \
+          + messageStringParameter \
+          + '\n\n'
+    
+    return \
+        timePointMessageStringVariable
 

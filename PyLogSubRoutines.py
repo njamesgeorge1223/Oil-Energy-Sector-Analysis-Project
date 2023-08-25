@@ -147,13 +147,17 @@ def OpenLogAndDebugFiles \
         
         log_constant \
             .logTxtFile \
-                = open(log_constant.LOG_FILE_PATH, 'a')
+                = open \
+                    (log_constant.LOG_FILE_PATH, 
+                     'a')
         
         if log_constant.DEBUG_FLAG == True:
-            
+        
             log_constant \
                 .debugTxtFile \
-                    = open(log_constant.DEBUG_FILE_PATH, 'a')
+                    = open \
+                        (log_constant.DEBUG_FILE_PATH, 
+                         'a')
 
     except:
         
@@ -194,19 +198,10 @@ def PrintAndLogWriteText \
     print \
         (messageStringParameter)
     
-    
-    currentTimeStampStringVariable \
-            = log_function \
-                .ReturnCurrentTimestampAsString()
-    
     timePointMessageStringVariable \
-        = f'\nTimepoint: {currentTimeStampStringVariable}\n'
-    
-    timePointMessageStringVariable \
-        = timePointMessageStringVariable \
-          + messageStringParameter \
-          + '\n\n'
-    
+        = log_function \
+            .ReturnTimePointMessage \
+                (messageStringParameter)
     
     log_constant \
         .logTxtFile \
@@ -245,27 +240,26 @@ def PrintAndDebugWriteText \
         (messageStringParameter \
             = ''):
        
+    timePointMessageStringVariable \
+        = log_function \
+            .ReturnTimePointMessage \
+                (messageStringParameter)
+        
+        
     if log_constant.DEBUG_FLAG == True:
     
         print \
-            (messageStringParameter)
-        
-        
-        currentTimeStampStringVariable \
-            = log_function \
-                .ReturnCurrentTimestampAsString()
-    
-        timePointMessageStringVariable \
-            = f'\nTimepoint: {currentTimeStampStringVariable}\n'
-    
-        timePointMessageStringVariable \
-            = timePointMessageStringVariable \
-              + messageStringParameter \
-              + '\n\n'
-    
+            (timePointMessageStringVariable)
     
         log_constant \
             .debugTxtFile \
+                .write \
+                    (timePointMessageStringVariable)
+        
+    else:
+        
+        log_constant \
+            .logTxtFile \
                 .write \
                     (timePointMessageStringVariable)
 
@@ -304,26 +298,18 @@ def PrintAllWriteText \
     print \
         (messageStringParameter)
     
-   
-    currentTimeStampStringVariable \
-            = log_function \
-                .ReturnCurrentTimestampAsString()
-   
-    timePointMessageStringVariable \
-        = f'\nTimepoint: {currentTimeStampStringVariable}\n'
-   
-    timePointMessageStringVariable \
-        = timePointMessageStringVariable \
-          + messageStringParameter \
-          + '\n\n'
-    
 
+    timePointMessageStringVariable \
+        = log_function \
+            .ReturnTimePointMessage \
+                (messageStringParameter)
+
+    
     log_constant \
         .logTxtFile \
             .write \
                 (timePointMessageStringVariable)   
 
-    
     if log_constant.DEBUG_FLAG == True:
     
         log_constant \
@@ -448,8 +434,38 @@ def EndProgramExecution():
         
 
 
-# In[ ]:
+# In[10]:
 
 
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  SetDebugMode
+ #
+ #  Subroutine Description:
+ #      This subroutine sets the value for the global debug flag (True/False).
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Boolean
+ #          modeFlagBooleanParameter
+ #                          This parameter is the desired Boolean value for the global 
+ #                          debug flag.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/24/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
+def SetDebugMode \
+        (modeFlagBooleanParameter \
+            = True):
+    
+    log_constant \
+        .DEBUG_FLAG \
+            = modeFlagBooleanParameter
 

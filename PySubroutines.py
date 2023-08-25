@@ -919,7 +919,7 @@ def DisplayRegressionLine \
                 ('r-squared:   {:.4f}'.format(rSquaredFloatVariable))
         
         log_subroutine \
-            .printAndLogWriteText \
+            .PrintAndLogWriteText \
                 ('correlation: {:.4f}'.format(correlationFloatVariable))
         
     except:
@@ -1266,7 +1266,7 @@ def DisplaySummaryStatisticsBoxPlot \
         
     except:
         
-         log_subroutine \
+        log_subroutine \
             .PrintAndLogWriteText \
                 (f'The subroutine, DisplaySummaryStatisticsBoxPlot, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
