@@ -1135,7 +1135,8 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                     .hide \
                         (subset \
                              = ['Latitude',
-                                'Longitude']) \
+                                'Longitude'],
+                         axis = 'columns') \
                     .hide \
                         (axis \
                           = 'index')
