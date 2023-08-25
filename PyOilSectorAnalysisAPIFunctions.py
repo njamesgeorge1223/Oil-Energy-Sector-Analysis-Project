@@ -18,7 +18,7 @@
  #      ReturnOilEnergySectorCompanies
  #      ReturnFormattedAddressString
  #      ReturnOilSectorMarketIndexSeries
- #      ReturnGeoDataFrame
+ #      ReturnGeographicDataFrame
  #
  #
  #  Date            Description                             Programmer
@@ -28,19 +28,21 @@
  #******************************************************************************************/
 
 import PyFunctions as function
+import PyLogSubRoutines as log_subroutine
 import PyOilSectorAnalysisConstants as local_constant
+
 import pandas as pd
+import yahoo_fin
 import yfinance as yf
+
 import yahoo_fin.stock_info as stock_info
 
 import datetime
-import hvplot.pandas
-import hvplot.xarray
 import json
 import requests
 
 from io import StringIO
-from config import geoapify_key
+from PyOilSectorAnalysisConfig import geoapify_key
 
 
 # In[2]:
@@ -86,9 +88,11 @@ def ReturnTradingPricesAsSeries \
         if tickerStringParameter == None \
             or tickerStringParameter == '':
             
-            print('The function, ReturnHistoricalPricesSeries, '
-                  + 'did not have a symbol passed to it ' 
-                  + f'as a parameter.  Exiting...\n')
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    ('The function, ReturnHistoricalPricesSeries, '
+                     + 'did not have a symbol passed to it ' 
+                     + f'as a parameter.  Exiting...\n')
             
             return \
                 None
@@ -116,10 +120,12 @@ def ReturnTradingPricesAsSeries \
             
     except:
         
-        print('The function, ReturnTradingPricesAsSeries, '
-              + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-              + 'was unable retrieve historical prices for the '
-              + f'ticker, {tickerStringParameter}.\n')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnTradingPricesAsSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable retrieve historical prices for the '
+                 + f'ticker, {tickerStringParameter}.\n')
         
         return \
             None
@@ -170,11 +176,12 @@ def ReturnCompleteTickerListFromYahooFinance():
     
     except:
         
-        print \
-            ('The function, ReturnCompleteTickerListFromYahooFinance, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to retrieve a List of tickers '
-             + 'from Yahoo Finance.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnCompleteTickerListFromYahooFinance, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to retrieve a List of tickers '
+                 + 'from Yahoo Finance.')
     
         return \
             None
@@ -254,11 +261,12 @@ def ReturnAllCovidDataFromWHO():
     
     except:
         
-        print \
-            ('The function, ReturnAllCovidDataFromWHO, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to retrieve COVID-19 Data '
-             + 'from the WHO.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnAllCovidDataFromWHO, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to retrieve COVID-19 Data '
+                 + 'from the WHO.')
     
         return \
             None
@@ -321,10 +329,10 @@ def ReturnOilEnergySectorCompanies \
         = []
     
      
-    print \
-        (f'\nBegin retrieving oil company information...\n')
-    
-    print()
+    log_subroutine \
+        .PrintAndLogWriteText \
+            (f'\nBegin retrieving oil company information...\n\n')
+
   
 
     for ticker in tickerListParameter:
@@ -360,10 +368,10 @@ def ReturnOilEnergySectorCompanies \
             
             if anaylysisStartDateTime < firstTradingDateTime:
                 
-                print (f'Trading for the ticker, {ticker}, begins ' \
-                       + 'after the first day of the analysis period.')
-                
-                print()
+                log_subroutine \
+                    .PrintAndLogWriteText \
+                        (f'Trading for the ticker, {ticker}, begins ' \
+                         + 'after the first day of the analysis period.\n')
                 
                 continue
             
@@ -457,19 +465,22 @@ def ReturnOilEnergySectorCompanies \
                             .median())
             
             
-                print \
-                    (f'\nRetrieved information for {ticker} in the ' \
-                     + f'{industryStringVariable} industry.\n\n')
+                log_subroutine \
+                    .PrintAndLogWriteText \
+                        (f'\nRetrieved information for {ticker} in the ' \
+                         + f'{industryStringVariable} industry.\n\n')
         
         except:
         
-            print \
-                (f'This ticker, {ticker}, does not have the required information.'
-                 + '  Skipping...\n')
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    (f'This ticker, {ticker}, does not have the required information.'
+                     + '  Skipping...\n')
         
 
-    print \
-        (f'\nThe retrievel of oil company information is complete.\n')
+    log_subroutine \
+        .PrintAndLogWriteText \
+            (f'\nThe retrievel of oil company information is complete.\n')
     
    
     companyDataFrame \
@@ -497,7 +508,9 @@ def ReturnOilEnergySectorCompanies \
     
     
     return \
-        companyDataFrame
+        ReturnGeographicDataFrame \
+            (companyDataFrame,
+             'Address')
 
 
 # In[7]:
@@ -599,11 +612,12 @@ def ReturnFormattedAddressString \
         
     except:
         
-        print \
-            ('The function, ReturnFormattedAddressString, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to retrieve and format a company '
-             + 'address through the Yahoo Finance API.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnFormattedAddressString, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to retrieve and format a company '
+                 + 'address through the Yahoo Finance API.')
     
         return \
             None
@@ -649,18 +663,18 @@ def ReturnOilSectorMarketIndexSeries \
     
     if len(tickerListParameter) != len(indexWeightListParameter):
         
-        print \
-            (f'The number of elements in the two function parameters are not equal. Exiting...\n')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The number of elements in the two function parameters are not equal. Exiting...\n')
         
         return \
             None
     
     
-    print \
-        ('Begin calculating oil company stock index...\n')
-    
-    print()
-    
+    log_subroutine \
+        .PrintAndLogWriteText \
+            ('Begin calculating oil company stock index...\n\n')
+
     
     for index, ticker in enumerate(tickerListParameter):
     
@@ -669,8 +683,9 @@ def ReturnOilSectorMarketIndexSeries \
             if ticker == None \
                 or ticker == '':
                 
-                print \
-                    ('\nThere was no ticker. Skipping...\n')
+                log_subroutine \
+                    .PrintAndLogWriteText \
+                        ('\nThere was no ticker. Skipping...\n')
             
                 continue
                 
@@ -707,34 +722,37 @@ def ReturnOilSectorMarketIndexSeries \
                     = marketIndexSeries \
                         + (temporarySeries * indexWeightListParameter[index])
             
-            print \
+            log_subroutine \
+                .PrintAndLogWriteText \
                     (f"\nProcessed {ticker}'s contribution...\n")
             
             
         except:
         
-            print \
-                (f'\nThis ticker, {ticker}, did not have historical stock prices. ' \
-                 + 'Skipping...\n')
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    (f'\nThis ticker, {ticker}, did not have historical stock prices. ' \
+                     + 'Skipping...\n')
             
             
-    print \
-        (f'\nThe calculation of the oil company stock index is complete.\n')
+    log_subroutine \
+        .PrintAndLogWriteText \
+            (f'\nThe calculation of the oil company stock index is complete.\n')
     
         
     return \
         marketIndexSeries
 
 
-# In[ ]:
+# In[9]:
 
 
 #*******************************************************************************************
  #
- #  Function Name:  ReturnGeoDataFrame
+ #  Function Name:  ReturnGeographicDataFrame
  #
  #  Function Description:
- #      This function receives a Frame Dictionary, appends latitude and longitude onto
+ #      This function receives a input DataFrame, appends latitude and longitude onto
  #      a copy of the input DataFrame, and returns the copy to the caller.
  #
  #
@@ -742,49 +760,26 @@ def ReturnOilSectorMarketIndexSeries \
  #
  #  Type    Name            Description
  #  -----   -------------   ----------------------------------------------
- #  List of Strings
- #          frameDictionaryParameter
- #                          This parameter is a input Frame Dictionary.
+ #  DataFrame
+ #          inputDataFrameParameter
+ #                          This parameter is a input DataFrame.
  #  String
  #          addressFieldStringParameter
  #                          This parameter is the column name for the address information.
- #  String
- #          sizeFieldStringParameter
- #                          This parameter is the column name for the marker size information.
- #  Integer
- #          sizeOrderFactorIntegerParameter
- #                          This optional parameter is the order of magnitude to reduce
- #                          the marker size parameter.
  #
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  8/23/2023           Initial Development                         N. James George
+ #  8/24/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
-def ReturnGeoDataFrame \
-        (frameDictionaryParameter,
-         addressFieldStringParameter,
-         sizeFieldStringParameter,
-         sizeOrderFactorIntegerParameter \
-            = 1):
+def ReturnGeographicDataFrame \
+        (inputDataFrameParameter,
+         addressFieldStringParameter):
 
-    if sizeOrderFactorIntegerParameter == 0:
-        
-        sizeOrderFactorIntegerParameter = 1
-    
-    
     inputDataFrame \
-        = pd \
-            .DataFrame \
-                (frameDictionaryParameter)
-    
-    inputDataFrame \
-        [sizeFieldStringParameter] \
-            = inputDataFrame \
-                [sizeFieldStringParameter] \
-              / sizeOrderFactorIntegerParameter
+        = inputDataFrameParameter.copy()
     
     
     latitudeFloatList \
@@ -794,8 +789,9 @@ def ReturnGeoDataFrame \
         = []
     
     
-    print \
-        ('\nRetrieving latitudes and longitudes for addresses...\n')
+    log_subroutine \
+        .PrintAndLogWriteText \
+            ('Retrieving latitudes and longitudes for addresses...\n')
     
     
     for index, company in inputDataFrame.iterrows():
@@ -836,10 +832,13 @@ def ReturnGeoDataFrame \
                                 ['properties'] \
                                     ['lon']
             
-            
-            print(f'\nLatitude: {latitudeFloatVariable}')
-            
-            print(f'Longitude:  {longitudeFloatVariable}\n')
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    (f'\nIndex: {index}\n' \
+                     + '\nCompany Information:\n'
+                     + f'{company}\n\n' \
+                     + f'Latitude: {latitudeFloatVariable}\n' \
+                     + f'Longitude:  {longitudeFloatVariable}\n')
             
             
             latitudeFloatList \
@@ -852,11 +851,13 @@ def ReturnGeoDataFrame \
 
         except:
             
-            print \
-                ('\nThe function, ReturnGeoDataFrame, ' \
-                  + f'in file, {CONSTANT_LOCAL_FILE_NAME}, ' \
-                  + 'did not find the requested address.  ' \
-                  + 'Skipping...\n')
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    ('\nThe function, ReturnGeoDataFrame, ' \
+                     + f'in file, {CONSTANT_LOCAL_FILE_NAME}, ' \
+                     + f' for company:\n\n{company}\n\n' \
+                     + 'did not find the requested address.  ' \
+                     + 'Skipping...\n')
             
             
     tempDataFrame \

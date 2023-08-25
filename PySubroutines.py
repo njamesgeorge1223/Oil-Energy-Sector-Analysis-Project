@@ -32,6 +32,7 @@
  #******************************************************************************************/
 
 import PyFunctions as function
+import PyLogSubRoutines as log_subroutine
 
 import math
 
@@ -180,10 +181,12 @@ def DisplayPandasBarChartFromSeries \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayPandasBarChartFromSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a bar chart using Pandas.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayPandasBarChartFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a bar chart using Pandas.')
 
 
 # In[4]:
@@ -315,10 +318,12 @@ def DisplayMatplotlibBarChartFromSeries \
 
     except:
         
-        print \
-            (f'The subroutine, DisplayMatplotlibBarChartFromSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a bar chart using Matplotlib.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayMatplotlibBarChartFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a bar chart using Matplotlib.')
 
 
 # In[5]:
@@ -421,10 +426,12 @@ def DisplayPandasPieChartFromSeries \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayPandasPieChartFromSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a pie chart using Pandas.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayPandasPieChartFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a pie chart using Pandas.')
 
 
 # In[6]:
@@ -524,10 +531,12 @@ def DisplayMatplotlibPieChartFromSeries \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayMatplotlibPieChartFromSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a pie chart using Matplotlib.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayMatplotlibPieChartFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a pie chart using Matplotlib.')
 
 
 # In[7]:
@@ -657,10 +666,12 @@ def DisplayMatplotlibBoxPlotFromSeriesList \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayMatplotlibBoxPlotFromSeriesList, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a box plot using Matplotlib.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayMatplotlibBoxPlotFromSeriesList, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a box plot using Matplotlib.')
 
 
 # In[8]:
@@ -778,10 +789,12 @@ def DisplayMatplotlibLineChartFromXYSeries \
 
     except:
         
-        print \
-            (f'The subroutine, DisplayMatplotlibLineChartFromXYSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a line chart using Matplotlib.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayMatplotlibLineChartFromXYSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a line chart using Matplotlib.')
 
 
 # In[9]:
@@ -897,24 +910,28 @@ def DisplayRegressionLine \
                          = 'pearson')
 
     
-        print \
-            ('r-value:     {:.4f}'.format(math.sqrt(rSquaredFloatVariable)))
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('r-value:     {:.4f}'.format(math.sqrt(rSquaredFloatVariable)))
         
-        print \
-            ('r-squared:   {:.4f}'.format(rSquaredFloatVariable))
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('r-squared:   {:.4f}'.format(rSquaredFloatVariable))
         
-        print \
-            ('correlation: {:.4f}'.format(correlationFloatVariable))
+        log_subroutine \
+            .printAndLogWriteText \
+                ('correlation: {:.4f}'.format(correlationFloatVariable))
         
     except:
         
-        print \
-            (f'The subroutine, DisplayRegressionLine, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to calculate and display a regression line.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayRegressionLine, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'was unable to calculate and display a regression line.')
 
 
-# In[15]:
+# In[10]:
 
 
 #*******************************************************************************************
@@ -1045,10 +1062,12 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayMatplotlibScatterPlotFromXYSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to plot a scatter plot using Matplotlib.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayMatplotlibScatterPlotFromXYSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to plot a scatter plot using Matplotlib.')
 
 
 # In[11]:
@@ -1149,10 +1168,12 @@ def DisplayStackedSubplots \
             
     except:
         
-         print \
-            (f'The subroutine, DisplayStackedSubplots, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to create stacked subplots.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayStackedSubplots, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to create stacked subplots.')
 
 
 # In[12]:
@@ -1245,10 +1266,12 @@ def DisplaySummaryStatisticsBoxPlot \
         
     except:
         
-         print \
-            (f'The subroutine, DisplaySummaryStatisticsBoxPlot, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to create a horizontal box plot.')
+         log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplaySummaryStatisticsBoxPlot, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to create a horizontal box plot.')
 
 
 # In[13]:
@@ -1342,13 +1365,15 @@ def DisplayOneLineGraphFromSeries \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayOneLineGraphFromSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to create a one line graph.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayOneLineGraphFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to create a one line graph.')
 
 
-# In[16]:
+# In[14]:
 
 
 #*******************************************************************************************
@@ -1448,13 +1473,15 @@ def DisplayLinesGraph \
 
     except:
         
-        print \
-            (f'The subroutine, DisplayLinesGraph, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to create a line graph.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayLinesGraph, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionStringParameter},\n'
+                 + f'was unable to create a line graph.')
 
 
-# In[ ]:
+# In[15]:
 
 
 #*******************************************************************************************
@@ -1500,9 +1527,10 @@ def DisplaySeriesCountAndRedundancies \
             .ReturnNumberOfRedundanciesInSeries \
                 (inputSeriesParameter)
 
-    print \
-        (f'There are now {numberOfTickersIntegerVariable} '
-         + f'{whatIsItStringParameter} '
-         + f'with {numberOfRedundanciesIntegerVariable} '
-         + f'redundancies in {whereIsItStringParameter}.')
+    log_subroutine \
+        .PrintAndLogWriteText \
+            (f'There are now {numberOfTickersIntegerVariable} '
+             + f'{whatIsItStringParameter} '
+             + f'with {numberOfRedundanciesIntegerVariable} '
+             + f'redundancies in {whereIsItStringParameter}.')
 

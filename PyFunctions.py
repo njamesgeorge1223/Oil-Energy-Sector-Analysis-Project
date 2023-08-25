@@ -12,7 +12,6 @@
  #      This Python script, PyFunctions.py, contains generic Python functions
  #      for completing common tasks.  Here is the list:
  #
- #      DebugReturnObject
  #      ReturnCSVFileAsDataFrame
  #      ReturnMergedDataFrame
  #
@@ -47,6 +46,9 @@
  #******************************************************************************************/
 
 import PyConstants as constant
+import PyLogSubRoutines as log_subroutine
+
+import PyLogConstants as log_constant
 
 import numpy as np
 import pandas as pd
@@ -63,44 +65,6 @@ CONSTANT_LOCAL_FILE_NAME \
 
 
 # In[3]:
-
-
-#*******************************************************************************************
- #
- #  Function Name:  DebugReturnObject
- #
- #  Subroutine Description:
- #      This function returns the input object if the global debug flag, 
- #      constant.CONSTANT_DEBUG_FLAG, is set to True.
- #
- #
- #  Subroutine Parameters:
- #
- #  Type    Name            Description
- #  -----   -------------   ----------------------------------------------
- #  Unknown
- #          objectUnknownTypeParameter
- #                          The parameter is the input object.
- #
- #
- #  Date                Description                                 Programmer
- #  ---------------     ------------------------------------        ------------------
- #  8/11/2023           Initial Development                         N. James George
- #
- #******************************************************************************************/
-
-def DebugReturnObject \
-        (objectUnknownTypeParameter):
-    
-    # This line of code returns the variable if the global debug flag, 
-    # CONSTANT_DEBUG_FLAG, is set to True.
-    if constant.CONSTANT_DEBUG_FLAG == True:
-        return objectUnknownTypeParameter
-    else:
-        return None
-
-
-# In[4]:
 
 
 #*******************************************************************************************
@@ -157,11 +121,12 @@ def ReturnCSVFileAsDataFrame \
         
     except:
         
-        print \
-            (f'The function, ReturnCSVFileAsDataFrame, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to open file path, '
-             + f'{filePathStringParameter}.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnCSVFileAsDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to open file path, '
+                 + f'{filePathStringParameter}.')
     
         return \
             None
@@ -171,7 +136,7 @@ def ReturnCSVFileAsDataFrame \
         dataDataFrame
 
 
-# In[5]:
+# In[4]:
 
 
 #*******************************************************************************************
@@ -239,16 +204,17 @@ def ReturnMergedDataFrame \
     
     except:
         
-        print \
-            (f'The function, returnMergedDataFrame, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to merge two Dataframes.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, returnMergedDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to merge two Dataframes.')
         
         return \
             None
 
 
-# In[6]:
+# In[5]:
 
 
 #*******************************************************************************************
@@ -360,16 +326,17 @@ def ReturnStylerObjectStandardFormat \
         
     except:
             
-        print \
-            (f'The function, returnStylerObjectStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to format a DataFrame as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, returnStylerObjectStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to format a DataFrame as a Styler object.')
         
         return \
             None
 
 
-# In[7]:
+# In[6]:
 
 
 #********************************************************************************************
@@ -444,17 +411,18 @@ def ReturnStylerObjectPercentChangeStandardFormat \
         
     except:
             
-        print \
-            ('The function, ReturnStylerObjectPercentChangeStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to format a DataFrame with percent values '
-             + 'as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnStylerObjectPercentChangeStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to format a DataFrame with percent values '
+                 + 'as a Styler object.')
         
         return \
             None
 
 
-# In[8]:
+# In[7]:
 
 
 #*******************************************************************************************
@@ -526,16 +494,17 @@ def ReturnStylerObjectBackgroundGradientFormat \
         
     except:
             
-        print \
-            (f'The function, ReturnStylerObjectBackgroundGradientFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to format a DataFrame as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnStylerObjectBackgroundGradientFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to format a DataFrame as a Styler object.')
         
         return \
             None
 
 
-# In[9]:
+# In[8]:
 
 
 #*******************************************************************************************
@@ -579,17 +548,18 @@ def ReturnNumberOfUniqueElementsInColumn \
         
     except:
         
-        print \
-            (f'The function, returnNumberOfUniqueElementsInColumnFunction, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to calculate the unique number of elements '
-             + f'in a DataFrame column.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, returnNumberOfUniqueElementsInColumnFunction, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to calculate the unique number of elements '
+                 + f'in a DataFrame column.')
         
         return \
             None
 
 
-# In[10]:
+# In[9]:
 
 
 #*******************************************************************************************
@@ -638,16 +608,17 @@ def ReturnDuplicateRowsAsDataFrame \
         
     except:
         
-        print \
-            (f'The function, returnDuplicateRowsAsDataFrame, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return duplicate rows from a DataFrame.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, returnDuplicateRowsAsDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return duplicate rows from a DataFrame.')
         
         return \
             None
 
 
-# In[11]:
+# In[10]:
 
 
 #*******************************************************************************************
@@ -704,16 +675,17 @@ def ReturnDataFrameRowsWithValue \
     
     except:
         
-        print \
-            (f'The function, ReturnDataFrameRowsWithValue, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return rows with specified value(s).')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnDataFrameRowsWithValue, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return rows with specified value(s).')
         
         return \
             None
 
 
-# In[12]:
+# In[11]:
 
 
 #*******************************************************************************************
@@ -771,16 +743,17 @@ def ReturnDataFrameRowsWithoutValue \
     
     except:
         
-        print \
-            (f'The function, ReturnDataFrameRowsWithoutValue, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return rows without specified value(s).')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnDataFrameRowsWithoutValue, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return rows without specified value(s).')
         
         return \
             None
 
 
-# In[13]:
+# In[12]:
 
 
 #*******************************************************************************************
@@ -882,17 +855,18 @@ def ReturnSummaryStatisticsAsDataFrame \
         
     except:
             
-        print \
-            (f'The function, ReturnSummaryStatisticsAsDataFrame, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to calculate summary statistics for '
-             + f'a Series of values.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnSummaryStatisticsAsDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to calculate summary statistics for '
+                 + f'a Series of values.')
             
         return \
             None
 
 
-# In[14]:
+# In[13]:
 
 
 #*******************************************************************************************
@@ -947,16 +921,17 @@ def ReturnRegressionModelEquationList \
     
     except:
         
-        print \
-            (f'The function, ReturnRegressionModelEquationList, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return polynomial regression equation coefficients.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnRegressionModelEquationList, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return polynomial regression equation coefficients.')
         
         return \
             None
 
 
-# In[15]:
+# In[14]:
 
 
 #*******************************************************************************************
@@ -1007,16 +982,17 @@ def ReturnPolynomialLineSeries \
                      sampleNumberIntegerVariable)
     except:
         
-        print \
-            (f'The function, ReturnPolynomialLineSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return a polynomial regression line Series.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnPolynomialLineSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return a polynomial regression line Series.')
         
         return \
             None
 
 
-# In[16]:
+# In[15]:
 
 
 #*******************************************************************************************
@@ -1100,16 +1076,17 @@ def ReturnRSquaredValue \
     
     except:
         
-        print \
-            (f'The function, ReturnRSquaredValue, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return the r-squared value.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnRSquaredValue, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return the r-squared value.')
         
         return \
             None
 
 
-# In[17]:
+# In[16]:
 
 
 #*******************************************************************************************
@@ -1197,16 +1174,17 @@ def ReturnEquationAsString \
         
     except:
         
-        print \
-            (f'The function, ReturnEquationAsString, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return the regression line as a String.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnEquationAsString, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return the regression line as a String.')
     
         return \
             None
 
 
-# In[18]:
+# In[17]:
 
 
 #*******************************************************************************************
@@ -1257,16 +1235,17 @@ def ReturnPearsonCorrelation \
         
     except:
         
-        print \
-            (f'The function, ReturnPearsonCorrelation, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to return the Pearson correlation.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnPearsonCorrelation, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return the Pearson correlation.')
     
         return \
             None
 
 
-# In[19]:
+# In[18]:
 
 
 #*******************************************************************************************
@@ -1339,17 +1318,18 @@ def ConvertSeriesValuesToPercentChange \
     
     except:
         
-        print \
-            ('The function, ConvertSeriesValuesToPercentChange, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to convert the values in a Series '
-             + 'to percent change values.\n')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ConvertSeriesValuesToPercentChange, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to convert the values in a Series '
+                 + 'to percent change values.\n')
         
         return \
             None
 
 
-# In[20]:
+# In[19]:
 
 
 #******************************************************************************************
@@ -1411,17 +1391,18 @@ def ConvertSeriesTimestampIndexesToDateObjects \
     except:
         
         
-        print \
-            ('The function, ConvertSeriesTimestampIndexesToDateObjects, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to convert the timestamp indices in a Series '
-             + 'to date objects.\n')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ConvertSeriesTimestampIndexesToDateObjects, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to convert the timestamp indices in a Series '
+                 + 'to date objects.\n')
         
         return \
             None
 
 
-# In[21]:
+# In[20]:
 
 
 #******************************************************************************************
@@ -1464,17 +1445,18 @@ def ConvertSeriesFromDateStringsToDateObjects \
         
     except:
         
-        print \
-            ('The function, ConvertSeriesFromDateStringsToDateObjects, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to convert the date Strings in a Series '
-             + 'to date objects.\n')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ConvertSeriesFromDateStringsToDateObjects, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to convert the date Strings in a Series '
+                 + 'to date objects.\n')
         
         return \
             None
 
 
-# In[22]:
+# In[21]:
 
 
 #******************************************************************************************
@@ -1511,23 +1493,18 @@ def ReturnNumberOfRedundanciesInSeries \
     
     except:
         
-        print \
-            ('The function, NumberOfRedundanciesInSeries, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to calculate the number of redundancies '
-             + 'in a Series.\n')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, NumberOfRedundanciesInSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to calculate the number of redundancies '
+                 + 'in a Series.\n')
         
         return \
             None
 
 
-# In[ ]:
-
-
-
-
-
-# In[23]:
+# In[22]:
 
 
 #******************************************************************************************
@@ -1642,7 +1619,7 @@ def DisplaySummaryStatistics \
             .hide()
 
 
-# In[24]:
+# In[23]:
 
 
 #******************************************************************************************
@@ -1712,10 +1689,11 @@ def ReturnCorrelationTableStandardFormat \
         
     except:
         
-        print \
-            (f'The subroutine, DisplayFormattedCorrelationTableStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to display a formatted correlation table.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayFormattedCorrelationTableStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to display a formatted correlation table.')
         
         return \
             None

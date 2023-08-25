@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -21,6 +21,8 @@
  #      DisplayFormattedLeadingOilCompanyIndexWeights
  #      ReturnTopCompanyByIndustry
  #      ReturnOilCompanyStylerObjectStandardFormat
+ #      ReturnOilSectorIndicesStandardFormat
+ #      ConvertOilCompanyToGeoDataFrame
  #
  #
  #  Date            Description                             Programmer
@@ -31,6 +33,7 @@
 
 import PyConstants as constant
 import PyFunctions as function
+import PyLogSubRoutines as log_subroutine
 
 import PyOilSectorAnalysisAPIFunctions as api_function
 import PyOilSectorAnalysisConstants as local_constant
@@ -40,14 +43,14 @@ import datetime
 import pandas as pd
 
 
-# In[2]:
+# In[ ]:
 
 
 CONSTANT_LOCAL_FILE_NAME \
     = 'PyOilSectorAnalysisFunctions.py'
 
 
-# In[3]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -109,17 +112,19 @@ def IsCompanyStartDateValidForAnalysis \
             
     except:
         
-        print(f'The function, IsCompanyStartDateValidForAnalysis, '
-              + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-              + f'was unable determine whether the trading start '
-              + f'date of the stock came at or before the analysis'
-              + f'start date.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, IsCompanyStartDateValidForAnalysis, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable determine whether the trading start '
+                 + f'date of the stock came at or before the analysis'
+                 + f'start date.')
     
         return \
             False
 
 
-# In[4]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -195,17 +200,18 @@ def ReturnEconomicIndicatorPricesStandardFormat \
         
     except:
             
-        print \
-            ('The function, ReturnEconomicIndicatorPricesStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to format an economic indicator historical prices '
-             + 'DataFrame as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnEconomicIndicatorPricesStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to format an economic indicator historical prices '
+                 + 'DataFrame as a Styler object.')
         
         return \
             None
 
 
-# In[5]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -283,17 +289,18 @@ def ReturnStylerObjectCOVIDStandardFormat \
         
     except:
             
-        print \
-            ('The function, ReturnStylerObjectCOVIDStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to format an COVID-19 new cases and new deaths '
-             + 'DataFrame as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnStylerObjectCOVIDStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to format an COVID-19 new cases and new deaths '
+                 + 'DataFrame as a Styler object.')
         
         return \
             None
 
 
-# In[6]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -394,16 +401,17 @@ def DisplayFormattedMarketCapDataFrame \
                 .hide()
     except:
                 
-        print \
-            ('The function, DisplayFormattedMarketCapDataFrame, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to format market capitalization DataFrame.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, DisplayFormattedMarketCapDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to format market capitalization DataFrame.')
         
         return \
             None
 
 
-# In[7]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -625,16 +633,17 @@ def ReturnIndustryMarketCapStatisticsSummary \
     
     except:
         
-        print \
-            ('The function, ReturnIndustryMarketCapStatisticsSummary, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to calculate market capitalization statistics.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnIndustryMarketCapStatisticsSummary, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to calculate market capitalization statistics.')
         
         return \
             None
 
 
-# In[8]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -727,16 +736,17 @@ def DisplayFormattedLeadingOilCompanyIndexWeights \
     
     except:
         
-        print \
-            ('The function, DisplayFormattedLeadingOilCompanyIndexWeights, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to format an oil company index weight DataFrame.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, DisplayFormattedLeadingOilCompanyIndexWeights, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to format an oil company index weight DataFrame.')
         
         return \
             None
 
 
-# In[9]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -878,17 +888,18 @@ def ReturnTopCompanyByIndustry \
     
     except: 
         
-        print \
-            ('The function, ReturnTopCompanyByIndustry, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to return the top company by industry.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnTopCompanyByIndustry, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to return the top company by industry.')
         
         return \
 
     None
 
 
-# In[10]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -967,22 +978,16 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                           'Company Name':
                             constant.GENERAL_TEXT_FORMAT, 
                           'Industry':
-                            constant.GENERAL_TEXT_FORMAT,
-                          'Market Cap (Min)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Max)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Mean)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Median)':
-                            constant.CURRENCY_FLOAT_FORMAT}) \
+                            constant.GENERAL_TEXT_FORMAT}) \
                     .hide \
                         (subset \
                              = ['Address',
                                 'Market Cap (Min)', 
                                 'Market Cap (Max)', 
                                 'Market Cap (Mean)', 
-                                'Market Cap (Median)'],
+                                'Market Cap (Median)',
+                                'Latitude',
+                                'Longitude'],
                          axis = 'columns') \
                     .hide \
                         (axis \
@@ -1030,7 +1035,9 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                             constant.CURRENCY_FLOAT_FORMAT}) \
                     .hide \
                         (subset \
-                             = ['Address'],
+                             = ['Address',
+                                'Latitude',
+                                'Longitude'],
                          axis = 'columns') \
                     .hide \
                         (axis \
@@ -1068,20 +1075,16 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                             constant.GENERAL_TEXT_FORMAT, 
                           'Industry':
                             constant.GENERAL_TEXT_FORMAT,
-                          'Market Cap (Min)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Max)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Mean)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Median)':
-                            constant.CURRENCY_FLOAT_FORMAT}) \
+                          'Address':
+                            constant.GENERAL_TEXT_FORMAT}) \
                     .hide \
                         (subset \
                              = ['Market Cap (Min)', 
                                 'Market Cap (Max)', 
                                 'Market Cap (Mean)', 
-                                'Market Cap (Median)'],
+                                'Market Cap (Median)',
+                                'Latitude',
+                                'Longitude'],
                          axis = 'columns') \
                     .hide \
                         (axis \
@@ -1119,6 +1122,8 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                             constant.GENERAL_TEXT_FORMAT, 
                           'Industry':
                             constant.GENERAL_TEXT_FORMAT,
+                          'Address':
+                            constant.GENERAL_TEXT_FORMAT,           
                           'Market Cap (Min)':
                             constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Max)':
@@ -1128,29 +1133,35 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                           'Market Cap (Median)':
                             constant.CURRENCY_FLOAT_FORMAT}) \
                     .hide \
+                        (subset \
+                             = ['Latitude',
+                                'Longitude']) \
+                    .hide \
                         (axis \
                           = 'index')
         
         else:
             
-            print \
-                ('The program did not specify a valid display option ' \
-                 + 'for the oil company DataFrame in subroutine, ' \
-                 + 'ReturnOilCompanyStylerObjectStandardFormat')
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    ('The program did not specify a valid display option ' \
+                     + 'for the oil company DataFrame in subroutine, ' \
+                     + 'ReturnOilCompanyStylerObjectStandardFormat')
         
         
     except:
             
-        print \
-            (f'The subroutine, ReturnOilCompanyStylerObjectStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + f'was unable to format a DataFrame as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, ReturnOilCompanyStylerObjectStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to format a DataFrame as a Styler object.')
         
         return \
             None
 
 
-# In[11]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1222,17 +1233,18 @@ def ReturnOilSectorIndicesStandardFormat \
         
     except:
             
-        print \
-            ('The function, ReturnOilSectorIndicesStandardFormat, '
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-             + 'was unable to format an oil energy sector indices '
-             + 'DataFrame as a Styler object.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnOilSectorIndicesStandardFormat, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'was unable to format an oil energy sector indices '
+                 + 'DataFrame as a Styler object.')
         
         return \
             None
 
 
-# In[13]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1270,50 +1282,65 @@ def ReturnOilSectorIndicesStandardFormat \
 
 def ConvertOilCompanyToGeoDataFrame \
         (inputDataFrameParameter,
-         addressFieldStringParameter,
          sizeFieldStringParameter,
          sizeOrderFactorIntegerParameter \
             = 1):
 
     try:
         
+        inputDataFrame \
+            = inputDataFrameParameter.copy()
+        
+        
+        if sizeOrderFactorIntegerParameter == 0:
+            
+            sizeOrderFactorIntegerParameter = 1
+        
+        
+        inputDataFrame \
+            [sizeFieldStringParameter] \
+                = inputDataFrame \
+                       [sizeFieldStringParameter] \
+                            / sizeOrderFactorIntegerParameter
+        
         frameDictionary \
             = {'Ticker': 
-                    inputDataFrameParameter \
+                    inputDataFrame \
                        ['Ticker'], 
                'Company Name': 
-                    inputDataFrameParameter \
+                    inputDataFrame \
                        ['Company Name'], 
                'Industry': 
-                    inputDataFrameParameter \
+                    inputDataFrame \
                        ['Industry'], 
-               'Marker Size': 
-                    inputDataFrameParameter \
-                       [sizeFieldStringParameter], 
                'Address': 
-                    inputDataFrameParameter \
-                       ['Address']}
-
-
-        geoDataFrame \
-            = api_function \
-                .ReturnGeoDataFrame \
-                     (frameDictionary,
-                      addressFieldStringParameter,
-                      'Marker Size',
-                      sizeOrderFactorIntegerParameter)
+                    inputDataFrame \
+                       ['Address'],
+               'Latitude': 
+                    inputDataFrame \
+                       ['Latitude'],             
+               'Longitude': 
+                    inputDataFrame \
+                       ['Longitude'],            
+               'Marker Size': 
+                    inputDataFrame \
+                       [sizeFieldStringParameter], 
+               }
         
 
         return \
-            geoDataFrame
+            pd \
+                .DataFrame \
+                    (frameDictionary)
         
     except:
         
-        print \
-            ('The function, ConvertOilCompanyToGeoDataFrame, ' \
-             + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, ' \
-             + 'was unable to convert an oil company DataFrame ' \
-             + 'to a GeoDataFrame.')
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ConvertOilCompanyToGeoDataFrame, ' \
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, ' \
+                 + 'was unable to convert an oil company DataFrame ' \
+                 + 'to a GeoDataFrame.')
         
         return \
             None 
