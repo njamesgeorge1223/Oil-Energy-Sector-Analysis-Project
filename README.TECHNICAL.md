@@ -41,8 +41,9 @@ pip install yahoo_fin
 pip install yfinance
 
 If the folders, Resources and Logs, are not present, the Jupyter Notebook will create them.  If the CSV file, 
-AllOilCompanies.csv, is not present in the Resources folder, it will use a variety of APIs to generate it; this   
-process will take approximately an hour.
+AllOilCompanies.csv, is not present in the Resources folder, the program will use a variety of APIs to generate 
+the CSV file.  Without the CSV file, execution time is between 45 minutes to an hour; with it, execution time 
+is approximately 1.5 minutes.
 
 To place the Jupyter Notebook in debug mode, set the variable in cell #2, log_constant.DEBUG_FLAG, equal to zero.  
 In debug mode, the program displays the debug information and writes it to a debug file in the Logs folder; otherwise,  
