@@ -6,7 +6,7 @@
 
 #*******************************************************************************************
  #
- #  File Name:  PyFunctions.py
+ #  File Name:  PyLogFunctions.py
  #
  #  File Description:
  #      This Python script, PyLogFunctions.py, contains generic Python functions
