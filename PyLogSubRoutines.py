@@ -364,6 +364,10 @@ def BeginProgramExecution \
         CreateDirectory \
             (log_constant \
                 .LOGS_DIRECTORY_PATH)
+        
+        CreateDirectory \
+            (log_constant \
+                .IMAGES_DIRECTORY_PATH)
 
 
         OpenLogAndDebugFiles \

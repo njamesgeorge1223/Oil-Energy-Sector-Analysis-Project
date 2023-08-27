@@ -65,7 +65,7 @@ CONSTANT_LOCAL_FILE_NAME \
     = 'PyFunctions.py'
 
 
-# In[3]:
+# In[1]:
 
 
 #*******************************************************************************************
@@ -101,6 +101,8 @@ CONSTANT_LOCAL_FILE_NAME \
 
 def ReturnCSVFileAsDataFrame \
         (filePathStringParameter,
+         indexNameStringParameter
+          = None,
          stringFlagBooleanParameter \
             = True):
     
@@ -108,17 +110,31 @@ def ReturnCSVFileAsDataFrame \
         
         if stringFlagBooleanParameter == True:
             
-            return \
-                pd \
-                    .read_csv \
-                        (Path \
-                            (filePathStringParameter))
+            pathObject \
+                = Path \
+                    (filePathStringParameter)
+            
         else:
+            
+            pathObject \
+                = filePathStringParameter
+            
+            
+        if indexNameStringParameter == None:
             
             return \
                 pd \
                     .read_csv \
-                        (filePathStringParameter)
+                        (pathObject)
+            
+        else:
+        
+            return \
+                pd \
+                    .read_csv \
+                        (pathObject,
+                         index_col \
+                            = indexNameStringParameter)
         
     except:
         
@@ -131,10 +147,6 @@ def ReturnCSVFileAsDataFrame \
     
         return \
             None
-    
-    
-    return \
-        dataDataFrame
 
 
 # In[4]:
@@ -1739,6 +1751,10 @@ def ReturnCorrelationTableStandardFormat \
  #  String
  #          tilesStringParameter
  #                          This parameter indicates the type of map (OSM, ESRI, etc.).
+ #  List of Strings
+ #          hoverColumnsListOfStringsParameter
+ #                          This parameter is the list of column names 
+ #                          for the hover message.
  #
  #
  #  Date                Description                                 Programmer
@@ -1752,36 +1768,73 @@ def DisplayHVPlotFromDataFrame \
          colorKeyStringParameter,
          sizeKeyStringParameter,
          xlimitTupleParameter \
-             = (-180, 180), 
+            = (-180, 180), 
          ylimitTupleParameter \
-             = (-55, 75),
+            = (-55, 75),
          alphaFloatParameter \
-             = 0.7,
+            = 0.7,
          tilesStringParameter \
-             = 'OSM'):
+            = 'OSM',
+         hoverColumnsListOfStringsParameter \
+            = None):
     
     try:
         
-        return \
-        inputDataFrameParameter \
-            .hvplot \
-            .points \
-                ('Longitude', 
-                 'Latitude', 
-                 geo \
-                     = True, 
-                 color \
-                     = colorKeyStringParameter, 
-                 size \
-                     = sizeKeyStringParameter,
-                 xlim \
-                     = xlimitTupleParameter, 
-                ylim \
-                     = ylimitTupleParameter,
-                 alpha \
-                     = alphaFloatParameter, 
-                 tiles \
-                      = tilesStringParameter)
+        inputDataFrame \
+            = inputDataFrameParameter.copy()
+        
+        
+        if hoverColumnsListOfStringsParameter == None:
+            
+            return \
+                inputDataFrame \
+                    .hvplot \
+                    .points \
+                        ('Longitude', 
+                         'Latitude',
+                         xlabel = '', 
+                         ylabel = '',
+                         geo \
+                            = True, 
+                         color \
+                            = colorKeyStringParameter, 
+                         size \
+                            = sizeKeyStringParameter,
+                         xlim \
+                            = xlimitTupleParameter, 
+                         ylim \
+                            = ylimitTupleParameter,
+                         alpha \
+                            = alphaFloatParameter, 
+                         tiles \
+                            = tilesStringParameter)
+        
+        else:
+            
+            return \
+                inputDataFrame \
+                    .hvplot \
+                    .points \
+                        ('Longitude', 
+                         'Latitude',
+                         xlabel = '', 
+                         ylabel = '',
+                         geo \
+                            = True, 
+                         color \
+                            = colorKeyStringParameter, 
+                         size \
+                            = sizeKeyStringParameter,
+                         xlim \
+                            = xlimitTupleParameter, 
+                         ylim \
+                            = ylimitTupleParameter,
+                         alpha \
+                            = alphaFloatParameter, 
+                         tiles \
+                            = tilesStringParameter,
+                         hover_cols \
+                            = hoverColumnsListOfStringsParameter)
     
     except:
         

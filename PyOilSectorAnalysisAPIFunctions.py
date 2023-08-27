@@ -222,15 +222,17 @@ def ReturnAllCovidDataFromWHO():
                 .get \
                     (local_constant.WHO_COVID_19_DATA_URL)
 
+
         dataStringIO \
             = StringIO \
                 (currentResponseObject.text)
 
-        
+
         tempDataFrame \
             = function \
                 .ReturnCSVFileAsDataFrame \
-                    (dataStringIO, 
+                    (dataStringIO,
+                     None,
                      False)
 
         tempDataFrame \

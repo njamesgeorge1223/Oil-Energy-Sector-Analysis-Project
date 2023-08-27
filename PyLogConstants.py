@@ -43,6 +43,9 @@ LOGS_DIRECTORY_PATH \
 RESOURCES_DIRECTORY_PATH \
     = './Resources'
 
+IMAGES_DIRECTORY_PATH \
+    = './Images'
+
 
 BASE_LOG_FILE_NAME \
     = 'Log.txt'

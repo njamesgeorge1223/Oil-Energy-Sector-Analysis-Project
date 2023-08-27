@@ -24,6 +24,7 @@
  #      DisplayOneLineGraphFromSeries
  #      DisplaySeriesCountAndRedundancies
  #      DisplayTwoByTwoHistograms
+ #      DisplayLinearRegressionLine
  #
  #
  #  Date            Description                             Programmer
@@ -39,6 +40,9 @@ import math
 
 import matplotlib.pyplot as plt
 import pandas as pd
+
+from scipy import stats
+from pathlib import Path
 
 
 # In[2]:
@@ -808,7 +812,7 @@ def DisplayMatplotlibLineChartFromXYSeries \
  #  Subroutine Description:
  #      This subroutine receives two Series and the polynomial degree, calculates 
  #      the parameters of the regression line, and displays the results on the 
- #      scatter plot and below it.
+ #      scatter plot and above it.
  #
  #
  #  Subroutine Parameters:
@@ -1047,8 +1051,16 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
             .grid()
         
         
-        if optionalDegreeIntegerParameter > 0:
+        if optionalDegreeIntegerParameter == 1:
             
+            DisplayLinearRegressionLine \
+                (xSeries,
+                 ySeries,
+                 optionalTextXCoordinateFloatParameter,
+                 optionalTextYCoordinateFloatParameter)
+            
+        elif optionalDegreeIntegerParameter > 1:
+                
             DisplayRegressionLine \
                 (xSeries,
                  ySeries,
@@ -1682,8 +1694,201 @@ def DisplayTwoByTwoHistograms \
                  + f'was unable to create a two-by-two set of four histograms.')
 
 
-# In[ ]:
+# In[17]:
 
 
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  WriteDataFrameToCSVFile
+ #
+ #  Subroutine Description:
+ #      This subroutine receives a file path to a csv file as a parameter, 
+ #      and write the DataFrame to the file.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrameParameter
+ #                          This parameter is the input DataFrame.
+ #  String or IOString
+ #          filePathStringOrIOStringParameter
+ #                          The parameter is name of the path to the csv file.
+ #                          (i.e., './Resources/input.csv') or an IOString Object.
+ #  String
+ #          indexNameStringParameter
+ #                          This parameter is the name of the index column.
+ #  Boolean
+ #          stringFlagBooleanParameter
+ #                          This parameter indicates whether the first parameter
+ #                          is a String variable or an IOString object.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/26/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
+def WriteDataFrameToCSVFile \
+        (inputDataFrameParameter,
+         filePathStringOrIOStringParameter,
+         indexNameStringParameter
+              = '',
+         stringFlagBooleanParameter \
+            = True):
+    
+    try:
+        
+        if stringFlagBooleanParameter == True:
+            
+            pathObject \
+                = Path \
+                    (filePathStringOrIOStringParameter)
+            
+        else:
+            
+            pathObject \
+                = filePathStringOrIOStringParameter
+        
+        
+        inputDataFrameParameter \
+            .to_csv \
+                (pathObject,
+                    index_label \
+                        = indexNameStringParameter)
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, WriteDataFrameToCSVFile, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to write a DataFrame to file path, '
+                 + f'{filePathStringParameter}.')
+
+
+# In[18]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayLinearRegressionLine
+ #
+ #  Subroutine Description:
+ #      This subroutine receives two Series and the polynomial degree, calculates 
+ #      the parameters of the linear regression line, and displays the results on
+ #      the scatter plot and above it.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          xSeriesParameter
+ #                          This parameter is the Series used as x-axis 
+ #                          values.
+ #  Series
+ #          ySeriesParameter
+ #                          This parameter is the Series used as y-axis 
+ #                          values.
+ #  Float
+ #          xCoordinateFloatParameter
+ #                          This parameter is the x-coordinate of the text 
+ #                          in the chart.
+ #  Float
+ #          yCoordinateFloatParameter
+ #                          This parameter is the y-coordinate of the text 
+ #                          in the chart.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/20/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayLinearRegressionLine \
+        (xSeriesParameter,
+         ySeriesParameter,
+         xCoordinateFloatParameter,
+         yCoordinateFloatParameter):
+    
+    try:
+        
+        xSeries \
+            = xSeriesParameter.copy()
+        
+        ySeries \
+            = ySeriesParameter.copy()
+        
+        (slope, 
+         intercept, 
+         rvalue, 
+         pvalue, 
+         stderr) \
+            = stats \
+                .linregress \
+                    (xSeries, 
+                     ySeries)
+
+        linearRegressionSeries \
+            = (xSeries * slope) + intercept
+        
+        
+        plt \
+            .plot \
+                (xSeries,
+                 linearRegressionSeries,
+                 color \
+                     = 'red')
+        
+        
+        linearEquationStringVariable \
+            = 'y = ' + str( round( slope, 4 ) ) + 'x + ' + str( round( intercept, 4 ) )
+        
+        
+        plt \
+            .annotate \
+                (linearEquationStringVariable,
+                 (xCoordinateFloatParameter, yCoordinateFloatParameter),
+                  fontsize \
+                     = 15, 
+                  color \
+                     = 'blue')   
+        
+        
+        rSquaredFloatVariable \
+            = rvalue*rvalue
+        
+        correlationFloatVariable \
+            = xSeries \
+                .corr \
+                    (ySeries, 
+                     method \
+                         = 'pearson')
+        
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('r-value:     {:.4f}'.format(rvalue))
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('r-squared:   {:.4f}'.format(rSquaredFloatVariable))
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('correlation: {:.4f}'.format(correlationFloatVariable))
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayLinearRegressionLine, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'was unable to calculate and display a linear regression line.')
 
