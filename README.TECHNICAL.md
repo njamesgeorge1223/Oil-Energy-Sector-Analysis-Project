@@ -28,17 +28,17 @@ yahoo_fin, yfinance.
 
 Here are the requisite Terminal commands for installation of these peripheral modules:
 
-pip install hvplot
+python3 -m pip install hvplot
 
-pip install numpy
+python3 -m pip install numpy
 
-pip install matplotlib
+python3 -m pip install matplotlib
 
-pip install requests_html
+python3 -m pip install requests_html
 
-pip install yahoo_fin
+python3 -m pip install yahoo_fin
 
-pip install yfinance
+python3 -m pip install yfinance
 
 If the folders, Resources, Logs, and Images are not present, the Jupyter Notebook will create them.  If the CSV file, 
 AllOilCompanies.csv, is not present in the Resources folder, the program will use APIs to generate the CSV file.  
