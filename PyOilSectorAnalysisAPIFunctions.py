@@ -330,6 +330,15 @@ def ReturnOilEnergySectorCompanies \
     medianMarketCapList \
         = []
     
+    varianceMarketCapList \
+        = []
+    
+    standardDeviationMarketCapList \
+        = []
+    
+    standardErrorOfMeanList \
+        = []
+    
      
     log_subroutine \
         .PrintAndLogWriteText \
@@ -465,8 +474,29 @@ def ReturnOilEnergySectorCompanies \
                             .Series \
                                 (marketCapList) \
                             .median())
+        
+                varianceMarketCapList \
+                    .append \
+                        (pd \
+                            .Series \
+                                (marketCapList) \
+                            .var())
+    
+                standardDeviationMarketCapList \
+                    .append \
+                        (pd \
+                            .Series \
+                                (marketCapList) \
+                            .std())
             
-            
+                standardErrorOfMeanList \
+                    .append \
+                        (pd \
+                            .Series \
+                                (marketCapList) \
+                            .sem())
+                
+                
                 log_subroutine \
                     .PrintAndLogWriteText \
                         (f'\nRetrieved information for {ticker} in the ' \
@@ -497,7 +527,10 @@ def ReturnOilEnergySectorCompanies \
                          minimumMarketCapList, 
                          maximumMarketCapList, 
                          meanMarketCapList, 
-                         medianMarketCapList)),
+                         medianMarketCapList,
+                         varianceMarketCapList,
+                         standardDeviationMarketCapList,
+                         standardErrorOfMeanList)),
                          columns \
                             = ['Ticker', 
                                'Company Name', 
@@ -506,7 +539,10 @@ def ReturnOilEnergySectorCompanies \
                                'Market Cap (Min)', 
                                'Market Cap (Max)', 
                                'Market Cap (Mean)', 
-                               'Market Cap (Median)'])
+                               'Market Cap (Median)',
+                               'Market Cap (Var)',
+                               'Market Cap (Stdev)',
+                               'Market Cap (SEM)'])
     
     
     return \

@@ -16,7 +16,6 @@
  #      IsCompanyStartDateValidForAnalysis
  #      ReturnEconomicIndicatorPricesStandardFormat
  #      ReturnStylerObjectCOVIDStandardFormat
- #      DisplayFormattedMarketCapDataFrame
  #      ReturnIndustryMarketCapStatisticsSummary
  #      DisplayFormattedLeadingOilCompanyIndexWeights
  #      ReturnTopCompanyByIndustry
@@ -305,117 +304,6 @@ def ReturnStylerObjectCOVIDStandardFormat \
 
 #*******************************************************************************************
  #
- #  Function Name:  DisplayFormattedMarketCapDataFrame
- #
- #  Function Description:
- #      This function receives a market capitalization DataFrame, formats a copy of it 
- #       as a Styler Object, and returns it to the caller.
- #
- #
- #  Function Parameters:
- #
- #  Type    Name            Description
- #  -----   -------------   ----------------------------------------------
- #  DataFrame
- #          inputDataFrameParameter
- #                          This parameter is the input DataFrame.
- #  String
- #          captionStringParameter
- #                          This parameter is the table title.
- #
- #
- #  Date                Description                                 Programmer
- #  ---------------     ------------------------------------        ------------------
- #  8/14/2023           Initial Development                         N. James George
- #
- #******************************************************************************************/
-
-def DisplayFormattedMarketCapDataFrame \
-        (inputDataFrameParameter,
-         captionStringParameter):
-    
-    try:
-        
-        inputDataFrame \
-            = inputDataFrameParameter \
-                .copy()
-    
-        inputDataFrame \
-            .index \
-            .name \
-                = None
-
-        return \
-            inputDataFrame \
-                .style \
-                .set_caption \
-                    (captionStringParameter) \
-                .set_table_styles \
-                    ([{'selector': 
-                           'caption', 
-                       'props':
-                            [('color', 
-                                  'black'), 
-                             ('font-size', 
-                                  '20px'),
-                             ('font-style', 
-                                  'bold'),
-                             ('text-align', 
-                                  'center')]}]) \
-                .set_properties \
-                    (**{'text-align':
-                            'center',
-                        'border':
-                            '1.3px solid red',
-                        'color':
-                            'blue'}) \
-                .format \
-                    ({'Ticker':
-                        constant.GENERAL_TEXT_FORMAT, 
-                      'Company Name':
-                        constant.GENERAL_TEXT_FORMAT, 
-                      'Industry':
-                        constant.GENERAL_TEXT_FORMAT,
-                      'Market Cap (Min)':
-                        constant.CURRENCY_FLOAT_FORMAT,
-                      'Market Cap (Max)':
-                        constant.CURRENCY_FLOAT_FORMAT,
-                      'Market Cap (Mean)':
-                        constant.CURRENCY_FLOAT_FORMAT,
-                      'Market Cap (Median)':
-                        constant.CURRENCY_FLOAT_FORMAT}) \
-                .highlight_max \
-                    (subset \
-                        = ['Market Cap (Min)',
-                           'Market Cap (Max)',
-                           'Market Cap (Mean)',
-                           'Market Cap (Median)'],
-                     color='lime') \
-                .highlight_min \
-                    (subset \
-                        = ['Market Cap (Min)',
-                           'Market Cap (Max)',
-                           'Market Cap (Mean)',
-                           'Market Cap (Median)'],
-                     color='yellow') \
-                .hide()
-    except:
-                
-        log_subroutine \
-            .PrintAndLogWriteText \
-                ('The function, DisplayFormattedMarketCapDataFrame, '
-                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-                 + 'was unable to format market capitalization DataFrame.')
-        
-        return \
-            None
-
-
-# In[7]:
-
-
-#*******************************************************************************************
- #
  #  Function Name:  ReturnIndustryMarketCapStatisticsSummary
  #
  #  Function Description:
@@ -643,7 +531,7 @@ def ReturnIndustryMarketCapStatisticsSummary \
             None
 
 
-# In[8]:
+# In[7]:
 
 
 #*******************************************************************************************
@@ -746,7 +634,7 @@ def DisplayFormattedLeadingOilCompanyIndexWeights \
             None
 
 
-# In[9]:
+# In[8]:
 
 
 #*******************************************************************************************
@@ -899,7 +787,7 @@ def ReturnTopCompanyByIndustry \
     None
 
 
-# In[10]:
+# In[9]:
 
 
 #*******************************************************************************************
@@ -986,6 +874,9 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                                 'Market Cap (Max)', 
                                 'Market Cap (Mean)', 
                                 'Market Cap (Median)',
+                                'Market Cap (Var)',
+                                'Market Cap (Stdev)',
+                                'Market Cap (SEM)',
                                 'Latitude',
                                 'Longitude'],
                          axis = 'columns') \
@@ -1032,7 +923,13 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                           'Market Cap (Mean)':
                             constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Median)':
-                            constant.CURRENCY_FLOAT_FORMAT}) \
+                            constant.CURRENCY_FLOAT_FORMAT,
+                          'Market Cap (Var)':
+                            constant.FLOAT_FORMAT,
+                          'Market Cap (Stdev)':
+                            constant.FLOAT_FORMAT,
+                          'Market Cap (SEM)':
+                            constant.FLOAT_FORMAT}) \
                     .hide \
                         (subset \
                              = ['Address',
@@ -1083,6 +980,9 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                                 'Market Cap (Max)', 
                                 'Market Cap (Mean)', 
                                 'Market Cap (Median)',
+                                'Market Cap (Var)',
+                                'Market Cap (Stdev)',
+                                'Market Cap (SEM)',
                                 'Latitude',
                                 'Longitude'],
                          axis = 'columns') \
@@ -1131,7 +1031,13 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                           'Market Cap (Mean)':
                             constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Median)':
-                            constant.CURRENCY_FLOAT_FORMAT}) \
+                            constant.CURRENCY_FLOAT_FORMAT,
+                          'Market Cap (Var)':
+                            constant.FLOAT_FORMAT,
+                          'Market Cap (Stdev)':
+                            constant.FLOAT_FORMAT,
+                          'Market Cap (SEM)':
+                            constant.FLOAT_FORMAT}) \
                     .hide \
                         (subset \
                              = ['Latitude',
@@ -1162,7 +1068,7 @@ def ReturnOilCompanyStylerObjectStandardFormat \
             None
 
 
-# In[11]:
+# In[10]:
 
 
 #*******************************************************************************************
@@ -1245,7 +1151,7 @@ def ReturnOilSectorIndicesStandardFormat \
             None
 
 
-# In[12]:
+# In[11]:
 
 
 #*******************************************************************************************
