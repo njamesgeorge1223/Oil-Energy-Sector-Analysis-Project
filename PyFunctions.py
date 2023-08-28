@@ -1597,8 +1597,6 @@ def DisplaySummaryStatistics \
                             constant.CURRENCY_FLOAT_AS_INTEGER_FORMAT, 
                      'Median':
                             constant.CURRENCY_FLOAT_AS_INTEGER_FORMAT, 
-                     '% Difference':
-                            constant.PERCENT_FLOAT_FORMAT, 
                      'Number of Companies':
                             constant.INTEGER_FORMAT, 
                      'Number of Outliers':
@@ -1612,7 +1610,6 @@ def DisplaySummaryStatistics \
                        'Upper Boundary',
                        'Mean',
                        'Median',
-                       '% Difference',
                        'Number of Companies',
                        'Number of Outliers'],
                  color='lime') \
@@ -1625,7 +1622,6 @@ def DisplaySummaryStatistics \
                        'Upper Boundary',
                        'Mean',
                        'Median',
-                       '% Difference',
                        'Number of Companies',
                        'Number of Outliers'],
                  color='yellow') \

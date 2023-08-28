@@ -371,9 +371,6 @@ def ReturnIndustryMarketCapStatisticsSummary \
         medianList \
             = []
     
-        percentDifferenceList \
-            = []
-    
         numberOfCompaniesList \
             = []
     
@@ -425,15 +422,16 @@ def ReturnIndustryMarketCapStatisticsSummary \
                         .mean()
 
                 medianFloatVariable \
-                    = quantileSeries \
-                        [index + 1]
+                    = inputDataFrameParameter \
+                        .loc \
+                            [inputDataFrameParameter \
+                                 ['Industry'] \
+                            == industryListStringVariable] \
+                                 [columnNameStringParameter] \
+                        .median()
+                    #= quantileSeries \
+                    #    [index + 1]
             
-                percentDifferenceFloatVariable \
-                    = abs \
-                        (meanFloatVariable - medianFloatVariable) \
-                      / meanFloatVariable
-            
-
                 numberOfOutliersIntegerVariable \
                     = len \
                         (inputDataFrameParameter \
@@ -480,10 +478,6 @@ def ReturnIndustryMarketCapStatisticsSummary \
                 medianList \
                     .append \
                         (medianFloatVariable)
-            
-                percentDifferenceList \
-                    .append \
-                        (percentDifferenceFloatVariable)
         
         
                 numberOfCompaniesList \
@@ -511,7 +505,6 @@ def ReturnIndustryMarketCapStatisticsSummary \
                          'Upper Boundary': pd.Series(upperBoundList),
                          'Mean': pd.Series(meanList),
                          'Median': pd.Series(medianList),
-                         '% Difference': pd.Series(percentDifferenceList),
                          'Number of Companies': pd.Series(numberOfCompaniesList),
                          'Number of Outliers': pd.Series(numberOfOutliersList)},
                         axis = 1)
@@ -916,16 +909,10 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                             constant.GENERAL_TEXT_FORMAT, 
                           'Industry':
                             constant.GENERAL_TEXT_FORMAT,
-                          'Market Cap (Min)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Max)':
-                            constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Mean)':
                             constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Median)':
                             constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Var)':
-                            constant.FLOAT_FORMAT,
                           'Market Cap (Stdev)':
                             constant.FLOAT_FORMAT,
                           'Market Cap (SEM)':
@@ -933,6 +920,9 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                     .hide \
                         (subset \
                              = ['Address',
+                                'Market Cap (Min)',
+                                'Market Cap (Max)',
+                                'Market Cap (Var)',
                                 'Latitude',
                                 'Longitude'],
                          axis = 'columns') \
@@ -1024,23 +1014,20 @@ def ReturnOilCompanyStylerObjectStandardFormat \
                             constant.GENERAL_TEXT_FORMAT,
                           'Address':
                             constant.GENERAL_TEXT_FORMAT,           
-                          'Market Cap (Min)':
-                            constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Max)':
-                            constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Mean)':
                             constant.CURRENCY_FLOAT_FORMAT,
                           'Market Cap (Median)':
                             constant.CURRENCY_FLOAT_FORMAT,
-                          'Market Cap (Var)':
-                            constant.FLOAT_FORMAT,
                           'Market Cap (Stdev)':
                             constant.FLOAT_FORMAT,
                           'Market Cap (SEM)':
                             constant.FLOAT_FORMAT}) \
                     .hide \
                         (subset \
-                             = ['Latitude',
+                             = ['Market Cap (Min)',
+                                'Market Cap (Max)',
+                                'Market Cap (Var)',
+                                'Latitude',
                                 'Longitude'],
                          axis = 'columns') \
                     .hide \
