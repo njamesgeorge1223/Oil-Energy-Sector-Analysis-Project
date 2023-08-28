@@ -1,5 +1,7 @@
 # Project #1, Group #4
 ![maksym-kaharlytskyi-u13zBF4r56A-unsplash](https://github.com/SIWhang213/Project-1-group-4/assets/137141385/500f11cf-8bc1-478b-837d-383e914413e9)
+
+
 -----
 The oil industry has always been a topic of interest to many due to the very nature of its business: a commodity that virtually everyone must frequently purchase either directly or indirectly to conduct the vagaries of daily life.  Thus, what factors affect, drive, or influence the oil industry is more than a mere topic of curiosity, as any unexpected disruptions can carry far reaching effects for individuals, groups, countries, or even the world.  For this project, we delve into this topic during the COVID-19 pandemic to answer these questions.
 
