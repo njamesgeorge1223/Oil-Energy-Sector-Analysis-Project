@@ -1,0 +1,3160 @@
+
+Timepoint: 08/27/2023 20:26:16
+Program execution begins...
+
+
+
+Timepoint: 08/27/2023 20:26:20
+r-value:     0.5010
+
+
+Timepoint: 08/27/2023 20:26:20
+r-squared:   0.2510
+
+
+Timepoint: 08/27/2023 20:26:20
+correlation: 0.5010
+
+
+Timepoint: 08/27/2023 20:26:21
+r-value:     0.7840
+
+
+Timepoint: 08/27/2023 20:26:21
+r-squared:   0.6146
+
+
+Timepoint: 08/27/2023 20:26:21
+correlation: 0.7840
+
+
+Timepoint: 08/27/2023 20:26:25
+There are 11,312 tickers in the complete Yahoo Finance ticker List.
+
+
+Timepoint: 08/27/2023 20:26:25
+There are now 217 oil companies in the Dataframe.
+
+
+
+Timepoint: 08/27/2023 20:26:25
+There are 217 publically traded oil companies in the Oil Energy Sector.
+
+
+Timepoint: 08/27/2023 20:26:26
+There is $1,885,557,234,621.23 in total mean market capitalization for the Oil Energy Sector.
+
+
+Timepoint: 08/27/2023 20:26:26
+There is $1,890,326,679,435.17 in total median market capitalization for the Oil Energy Sector.
+
+
+Timepoint: 08/27/2023 20:26:31
+Begin calculating oil company stock index...
+
+
+
+
+Timepoint: 08/27/2023 20:26:31
+
+Processed AE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:32
+
+Processed AM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:32
+
+Processed AMPY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:32
+
+Processed AMTX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:32
+
+Processed APA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:32
+
+Processed AR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:33
+
+Processed AROC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:33
+
+Processed BATL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:33
+
+Processed BKR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:34
+
+Processed BOOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:34
+
+Processed BORR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:34
+
+Processed BP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:34
+
+Processed BPT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:35
+
+Processed BRN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:35
+
+Processed BROG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:35
+
+Processed BRY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:35
+
+Processed BSM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:35
+
+Processed BTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:36
+
+Processed CAPL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:36
+
+Processed CCLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:36
+
+Processed CEI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:36
+
+Processed CEQP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:36
+
+Processed CHRD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:37
+
+Processed CHX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:37
+
+Processed CIVI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:37
+
+Processed CKX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:37
+
+Processed CLB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:37
+
+Processed CLMT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:38
+
+Processed CLNE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:38
+
+Processed CNQ's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:38
+
+Processed CNX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:38
+
+Processed COP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:38
+
+Processed CPE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:39
+
+Processed CPG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:39
+
+Processed CQP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:39
+
+Processed CRK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:39
+
+Processed CRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:40
+
+Processed CTRA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:40
+
+Processed CVE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:40
+
+Processed CVI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:40
+
+Processed CVX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:41
+
+Processed DHT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:41
+
+Processed DINO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:41
+
+Processed DK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:41
+
+Processed DKL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:41
+
+Processed DLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:42
+
+Processed DMLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:42
+
+Processed DNOW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:42
+
+Processed DRQ's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:42
+
+Processed DVN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:42
+
+Processed DWSN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:43
+
+Processed E's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:43
+
+Processed EC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:43
+
+Processed EGY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:43
+
+Processed ENB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:43
+
+Processed ENLC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:44
+
+Processed ENSV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:44
+
+Processed EOG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:44
+
+Processed EP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:44
+
+Processed EPD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:44
+
+Processed EPM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:45
+
+Processed EPSN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:45
+
+Processed EQNR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:45
+
+Processed EQT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:45
+
+Processed ERF's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:46
+
+Processed ESTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:46
+
+Processed ET's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:46
+
+Processed ETRN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:46
+
+Processed EURN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:47
+
+Processed FANG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:47
+
+Processed FET's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:47
+
+Processed FLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:47
+
+Processed FRO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:47
+
+Processed FTI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:47
+
+Processed FTK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:48
+
+Processed GEL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:48
+
+Processed GEOS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:48
+
+Processed GLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:48
+
+Processed GLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:48
+
+Processed GPP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:49
+
+Processed GPRK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:49
+
+Processed GTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:49
+
+Processed HAL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:49
+
+Processed HEP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:50
+
+Processed HES's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:50
+
+Processed HESM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:50
+
+Processed HLX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:50
+
+Processed HP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:50
+
+Processed HPK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:50
+
+Processed HUSA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:51
+
+Processed ICD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:51
+
+Processed IEP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:51
+
+Processed IMO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:51
+
+Processed INDO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:51
+
+Processed INSW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:52
+
+Processed KLXE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:52
+
+Processed KMI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:52
+
+Processed KNTK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:52
+
+Processed KOS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:53
+
+Processed KRP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:53
+
+Processed LBRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:53
+
+Processed LNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:53
+
+Processed LPG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:53
+
+Processed MARPS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:53
+
+Processed MGY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:54
+
+Processed MMLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:54
+
+Processed MMP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:54
+
+Processed MPC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:55
+
+Processed MPLX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:55
+
+Processed MRC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:55
+
+Processed MRO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:56
+
+Processed MTDR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:56
+
+Processed MTR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:56
+
+Processed MUR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:56
+
+Processed MVO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:57
+
+Processed MXC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:57
+
+Processed NBR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:57
+
+Processed NCSM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:57
+
+Processed NEX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:57
+
+Processed NEXT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:58
+
+Processed NFG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:58
+
+Processed NGL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:58
+
+Processed NGS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:58
+
+Processed NINE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:58
+
+Processed NOA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:58
+
+Processed NOG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:59
+
+Processed NOV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:59
+
+Processed NR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:59
+
+Processed NRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:59
+
+Processed NS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:26:59
+
+Processed NVGS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:00
+
+Processed OBE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:00
+
+Processed OII's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:00
+
+Processed OIS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:00
+
+Processed OKE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:00
+
+Processed OSG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:01
+
+Processed OVV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:01
+
+Processed OXY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:01
+
+Processed PAA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:02
+
+Processed PAGP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:02
+
+Processed PARR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:02
+
+Processed PBA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:02
+
+Processed PBF's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:03
+
+Processed PBR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:03
+
+Processed PBT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:03
+
+Processed PDS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:04
+
+Processed PED's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:04
+
+Processed PFIE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:05
+
+Processed PHX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:05
+
+Processed PNRG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:05
+
+Processed PR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:05
+
+Processed PRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:06
+
+Processed PSX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:06
+
+Processed PTEN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:06
+
+Processed PUMP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:06
+
+Processed PVL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:07
+
+Processed PXD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:07
+
+Processed RCON's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:07
+
+Processed REI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:07
+
+Processed REPX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:07
+
+Processed RES's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:08
+
+Processed RIG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:08
+
+Processed RNGR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:08
+
+Processed RRC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:08
+
+Processed SBOW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:08
+
+Processed SBR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:08
+
+Processed SD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:09
+
+Processed SDPI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:09
+
+Processed SGU's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:09
+
+Processed SHEL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:10
+
+Processed SJT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:10
+
+Processed SLB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:10
+
+Processed SLCA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:10
+
+Processed SLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:11
+
+Processed SM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:11
+
+Processed SMLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:11
+
+Processed SND's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:11
+
+Processed SOI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:12
+
+Processed STNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:12
+
+Processed STR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:12
+
+Processed SU's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:12
+
+Processed SUN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:12
+
+Processed SWN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:13
+
+Processed TALO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:13
+
+Processed TDW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:13
+
+Processed TELL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:13
+
+Processed TGS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:13
+
+Processed TK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:14
+
+Processed TNK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:14
+
+Processed TNP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:14
+
+Processed TPL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:14
+
+Processed TRGP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:14
+
+Processed TRMD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:15
+
+Processed TRP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:15
+
+Processed TS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:15
+
+Processed TTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:15
+
+Processed TTI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:15
+
+Processed UGP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:16
+
+Processed USAC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:16
+
+Processed USEG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:16
+
+Processed VET's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:16
+
+Processed VIST's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:16
+
+Processed VIVK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:17
+
+Processed VLO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:17
+
+Processed VNOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:17
+
+Processed VOC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:17
+
+Processed VTNR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:17
+
+Processed VTOL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:18
+
+Processed VVV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:18
+
+Processed WDS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:18
+
+Processed WES's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:18
+
+Processed WHD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:18
+
+Processed WMB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:19
+
+Processed WTI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:19
+
+Processed XOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:19
+
+Processed XPRO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:19
+
+Processed YPF's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:19
+
+The calculation of the oil company stock index is complete.
+
+
+
+Timepoint: 08/27/2023 20:27:20
+Begin calculating oil company stock index...
+
+
+
+
+Timepoint: 08/27/2023 20:27:20
+
+Processed COP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:21
+
+Processed ENB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:21
+
+Processed HP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:21
+
+Processed MPC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:21
+
+Processed SLB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:22
+
+Processed XOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:27:22
+
+The calculation of the oil company stock index is complete.
+
+
+
+Timepoint: 08/27/2023 20:27:26
+r-value:     0.9962
+
+
+Timepoint: 08/27/2023 20:27:26
+r-squared:   0.9924
+
+
+Timepoint: 08/27/2023 20:27:26
+correlation: 0.9962
+
+
+Timepoint: 08/27/2023 20:27:27
+r-value:     0.9763
+
+
+Timepoint: 08/27/2023 20:27:27
+r-squared:   0.9531
+
+
+Timepoint: 08/27/2023 20:27:27
+correlation: 0.9763
+
+
+Timepoint: 08/27/2023 20:27:28
+r-value:     0.9293
+
+
+Timepoint: 08/27/2023 20:27:28
+r-squared:   0.8637
+
+
+Timepoint: 08/27/2023 20:27:28
+correlation: 0.9293
+
+
+Timepoint: 08/27/2023 20:27:29
+r-value:     0.2145
+
+
+Timepoint: 08/27/2023 20:27:29
+r-squared:   0.0460
+
+
+Timepoint: 08/27/2023 20:27:29
+correlation: 0.2095
+
+
+Timepoint: 08/27/2023 20:27:30
+r-value:     0.7973
+
+
+Timepoint: 08/27/2023 20:27:30
+r-squared:   0.6356
+
+
+Timepoint: 08/27/2023 20:27:30
+correlation: 0.5794
+
+
+Timepoint: 08/27/2023 20:27:31
+r-value:     0.6546
+
+
+Timepoint: 08/27/2023 20:27:31
+r-squared:   0.4285
+
+
+Timepoint: 08/27/2023 20:27:31
+correlation: 0.6356
+
+
+Timepoint: 08/27/2023 20:27:32
+r-value:     0.2834
+
+
+Timepoint: 08/27/2023 20:27:32
+r-squared:   0.0803
+
+
+Timepoint: 08/27/2023 20:27:32
+correlation: 0.0163
+
+
+Timepoint: 08/27/2023 20:27:33
+r-value:     0.1917
+
+
+Timepoint: 08/27/2023 20:27:33
+r-squared:   0.0368
+
+
+Timepoint: 08/27/2023 20:27:33
+correlation: 0.1025
+
+
+Timepoint: 08/27/2023 20:27:34
+r-value:     0.9498
+
+
+Timepoint: 08/27/2023 20:27:34
+r-squared:   0.9021
+
+
+Timepoint: 08/27/2023 20:27:34
+correlation: 0.9434
+
+
+Timepoint: 08/27/2023 20:27:35
+r-value:     0.3356
+
+
+Timepoint: 08/27/2023 20:27:35
+r-squared:   0.1126
+
+
+Timepoint: 08/27/2023 20:27:35
+correlation: 0.3302
+
+
+Timepoint: 08/27/2023 20:27:36
+r-value:     0.1935
+
+
+Timepoint: 08/27/2023 20:27:36
+r-squared:   0.0375
+
+
+Timepoint: 08/27/2023 20:27:36
+correlation: 0.1111
+
+
+Timepoint: 08/27/2023 20:27:37
+r-value:     -0.0497
+
+
+Timepoint: 08/27/2023 20:27:37
+r-squared:   0.0025
+
+
+Timepoint: 08/27/2023 20:27:37
+correlation: -0.0497
+
+
+Timepoint: 08/27/2023 20:27:38
+r-value:     0.2679
+
+
+Timepoint: 08/27/2023 20:27:38
+r-squared:   0.0718
+
+
+Timepoint: 08/27/2023 20:27:38
+correlation: -0.2383
+
+
+Timepoint: 08/27/2023 20:27:39
+r-value:     -0.0272
+
+
+Timepoint: 08/27/2023 20:27:39
+r-squared:   0.0007
+
+
+Timepoint: 08/27/2023 20:27:39
+correlation: -0.0272
+
+
+Timepoint: 08/27/2023 20:30:37
+Program execution begins...
+
+
+
+Timepoint: 08/27/2023 20:30:40
+r-value:     0.5010
+
+
+Timepoint: 08/27/2023 20:30:40
+r-squared:   0.2510
+
+
+Timepoint: 08/27/2023 20:30:40
+correlation: 0.5010
+
+
+Timepoint: 08/27/2023 20:30:41
+r-value:     0.7840
+
+
+Timepoint: 08/27/2023 20:30:41
+r-squared:   0.6146
+
+
+Timepoint: 08/27/2023 20:30:41
+correlation: 0.7840
+
+
+Timepoint: 08/27/2023 20:30:48
+There are 11,312 tickers in the complete Yahoo Finance ticker List.
+
+
+Timepoint: 08/27/2023 20:30:48
+There are now 217 oil companies in the Dataframe.
+
+
+
+Timepoint: 08/27/2023 20:30:48
+There are 217 publically traded oil companies in the Oil Energy Sector.
+
+
+Timepoint: 08/27/2023 20:30:48
+There is $1,885,557,234,621.23 in total mean market capitalization for the Oil Energy Sector.
+
+
+Timepoint: 08/27/2023 20:30:49
+There is $1,890,326,679,435.17 in total median market capitalization for the Oil Energy Sector.
+
+
+Timepoint: 08/27/2023 20:30:54
+Begin calculating oil company stock index...
+
+
+
+
+Timepoint: 08/27/2023 20:30:54
+
+Processed AE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:54
+
+Processed AM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:54
+
+Processed AMPY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:55
+
+Processed AMTX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:55
+
+Processed APA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:55
+
+Processed AR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:55
+
+Processed AROC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:55
+
+Processed BATL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:56
+
+Processed BKR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:56
+
+Processed BOOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:56
+
+Processed BORR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:56
+
+Processed BP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:57
+
+Processed BPT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:57
+
+Processed BRN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:57
+
+Processed BROG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:57
+
+Processed BRY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:57
+
+Processed BSM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:57
+
+Processed BTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:58
+
+Processed CAPL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:58
+
+Processed CCLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:58
+
+Processed CEI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:58
+
+Processed CEQP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:58
+
+Processed CHRD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:59
+
+Processed CHX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:59
+
+Processed CIVI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:59
+
+Processed CKX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:30:59
+
+Processed CLB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:00
+
+Processed CLMT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:00
+
+Processed CLNE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:00
+
+Processed CNQ's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:00
+
+Processed CNX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:01
+
+Processed COP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:01
+
+Processed CPE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:01
+
+Processed CPG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:01
+
+Processed CQP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:01
+
+Processed CRK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:02
+
+Processed CRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:02
+
+Processed CTRA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:02
+
+Processed CVE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:02
+
+Processed CVI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:02
+
+Processed CVX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:03
+
+Processed DHT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:03
+
+Processed DINO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:03
+
+Processed DK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:03
+
+Processed DKL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:03
+
+Processed DLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:04
+
+Processed DMLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:04
+
+Processed DNOW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:04
+
+Processed DRQ's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:04
+
+Processed DVN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:04
+
+Processed DWSN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:05
+
+Processed E's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:05
+
+Processed EC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:05
+
+Processed EGY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:05
+
+Processed ENB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:05
+
+Processed ENLC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:06
+
+Processed ENSV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:06
+
+Processed EOG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:06
+
+Processed EP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:06
+
+Processed EPD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:07
+
+Processed EPM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:07
+
+Processed EPSN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:07
+
+Processed EQNR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:07
+
+Processed EQT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:07
+
+Processed ERF's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:08
+
+Processed ESTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:08
+
+Processed ET's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:08
+
+Processed ETRN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:08
+
+Processed EURN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:08
+
+Processed FANG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:09
+
+Processed FET's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:09
+
+Processed FLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:09
+
+Processed FRO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:09
+
+Processed FTI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:09
+
+Processed FTK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:09
+
+Processed GEL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:10
+
+Processed GEOS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:10
+
+Processed GLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:10
+
+Processed GLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:10
+
+Processed GPP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:10
+
+Processed GPRK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:11
+
+Processed GTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:11
+
+Processed HAL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:11
+
+Processed HEP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:11
+
+Processed HES's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:12
+
+Processed HESM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:12
+
+Processed HLX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:12
+
+Processed HP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:12
+
+Processed HPK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:13
+
+Processed HUSA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:13
+
+Processed ICD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:13
+
+Processed IEP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:13
+
+Processed IMO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:13
+
+Processed INDO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:14
+
+Processed INSW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:14
+
+Processed KLXE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:14
+
+Processed KMI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:14
+
+Processed KNTK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:15
+
+Processed KOS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:15
+
+Processed KRP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:15
+
+Processed LBRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:15
+
+Processed LNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:15
+
+Processed LPG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:16
+
+Processed MARPS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:16
+
+Processed MGY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:16
+
+Processed MMLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:16
+
+Processed MMP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:16
+
+Processed MPC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:17
+
+Processed MPLX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:17
+
+Processed MRC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:17
+
+Processed MRO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:17
+
+Processed MTDR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:18
+
+Processed MTR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:18
+
+Processed MUR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:18
+
+Processed MVO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:18
+
+Processed MXC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:19
+
+Processed NBR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:19
+
+Processed NCSM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:19
+
+Processed NEX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:19
+
+Processed NEXT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:19
+
+Processed NFG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:20
+
+Processed NGL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:20
+
+Processed NGS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:20
+
+Processed NINE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:20
+
+Processed NOA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:20
+
+Processed NOG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:21
+
+Processed NOV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:21
+
+Processed NR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:21
+
+Processed NRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:21
+
+Processed NS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:21
+
+Processed NVGS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:22
+
+Processed OBE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:22
+
+Processed OII's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:22
+
+Processed OIS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:22
+
+Processed OKE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:23
+
+Processed OSG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:23
+
+Processed OVV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:23
+
+Processed OXY's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:23
+
+Processed PAA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:24
+
+Processed PAGP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:24
+
+Processed PARR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:24
+
+Processed PBA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:24
+
+Processed PBF's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:24
+
+Processed PBR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:25
+
+Processed PBT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:25
+
+Processed PDS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:26
+
+Processed PED's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:27
+
+Processed PFIE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:28
+
+Processed PHX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:28
+
+Processed PNRG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:29
+
+Processed PR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:30
+
+Processed PRT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:31
+
+Processed PSX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:32
+
+Processed PTEN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:33
+
+Processed PUMP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:33
+
+Processed PVL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:34
+
+Processed PXD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:35
+
+Processed RCON's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:36
+
+Processed REI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:36
+
+Processed REPX's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:37
+
+Processed RES's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:38
+
+Processed RIG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:39
+
+Processed RNGR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:40
+
+Processed RRC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:41
+
+Processed SBOW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:41
+
+Processed SBR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:42
+
+Processed SD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:43
+
+Processed SDPI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:44
+
+Processed SGU's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:45
+
+Processed SHEL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:46
+
+Processed SJT's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:46
+
+Processed SLB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:47
+
+Processed SLCA's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:48
+
+Processed SLNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:49
+
+Processed SM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:49
+
+Processed SMLP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:50
+
+Processed SND's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:51
+
+Processed SOI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:52
+
+Processed STNG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:53
+
+Processed STR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:54
+
+Processed SU's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:54
+
+Processed SUN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:55
+
+Processed SWN's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:56
+
+Processed TALO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:57
+
+Processed TDW's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:58
+
+Processed TELL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:58
+
+Processed TGS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:31:59
+
+Processed TK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:00
+
+Processed TNK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:01
+
+Processed TNP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:02
+
+Processed TPL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:03
+
+Processed TRGP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:03
+
+Processed TRMD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:04
+
+Processed TRP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:05
+
+Processed TS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:06
+
+Processed TTE's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:07
+
+Processed TTI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:08
+
+Processed UGP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:08
+
+Processed USAC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:09
+
+Processed USEG's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:10
+
+Processed VET's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:11
+
+Processed VIST's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:12
+
+Processed VIVK's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:13
+
+Processed VLO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:14
+
+Processed VNOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:14
+
+Processed VOC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:15
+
+Processed VTNR's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:16
+
+Processed VTOL's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:17
+
+Processed VVV's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:18
+
+Processed WDS's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:18
+
+Processed WES's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:19
+
+Processed WHD's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:20
+
+Processed WMB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:21
+
+Processed WTI's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:22
+
+Processed XOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:22
+
+Processed XPRO's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:23
+
+Processed YPF's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:23
+
+The calculation of the oil company stock index is complete.
+
+
+
+Timepoint: 08/27/2023 20:32:24
+Begin calculating oil company stock index...
+
+
+
+
+Timepoint: 08/27/2023 20:32:25
+
+Processed COP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:26
+
+Processed ENB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:27
+
+Processed HP's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:28
+
+Processed MPC's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:29
+
+Processed SLB's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:30
+
+Processed XOM's contribution...
+
+
+
+Timepoint: 08/27/2023 20:32:30
+
+The calculation of the oil company stock index is complete.
+
+
+
+Timepoint: 08/27/2023 20:32:33
+r-value:     0.9962
+
+
+Timepoint: 08/27/2023 20:32:33
+r-squared:   0.9924
+
+
+Timepoint: 08/27/2023 20:32:33
+correlation: 0.9962
+
+
+Timepoint: 08/27/2023 20:32:35
+r-value:     0.9763
+
+
+Timepoint: 08/27/2023 20:32:35
+r-squared:   0.9531
+
+
+Timepoint: 08/27/2023 20:32:35
+correlation: 0.9763
+
+
+Timepoint: 08/27/2023 20:32:36
+r-value:     0.9293
+
+
+Timepoint: 08/27/2023 20:32:36
+r-squared:   0.8637
+
+
+Timepoint: 08/27/2023 20:32:36
+correlation: 0.9293
+
+
+Timepoint: 08/27/2023 20:32:37
+r-value:     0.2145
+
+
+Timepoint: 08/27/2023 20:32:37
+r-squared:   0.0460
+
+
+Timepoint: 08/27/2023 20:32:37
+correlation: 0.2095
+
+
+Timepoint: 08/27/2023 20:32:38
+r-value:     0.7973
+
+
+Timepoint: 08/27/2023 20:32:38
+r-squared:   0.6356
+
+
+Timepoint: 08/27/2023 20:32:38
+correlation: 0.5794
+
+
+Timepoint: 08/27/2023 20:32:39
+r-value:     0.6546
+
+
+Timepoint: 08/27/2023 20:32:39
+r-squared:   0.4285
+
+
+Timepoint: 08/27/2023 20:32:39
+correlation: 0.6356
+
+
+Timepoint: 08/27/2023 20:32:40
+r-value:     0.2834
+
+
+Timepoint: 08/27/2023 20:32:40
+r-squared:   0.0803
+
+
+Timepoint: 08/27/2023 20:32:40
+correlation: 0.0163
+
+
+Timepoint: 08/27/2023 20:32:41
+r-value:     0.1917
+
+
+Timepoint: 08/27/2023 20:32:41
+r-squared:   0.0368
+
+
+Timepoint: 08/27/2023 20:32:41
+correlation: 0.1025
+
+
+Timepoint: 08/27/2023 20:32:41
+r-value:     0.9498
+
+
+Timepoint: 08/27/2023 20:32:41
+r-squared:   0.9021
+
+
+Timepoint: 08/27/2023 20:32:41
+correlation: 0.9434
+
+
+Timepoint: 08/27/2023 20:32:43
+r-value:     0.3356
+
+
+Timepoint: 08/27/2023 20:32:43
+r-squared:   0.1126
+
+
+Timepoint: 08/27/2023 20:32:43
+correlation: 0.3302
+
+
+Timepoint: 08/27/2023 20:32:43
+r-value:     0.1935
+
+
+Timepoint: 08/27/2023 20:32:43
+r-squared:   0.0375
+
+
+Timepoint: 08/27/2023 20:32:43
+correlation: 0.1111
+
+
+Timepoint: 08/27/2023 20:32:45
+r-value:     -0.0497
+
+
+Timepoint: 08/27/2023 20:32:45
+r-squared:   0.0025
+
+
+Timepoint: 08/27/2023 20:32:45
+correlation: -0.0497
+
+
+Timepoint: 08/27/2023 20:32:45
+r-value:     0.2679
+
+
+Timepoint: 08/27/2023 20:32:45
+r-squared:   0.0718
+
+
+Timepoint: 08/27/2023 20:32:45
+correlation: -0.2383
+
+
+Timepoint: 08/27/2023 20:32:47
+r-value:     -0.0272
+
+
+Timepoint: 08/27/2023 20:32:47
+r-squared:   0.0007
+
+
+Timepoint: 08/27/2023 20:32:47
+correlation: -0.0272
+

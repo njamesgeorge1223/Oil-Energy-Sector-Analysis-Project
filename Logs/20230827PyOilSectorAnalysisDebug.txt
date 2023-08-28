@@ -1,0 +1,1770 @@
+
+Timepoint: 08/27/2023 20:26:16
+Program execution begins...
+
+
+
+
+Date
+2020-01-03 00:00:00-05:00    63.049999
+2020-01-06 00:00:00-05:00    63.270000
+2020-01-07 00:00:00-05:00    62.700001
+2020-01-08 00:00:00-05:00    59.610001
+2020-01-09 00:00:00-05:00    59.560001
+                               ...    
+2022-10-10 00:00:00-04:00    91.129997
+2022-10-11 00:00:00-04:00    89.349998
+2022-10-12 00:00:00-04:00    87.269997
+2022-10-13 00:00:00-04:00    89.110001
+2022-10-14 00:00:00-04:00    85.610001
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    3234.850098
+2020-01-06 00:00:00-05:00    3246.280029
+2020-01-07 00:00:00-05:00    3237.179932
+2020-01-08 00:00:00-05:00    3253.050049
+2020-01-09 00:00:00-05:00    3274.699951
+                                ...     
+2022-10-10 00:00:00-04:00    3612.389893
+2022-10-11 00:00:00-04:00    3588.840088
+2022-10-12 00:00:00-04:00    3577.030029
+2022-10-13 00:00:00-04:00    3669.909912
+2022-10-14 00:00:00-04:00    3583.070068
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    1549.199951
+2020-01-06 00:00:00-05:00    1566.199951
+2020-01-07 00:00:00-05:00    1571.800049
+2020-01-08 00:00:00-05:00    1557.400024
+2020-01-09 00:00:00-05:00    1551.699951
+                                ...     
+2022-10-10 00:00:00-04:00    1667.300049
+2022-10-11 00:00:00-04:00    1678.699951
+2022-10-12 00:00:00-04:00    1670.300049
+2022-10-13 00:00:00-04:00    1670.000000
+2022-10-14 00:00:00-04:00    1641.699951
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    1.788
+2020-01-06 00:00:00-05:00    1.811
+2020-01-07 00:00:00-05:00    1.827
+2020-01-08 00:00:00-05:00    1.874
+2020-01-09 00:00:00-05:00    1.858
+                             ...  
+2022-10-10 00:00:00-04:00    3.888
+2022-10-11 00:00:00-04:00    3.939
+2022-10-12 00:00:00-04:00    3.902
+2022-10-13 00:00:00-04:00    3.952
+2022-10-14 00:00:00-04:00    4.010
+Name: Close, Length: 702, dtype: float64
+
+
+
+            Crude Oil      S&P 500         Gold  10-Year Bond Yield
+Date                                                               
+2020-01-03  63.049999  3234.850098  1549.199951               1.788
+2020-01-06  63.270000  3246.280029  1566.199951               1.811
+2020-01-07  62.700001  3237.179932  1571.800049               1.827
+2020-01-08  59.610001  3253.050049  1557.400024               1.874
+2020-01-09  59.560001  3274.699951  1551.699951               1.858
+...               ...          ...          ...                 ...
+2022-10-10  91.129997  3612.389893  1667.300049               3.888
+2022-10-11  89.349998  3588.840088  1678.699951               3.939
+2022-10-12  87.269997  3577.030029  1670.300049               3.902
+2022-10-13  89.110001  3669.909912  1670.000000               3.952
+2022-10-14  85.610001  3583.070068  1641.699951               4.010
+
+[702 rows x 4 columns]
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.348931
+2020-01-07 00:00:00-05:00   -0.900900
+2020-01-08 00:00:00-05:00   -4.928230
+2020-01-09 00:00:00-05:00   -0.083877
+2020-01-10 00:00:00-05:00   -0.873070
+                               ...   
+2022-10-10 00:00:00-04:00   -1.629968
+2022-10-11 00:00:00-04:00   -1.953252
+2022-10-12 00:00:00-04:00   -2.327926
+2022-10-13 00:00:00-04:00    2.108404
+2022-10-14 00:00:00-04:00   -3.927730
+Name: Close, Length: 701, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.353337
+2020-01-07 00:00:00-05:00   -0.280324
+2020-01-08 00:00:00-05:00    0.490245
+2020-01-09 00:00:00-05:00    0.665526
+2020-01-10 00:00:00-05:00   -0.285518
+                               ...   
+2022-10-10 00:00:00-04:00   -0.749246
+2022-10-11 00:00:00-04:00   -0.651918
+2022-10-12 00:00:00-04:00   -0.329077
+2022-10-13 00:00:00-04:00    2.596564
+2022-10-14 00:00:00-04:00   -2.366266
+Name: Close, Length: 701, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    1.097341
+2020-01-07 00:00:00-05:00    0.357560
+2020-01-08 00:00:00-05:00   -0.916149
+2020-01-09 00:00:00-05:00   -0.365999
+2020-01-10 00:00:00-05:00    0.373787
+                               ...   
+2022-10-10 00:00:00-04:00   -1.952364
+2022-10-11 00:00:00-04:00    0.683734
+2022-10-12 00:00:00-04:00   -0.500381
+2022-10-13 00:00:00-04:00   -0.017964
+2022-10-14 00:00:00-04:00   -1.694614
+Name: Close, Length: 701, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    1.286354
+2020-01-07 00:00:00-05:00    0.883492
+2020-01-08 00:00:00-05:00    2.572519
+2020-01-09 00:00:00-05:00   -0.853784
+2020-01-10 00:00:00-05:00   -1.776103
+                               ...   
+2022-10-10 00:00:00-04:00    0.128769
+2022-10-11 00:00:00-04:00    1.311725
+2022-10-12 00:00:00-04:00   -0.939323
+2022-10-13 00:00:00-04:00    1.281393
+2022-10-14 00:00:00-04:00    1.467620
+Name: Close, Length: 701, dtype: float64
+
+
+
+            Crude Oil (% Change)  S&P 500 (% Change)  Gold (% Change)  \
+Date                                                                    
+2020-01-06              0.348931            0.353337         1.097341   
+2020-01-07             -0.900900           -0.280324         0.357560   
+2020-01-08             -4.928230            0.490245        -0.916149   
+2020-01-09             -0.083877            0.665526        -0.365999   
+2020-01-10             -0.873070           -0.285518         0.373787   
+...                          ...                 ...              ...   
+2022-10-10             -1.629968           -0.749246        -1.952364   
+2022-10-11             -1.953252           -0.651918         0.683734   
+2022-10-12             -2.327926           -0.329077        -0.500381   
+2022-10-13              2.108404            2.596564        -0.017964   
+2022-10-14             -3.927730           -2.366266        -1.694614   
+
+            10-Year Bond Yield (% Change)  
+Date                                       
+2020-01-06                       1.286354  
+2020-01-07                       0.883492  
+2020-01-08                       2.572519  
+2020-01-09                      -0.853784  
+2020-01-10                      -1.776103  
+...                                   ...  
+2022-10-10                       0.128769  
+2022-10-11                       1.311725  
+2022-10-12                      -0.939323  
+2022-10-13                       1.281393  
+2022-10-14                       1.467620  
+
+[701 rows x 4 columns]
+
+
+
+       Date Reported Country Code      Country WHO Region  New Cases  \
+0         2020-01-03           AF  Afghanistan       EMRO          0   
+1         2020-01-04           AF  Afghanistan       EMRO          0   
+2         2020-01-05           AF  Afghanistan       EMRO          0   
+3         2020-01-06           AF  Afghanistan       EMRO          0   
+4         2020-01-07           AF  Afghanistan       EMRO          0   
+...              ...          ...          ...        ...        ...   
+314968    2023-08-19           ZW     Zimbabwe       AFRO          0   
+314969    2023-08-20           ZW     Zimbabwe       AFRO          0   
+314970    2023-08-21           ZW     Zimbabwe       AFRO          0   
+314971    2023-08-22           ZW     Zimbabwe       AFRO          0   
+314972    2023-08-23           ZW     Zimbabwe       AFRO          0   
+
+        Cumulative Cases  New Deaths  Cumulative Deaths  
+0                      0           0                  0  
+1                      0           0                  0  
+2                      0           0                  0  
+3                      0           0                  0  
+4                      0           0                  0  
+...                  ...         ...                ...  
+314968            265716           0               5713  
+314969            265716           0               5713  
+314970            265716           0               5713  
+314971            265716           0               5713  
+314972            265716           0               5713  
+
+[314973 rows x 8 columns]
+
+
+
+       Date Reported Country Code                   Country WHO Region  \
+300354    2020-01-03           US  United States of America       AMRO   
+300355    2020-01-04           US  United States of America       AMRO   
+300356    2020-01-05           US  United States of America       AMRO   
+300357    2020-01-06           US  United States of America       AMRO   
+300358    2020-01-07           US  United States of America       AMRO   
+...              ...          ...                       ...        ...   
+301678    2023-08-19           US  United States of America       AMRO   
+301679    2023-08-20           US  United States of America       AMRO   
+301680    2023-08-21           US  United States of America       AMRO   
+301681    2023-08-22           US  United States of America       AMRO   
+301682    2023-08-23           US  United States of America       AMRO   
+
+        New Cases  Cumulative Cases  New Deaths  Cumulative Deaths  
+300354          0                 0           0                  0  
+300355          0                 0           0                  0  
+300356          0                 0           0                  0  
+300357          0                 0           0                  0  
+300358          0                 0           0                  0  
+...           ...               ...         ...                ...  
+301678          0         103436829           0            1127152  
+301679          0         103436829           0            1127152  
+301680          0         103436829           0            1127152  
+301681          0         103436829           0            1127152  
+301682          0         103436829           0            1127152  
+
+[1329 rows x 8 columns]
+
+
+
+300354    2020-01-03
+300355    2020-01-04
+300356    2020-01-05
+300357    2020-01-06
+300358    2020-01-07
+             ...    
+301678    2023-08-19
+301679    2023-08-20
+301680    2023-08-21
+301681    2023-08-22
+301682    2023-08-23
+Name: Date Reported, Length: 1329, dtype: object
+
+
+
+              Country Code                   Country WHO Region  New Cases  \
+Date Reported                                                                
+2020-01-03              US  United States of America       AMRO          0   
+2020-01-06              US  United States of America       AMRO          0   
+2020-01-07              US  United States of America       AMRO          0   
+2020-01-08              US  United States of America       AMRO          0   
+2020-01-09              US  United States of America       AMRO          0   
+...                    ...                       ...        ...        ...   
+2022-10-10              US  United States of America       AMRO      11333   
+2022-10-11              US  United States of America       AMRO      13220   
+2022-10-12              US  United States of America       AMRO      24419   
+2022-10-13              US  United States of America       AMRO      38156   
+2022-10-14              US  United States of America       AMRO      57464   
+
+               Cumulative Cases  New Deaths  Cumulative Deaths  
+Date Reported                                                   
+2020-01-03                    0           0                  0  
+2020-01-06                    0           0                  0  
+2020-01-07                    0           0                  0  
+2020-01-08                    0           0                  0  
+2020-01-09                    0           0                  0  
+...                         ...         ...                ...  
+2022-10-10             95396455          72            1051681  
+2022-10-11             95409675          78            1051759  
+2022-10-12             95434094         169            1051928  
+2022-10-13             95472250         398            1052326  
+2022-10-14             95529714         652            1052978  
+
+[702 rows x 7 columns]
+
+
+
+Date Reported
+2020-01-06     0.000000
+2020-01-07     0.000000
+2020-01-08     0.000000
+2020-01-09     0.000000
+2020-01-10     0.000000
+                ...    
+2022-10-10   -82.345427
+2022-10-11    16.650490
+2022-10-12    84.712557
+2022-10-13    56.255375
+2022-10-14    50.602789
+Name: New Cases, Length: 701, dtype: float64
+
+
+
+Date Reported
+2020-01-06      0.000000
+2020-01-07      0.000000
+2020-01-08      0.000000
+2020-01-09      0.000000
+2020-01-10      0.000000
+                 ...    
+2022-10-10    -90.612777
+2022-10-11      8.333333
+2022-10-12    116.666667
+2022-10-13    135.502959
+2022-10-14     63.819095
+Name: New Deaths, Length: 701, dtype: float64
+
+
+
+               New Cases (% Change)  New Deaths (% Change)
+Date Reported                                             
+2020-01-06                 0.000000               0.000000
+2020-01-07                 0.000000               0.000000
+2020-01-08                 0.000000               0.000000
+2020-01-09                 0.000000               0.000000
+2020-01-10                 0.000000               0.000000
+...                             ...                    ...
+2022-10-10               -82.345427             -90.612777
+2022-10-11                16.650490               8.333333
+2022-10-12                84.712557             116.666667
+2022-10-13                56.255375             135.502959
+2022-10-14                50.602789              63.819095
+
+[701 rows x 2 columns]
+
+
+
+           Ticker                    Company Name  \
+Company ID                                          
+0              AE  Adams Resources & Energy, Inc.   
+1              AM    Antero Midstream Corporation   
+2            AMPY            Amplify Energy Corp.   
+3            AMTX                   Aemetis, Inc.   
+4             APA                 APA Corporation   
+...           ...                             ...   
+212           WMB    The Williams Companies, Inc.   
+213           WTI              W&T Offshore, Inc.   
+214           XOM         Exxon Mobil Corporation   
+215          XPRO       Expro Group Holdings N.V.   
+216           YPF            YPF Sociedad Anónima   
+
+                                  Industry  \
+Company ID                                   
+0           Oil & Gas Refining & Marketing   
+1                      Oil & Gas Midstream   
+2                            Oil & Gas E&P   
+3           Oil & Gas Refining & Marketing   
+4                            Oil & Gas E&P   
+...                                    ...   
+212                    Oil & Gas Midstream   
+213                          Oil & Gas E&P   
+214                   Oil & Gas Integrated   
+215         Oil & Gas Equipment & Services   
+216                   Oil & Gas Integrated   
+
+                                                      Address  \
+Company ID                                                      
+0           17 South Briar Hollow Lane, Houston, TX, 77027...   
+1           1615 Wynkoop Street, Denver, CO, 80202, United...   
+2           500 Dallas Street, Houston, TX, 77002, United ...   
+3           20400 Stevens Creek Boulevard, Cupertino, CA, ...   
+4           2000 Post Oak Boulevard, Houston, TX, 77056-40...   
+...                                                       ...   
+212         One Williams Center, Tulsa, OK, 74172, United ...   
+213         5718 Westheimer Road, Houston, TX, 77057-5745,...   
+214         5959 Las Colinas Boulevard, Irving, TX, 75039-...   
+215         1311 Broadfield Boulevard, Houston, TX, 77084,...   
+216              Macacha GUeemes 515, Buenos Aires, Argentina   
+
+            Market Cap (Min)  Market Cap (Max)  Market Cap (Mean)  \
+Company ID                                                          
+0               7.380701e+07      1.479064e+08       1.277287e+08   
+1               6.154161e+08      2.364165e+09       1.334669e+09   
+2               1.987944e+07      3.289919e+08       1.265423e+08   
+3               1.175680e+07      2.940153e+07       1.869010e+07   
+4               1.390684e+09      1.474709e+10       6.443573e+09   
+...                      ...               ...                ...   
+212             9.962444e+09      2.518319e+10       1.990798e+10   
+213             1.551800e+08      8.365224e+08       4.613033e+08   
+214             1.166814e+11      2.588377e+11       1.909896e+11   
+215             2.301264e+09      3.330824e+09       2.631213e+09   
+216             1.297933e+09      6.818712e+09       3.300999e+09   
+
+            Market Cap (Median)  Market Cap (Var)  Market Cap (Stdev)  \
+Company ID                                                              
+0                  1.330726e+08      3.299997e+14        1.816589e+07   
+1                  1.362405e+09      2.551318e+17        5.051057e+08   
+2                  1.408349e+08      7.983307e+15        8.934935e+07   
+3                  1.791199e+07      1.098368e+13        3.314163e+06   
+4                  4.225448e+09      1.555754e+19        3.944304e+09   
+...                         ...               ...                 ...   
+212                2.155938e+10      1.745362e+19        4.177753e+09   
+213                4.704182e+08      4.179447e+16        2.044370e+08   
+214                1.878772e+11      1.902985e+21        4.362322e+10   
+215                2.556175e+09      7.714667e+16        2.777529e+08   
+216                3.392442e+09      1.529530e+18        1.236742e+09   
+
+            Market Cap (SEM)   Latitude   Longitude  
+Company ID                                           
+0               2.543734e+06  29.751085  -95.449306  
+1               5.994502e+07  39.752137 -105.001000  
+2               1.045755e+07  29.757892  -95.370349  
+3               3.493435e+05  37.321626 -122.030389  
+4               4.134755e+08  29.744713  -95.461592  
+...                      ...        ...         ...  
+212             5.066270e+08  36.072575  -95.888641  
+213             2.479162e+07  29.737701  -95.477719  
+214             4.817378e+09  32.890255  -96.949441  
+215             5.071051e+07  29.788715  -95.659914  
+216             1.179187e+08 -34.607357  -58.454595  
+
+[217 rows x 13 columns]
+
+
+
+Industry
+Oil & Gas Drilling                 7
+Oil & Gas E&P                     80
+Oil & Gas Equipment & Services    45
+Oil & Gas Integrated              16
+Oil & Gas Midstream               50
+Oil & Gas Refining & Marketing    19
+Name: Ticker, dtype: int64
+
+
+
+Industry
+Oil & Gas Drilling                 3.225806
+Oil & Gas E&P                     36.866359
+Oil & Gas Equipment & Services    20.737327
+Oil & Gas Integrated               7.373272
+Oil & Gas Midstream               23.041475
+Oil & Gas Refining & Marketing     8.755760
+Name: Ticker, dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                1.988410e+10
+Oil & Gas E&P                     3.263515e+11
+Oil & Gas Equipment & Services    1.115525e+11
+Oil & Gas Integrated              9.380830e+11
+Oil & Gas Midstream               3.736408e+11
+Oil & Gas Refining & Marketing    1.160454e+11
+Name: Market Cap (Mean), dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                 1.054548
+Oil & Gas E&P                     17.307961
+Oil & Gas Equipment & Services     5.916155
+Oil & Gas Integrated              49.750968
+Oil & Gas Midstream               19.815933
+Oil & Gas Refining & Marketing     6.154436
+Name: Market Cap (Mean), dtype: float64
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    7.207928e+08    2.634731e+09   
+1                   Oil & Gas E&P    9.790175e+07    2.184842e+09   
+2  Oil & Gas Equipment & Services    1.252223e+08    1.084834e+09   
+3            Oil & Gas Integrated    1.234893e+10    8.817845e+10   
+4             Oil & Gas Midstream    6.059798e+08    8.176926e+09   
+5  Oil & Gas Refining & Marketing    4.425640e+08    4.045335e+09   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         1.913938e+09   -2.150114e+09    3.591699e+09  2.840586e+09   
+1         2.086940e+09   -3.032509e+09    3.228312e+09  4.079394e+09   
+2         9.596118e+08   -1.314195e+09    1.564640e+09  2.478944e+09   
+3         7.582952e+10   -1.013954e+11    1.260932e+11  5.863019e+10   
+4         7.570946e+09   -1.075044e+10    1.196240e+10  7.472815e+09   
+5         3.602771e+09   -4.961592e+09    5.846720e+09  6.107653e+09   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  1.698725e+09      0.401981                    7                   1  
+1  4.808747e+08      0.882121                   80                  16  
+2  6.386807e+08      0.742358                   45                   8  
+3  3.524187e+10      0.398912                   16                   3  
+4  1.411852e+09      0.811068                   50                  11  
+5  1.797146e+09      0.705755                   19                   4  
+
+
+
+Industry
+Oil & Gas Drilling                8.531591e+09
+Oil & Gas E&P                     3.353112e+11
+Oil & Gas Equipment & Services    1.159652e+11
+Oil & Gas Integrated              9.101744e+11
+Oil & Gas Midstream               3.954430e+11
+Oil & Gas Refining & Marketing    1.249012e+11
+Name: Market Cap (Median), dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                 0.451329
+Oil & Gas E&P                     17.738269
+Oil & Gas Equipment & Services     6.134666
+Oil & Gas Integrated              48.149055
+Oil & Gas Midstream               20.919294
+Oil & Gas Refining & Marketing     6.607387
+Name: Market Cap (Median), dtype: float64
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    4.486223e+08    1.598505e+09   
+1                   Oil & Gas E&P    8.725378e+07    1.794216e+09   
+2  Oil & Gas Equipment & Services    9.593208e+07    1.264984e+09   
+3            Oil & Gas Integrated    1.217956e+10    8.862731e+10   
+4             Oil & Gas Midstream    5.319521e+08    7.895773e+09   
+5  Oil & Gas Refining & Marketing    4.582462e+08    3.538027e+09   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         1.149883e+09   -1.276202e+09    2.173446e+09  1.218799e+09   
+1         1.706962e+09   -2.473190e+09    2.647697e+09  4.191390e+09   
+2         1.169052e+09   -1.657645e+09    1.849510e+09  2.577005e+09   
+3         7.644775e+10   -1.024921e+11    1.268512e+11  5.688590e+10   
+4         7.363821e+09   -1.051378e+10    1.157768e+10  7.908860e+09   
+5         3.079781e+09   -4.161425e+09    5.077917e+09  6.573748e+09   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  5.963866e+08      0.510677                    7                   2  
+1  4.856175e+08      0.884139                   80                  15  
+2  4.723541e+08      0.816704                   45                   8  
+3  3.510352e+10      0.382914                   16                   3  
+4  1.416186e+09      0.820937                   50                  11  
+5  1.828701e+09      0.721818                   19                   4  
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    2.403599e+17    3.039651e+18   
+1                   Oil & Gas E&P    1.035115e+15    1.128571e+18   
+2  Oil & Gas Equipment & Services    5.675270e+15    1.946008e+17   
+3            Oil & Gas Integrated    2.509190e+19    3.234317e+20   
+4             Oil & Gas Midstream    2.222955e+16    6.127268e+18   
+5  Oil & Gas Refining & Marketing    9.714729e+15    1.269289e+18   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         2.799291e+18   -3.958577e+18    4.439297e+18  6.299060e+19   
+1         1.127536e+18   -1.690269e+18    1.692339e+18  1.466022e+19   
+2         1.889255e+17   -2.777130e+17    2.890636e+17  5.828737e+18   
+3         2.983398e+20   -4.224178e+20    4.726016e+20  3.954386e+20   
+4         6.105039e+18   -9.135329e+18    9.179788e+18  1.093730e+19   
+5         1.259575e+18   -1.879647e+18    1.899077e+18  1.214228e+19   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  1.322321e+18      0.979008                    7                   2  
+1  3.648779e+16      0.997511                   80                  16  
+2  5.743427e+16      0.990146                   45                  10  
+3  8.925283e+19      0.774294                   16                   3  
+4  2.461880e+17      0.977491                   50                  10  
+5  2.487322e+17      0.979515                   19                   4  
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    4.849881e+08    1.684231e+09   
+1                   Oil & Gas E&P    3.193481e+07    1.061732e+09   
+2  Oil & Gas Equipment & Services    7.533439e+07    4.411358e+08   
+3            Oil & Gas Integrated    4.614082e+09    1.786685e+10   
+4             Oil & Gas Midstream    1.487902e+08    2.473465e+09   
+5  Oil & Gas Refining & Marketing    9.691045e+07    1.124631e+09   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         1.199243e+09   -1.313877e+09    2.283853e+09  3.799230e+09   
+1         1.029797e+09   -1.512760e+09    1.576630e+09  1.667504e+09   
+2         3.658014e+08   -4.733678e+08    6.240365e+08  9.326092e+08   
+3         1.325277e+10   -1.526508e+10    2.449324e+10  1.409291e+10   
+4         2.324674e+09   -3.338221e+09    3.635802e+09  1.828626e+09   
+5         1.027721e+09   -1.444670e+09    1.638491e+09  1.802963e+09   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  1.149922e+09      0.697328                    7                   1  
+1  1.910129e+08      0.885450                   80                  16  
+2  2.396545e+08      0.743028                   45                   9  
+3  9.437423e+09      0.330343                   16                   3  
+4  4.960915e+08      0.728708                   50                   8  
+5  4.987306e+08      0.723383                   19                   4  
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    4.853873e+07    1.410193e+08   
+1                   Oil & Gas E&P    3.974884e+06    1.221879e+08   
+2  Oil & Gas Equipment & Services    6.841973e+06    5.738786e+07   
+3            Oil & Gas Integrated    2.287601e+08    9.381414e+08   
+4             Oil & Gas Midstream    1.316047e+07    2.478335e+08   
+5  Oil & Gas Refining & Marketing    1.056609e+07    1.338671e+08   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         9.248053e+07   -9.018207e+07    1.872595e+08  3.972676e+08   
+1         1.182130e+08   -1.733446e+08    1.812944e+08  1.723068e+08   
+2         5.054589e+07   -6.897686e+07    8.266081e+07  1.002159e+08   
+3         7.093812e+08   -8.353117e+08    1.292832e+09  1.054302e+09   
+4         2.346731e+08   -3.388491e+08    3.651701e+08  1.821995e+08   
+5         1.233010e+08   -1.743855e+08    1.955176e+08  2.137050e+08   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  9.127765e+07      0.770236                    7                   1  
+1  2.162489e+07      0.874498                   80                  17  
+2  2.817597e+07      0.718847                   45                   7  
+3  3.840680e+08      0.635714                   16                   3  
+4  5.327180e+07      0.707618                   50                   8  
+5  5.269286e+07      0.753432                   19                   4  
+
+
+
+Company ID
+0      0.000070
+1      0.000721
+2      0.000075
+3      0.000009
+4      0.002235
+         ...   
+212    0.011405
+213    0.000249
+214    0.099389
+215    0.001352
+216    0.001795
+Name: Market Cap (Median), Length: 217, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    45.802440
+2020-01-06 00:00:00-05:00    46.232022
+2020-01-07 00:00:00-05:00    46.074437
+2020-01-08 00:00:00-05:00    45.485374
+2020-01-09 00:00:00-05:00    45.678506
+                               ...    
+2022-10-10 00:00:00-04:00    66.879912
+2022-10-11 00:00:00-04:00    66.526416
+2022-10-12 00:00:00-04:00    66.796005
+2022-10-13 00:00:00-04:00    69.399262
+2022-10-14 00:00:00-04:00    67.053238
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.937904
+2020-01-07 00:00:00-05:00   -0.340858
+2020-01-08 00:00:00-05:00   -1.278503
+2020-01-09 00:00:00-05:00    0.424604
+2020-01-10 00:00:00-05:00   -0.655229
+                               ...   
+2022-10-10 00:00:00-04:00   -1.793159
+2022-10-11 00:00:00-04:00   -0.528554
+2022-10-12 00:00:00-04:00    0.405236
+2022-10-13 00:00:00-04:00    3.897325
+2022-10-14 00:00:00-04:00   -3.380475
+Name: Close, Length: 701, dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                3.801494e+09
+Oil & Gas E&P                     5.763540e+10
+Oil & Gas Equipment & Services    3.886553e+10
+Oil & Gas Integrated              1.878772e+11
+Oil & Gas Midstream               6.885676e+10
+Oil & Gas Refining & Marketing    3.112308e+10
+Name: Market Cap (Median), dtype: float64
+
+
+
+  Ticker                    Company Name                        Industry  \
+0    COP                  ConocoPhillips                   Oil & Gas E&P   
+1    ENB                   Enbridge Inc.             Oil & Gas Midstream   
+2     HP         Helmerich & Payne, Inc.              Oil & Gas Drilling   
+3    MPC  Marathon Petroleum Corporation  Oil & Gas Refining & Marketing   
+4    SLB            Schlumberger Limited  Oil & Gas Equipment & Services   
+5    XOM         Exxon Mobil Corporation            Oil & Gas Integrated   
+
+                                             Address  Market Cap (Min)  \
+0  925 North Eldridge Parkway, Houston, TX, 77079...      2.786214e+10   
+1  200, Fifth Avenue Place, Calgary, AB, T2P 3L8,...      3.956467e+10   
+2  1437 South Boulder Avenue, Tulsa, OK, 74119, U...      1.196714e+09   
+3  539 South Main Street, Findlay, OH, 45840-3229...      8.455855e+09   
+4  5599 San Felipe, Houston, TX, 77056, United St...      1.624968e+10   
+5  5959 Las Colinas Boulevard, Irving, TX, 75039-...      1.166814e+11   
+
+   Market Cap (Max)  Market Cap (Mean)  Market Cap (Median)  Market Cap (Var)  \
+0      7.754101e+10       5.255242e+10         5.763540e+10      1.841776e+20   
+1      9.499559e+10       6.834231e+10         6.885676e+10      1.679968e+20   
+2      4.504686e+09       3.131173e+09         3.801494e+09      1.521912e+18   
+3      3.628629e+10       2.532897e+10         3.112308e+10      1.081163e+20   
+4      5.816301e+10       3.560477e+10         3.886553e+10      1.740781e+20   
+5      2.588377e+11       1.909896e+11         1.878772e+11      1.902985e+21   
+
+   Market Cap (Stdev)  Market Cap (SEM)   Latitude   Longitude  
+0        1.357120e+10      1.517307e+09  29.783352  -95.617801  
+1        1.296136e+10      5.327085e+08  51.046246 -114.066516  
+2        1.233658e+09      1.474503e+08  36.141235  -95.987877  
+3        1.039790e+10      1.279893e+09  41.036497  -83.650163  
+4        1.319387e+10      1.544225e+09  29.749650  -95.473350  
+5        4.362322e+10      4.817378e+09  32.890255  -96.949441  
+
+
+
+388159487285.40967
+
+
+
+0    0.148484
+1    0.177393
+2    0.009794
+3    0.080181
+4    0.100128
+5    0.484021
+Name: Market Cap (Median), dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    49.940962
+2020-01-06 00:00:00-05:00    50.339745
+2020-01-07 00:00:00-05:00    50.112466
+2020-01-08 00:00:00-05:00    49.356187
+2020-01-09 00:00:00-05:00    49.807962
+                               ...    
+2022-10-10 00:00:00-04:00    81.938356
+2022-10-11 00:00:00-04:00    81.060280
+2022-10-12 00:00:00-04:00    81.436524
+2022-10-13 00:00:00-04:00    84.774696
+2022-10-14 00:00:00-04:00    82.029484
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.798508
+2020-01-07 00:00:00-05:00   -0.451490
+2020-01-08 00:00:00-05:00   -1.509164
+2020-01-09 00:00:00-05:00    0.915337
+2020-01-10 00:00:00-05:00   -0.515412
+                               ...   
+2022-10-10 00:00:00-04:00   -1.789752
+2022-10-11 00:00:00-04:00   -1.071630
+2022-10-12 00:00:00-04:00    0.464154
+2022-10-13 00:00:00-04:00    4.099109
+2022-10-14 00:00:00-04:00   -3.238245
+Name: Close, Length: 701, dtype: float64
+
+
+
+  Ticker                    Company Name                        Industry  \
+0    COP                  ConocoPhillips                   Oil & Gas E&P   
+1    ENB                   Enbridge Inc.             Oil & Gas Midstream   
+2     HP         Helmerich & Payne, Inc.              Oil & Gas Drilling   
+3    MPC  Marathon Petroleum Corporation  Oil & Gas Refining & Marketing   
+4    SLB            Schlumberger Limited  Oil & Gas Equipment & Services   
+5    XOM         Exxon Mobil Corporation            Oil & Gas Integrated   
+
+                                             Address   Latitude   Longitude  \
+0  925 North Eldridge Parkway, Houston, TX, 77079...  29.783352  -95.617801   
+1  200, Fifth Avenue Place, Calgary, AB, T2P 3L8,...  51.046246 -114.066516   
+2  1437 South Boulder Avenue, Tulsa, OK, 74119, U...  36.141235  -95.987877   
+3  539 South Main Street, Findlay, OH, 45840-3229...  41.036497  -83.650163   
+4  5599 San Felipe, Houston, TX, 77056, United St...  29.749650  -95.473350   
+5  5959 Las Colinas Boulevard, Irving, TX, 75039-...  32.890255  -96.949441   
+
+   Marker Size  
+0   576.353980  
+1   688.567602  
+2    38.014944  
+3   311.230763  
+4   388.655300  
+5  1878.772284  
+
+
+
+           Ticker                    Company Name  \
+Company ID                                          
+0              AE  Adams Resources & Energy, Inc.   
+1              AM    Antero Midstream Corporation   
+2            AMPY            Amplify Energy Corp.   
+3            AMTX                   Aemetis, Inc.   
+4             APA                 APA Corporation   
+...           ...                             ...   
+212           WMB    The Williams Companies, Inc.   
+213           WTI              W&T Offshore, Inc.   
+214           XOM         Exxon Mobil Corporation   
+215          XPRO       Expro Group Holdings N.V.   
+216           YPF            YPF Sociedad Anónima   
+
+                                  Industry  \
+Company ID                                   
+0           Oil & Gas Refining & Marketing   
+1                      Oil & Gas Midstream   
+2                            Oil & Gas E&P   
+3           Oil & Gas Refining & Marketing   
+4                            Oil & Gas E&P   
+...                                    ...   
+212                    Oil & Gas Midstream   
+213                          Oil & Gas E&P   
+214                   Oil & Gas Integrated   
+215         Oil & Gas Equipment & Services   
+216                   Oil & Gas Integrated   
+
+                                                      Address   Latitude  \
+Company ID                                                                 
+0           17 South Briar Hollow Lane, Houston, TX, 77027...  29.751085   
+1           1615 Wynkoop Street, Denver, CO, 80202, United...  39.752137   
+2           500 Dallas Street, Houston, TX, 77002, United ...  29.757892   
+3           20400 Stevens Creek Boulevard, Cupertino, CA, ...  37.321626   
+4           2000 Post Oak Boulevard, Houston, TX, 77056-40...  29.744713   
+...                                                       ...        ...   
+212         One Williams Center, Tulsa, OK, 74172, United ...  36.072575   
+213         5718 Westheimer Road, Houston, TX, 77057-5745,...  29.737701   
+214         5959 Las Colinas Boulevard, Irving, TX, 75039-...  32.890255   
+215         1311 Broadfield Boulevard, Houston, TX, 77084,...  29.788715   
+216              Macacha GUeemes 515, Buenos Aires, Argentina -34.607357   
+
+             Longitude  Marker Size  
+Company ID                           
+0           -95.449306     1.330726  
+1          -105.001000    13.624047  
+2           -95.370349     1.408349  
+3          -122.030389     0.179120  
+4           -95.461592    42.254479  
+...                ...          ...  
+212         -95.888641   215.593806  
+213         -95.477719     4.704182  
+214         -96.949441  1878.772284  
+215         -95.659914    25.561754  
+216         -58.454595    33.924425  
+
+[217 rows x 7 columns]
+
+
+
+            OES (Top) Index  OES (All) Index
+Date                                        
+2020-01-03        49.940962        45.802440
+2020-01-06        50.339745        46.232022
+2020-01-07        50.112466        46.074437
+2020-01-08        49.356187        45.485374
+2020-01-09        49.807962        45.678506
+...                     ...              ...
+2022-10-10        81.938356        66.879912
+2022-10-11        81.060280        66.526416
+2022-10-12        81.436524        66.796005
+2022-10-13        84.774696        69.399262
+2022-10-14        82.029484        67.053238
+
+[702 rows x 2 columns]
+
+
+
+            OES (Top) Index (% Change)  OES (All) Index (% Change)
+Date                                                              
+2020-01-06                    0.798508                    0.937904
+2020-01-07                   -0.451490                   -0.340858
+2020-01-08                   -1.509164                   -1.278503
+2020-01-09                    0.915337                    0.424604
+2020-01-10                   -0.515412                   -0.655229
+...                                ...                         ...
+2022-10-10                   -1.789752                   -1.793159
+2022-10-11                   -1.071630                   -0.528554
+2022-10-12                    0.464154                    0.405236
+2022-10-13                    4.099109                    3.897325
+2022-10-14                   -3.238245                   -3.380475
+
+[701 rows x 2 columns]
+
+
+Timepoint: 08/27/2023 20:30:37
+Program execution begins...
+
+
+
+
+Date
+2020-01-03 00:00:00-05:00    63.049999
+2020-01-06 00:00:00-05:00    63.270000
+2020-01-07 00:00:00-05:00    62.700001
+2020-01-08 00:00:00-05:00    59.610001
+2020-01-09 00:00:00-05:00    59.560001
+                               ...    
+2022-10-10 00:00:00-04:00    91.129997
+2022-10-11 00:00:00-04:00    89.349998
+2022-10-12 00:00:00-04:00    87.269997
+2022-10-13 00:00:00-04:00    89.110001
+2022-10-14 00:00:00-04:00    85.610001
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    3234.850098
+2020-01-06 00:00:00-05:00    3246.280029
+2020-01-07 00:00:00-05:00    3237.179932
+2020-01-08 00:00:00-05:00    3253.050049
+2020-01-09 00:00:00-05:00    3274.699951
+                                ...     
+2022-10-10 00:00:00-04:00    3612.389893
+2022-10-11 00:00:00-04:00    3588.840088
+2022-10-12 00:00:00-04:00    3577.030029
+2022-10-13 00:00:00-04:00    3669.909912
+2022-10-14 00:00:00-04:00    3583.070068
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    1549.199951
+2020-01-06 00:00:00-05:00    1566.199951
+2020-01-07 00:00:00-05:00    1571.800049
+2020-01-08 00:00:00-05:00    1557.400024
+2020-01-09 00:00:00-05:00    1551.699951
+                                ...     
+2022-10-10 00:00:00-04:00    1667.300049
+2022-10-11 00:00:00-04:00    1678.699951
+2022-10-12 00:00:00-04:00    1670.300049
+2022-10-13 00:00:00-04:00    1670.000000
+2022-10-14 00:00:00-04:00    1641.699951
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    1.788
+2020-01-06 00:00:00-05:00    1.811
+2020-01-07 00:00:00-05:00    1.827
+2020-01-08 00:00:00-05:00    1.874
+2020-01-09 00:00:00-05:00    1.858
+                             ...  
+2022-10-10 00:00:00-04:00    3.888
+2022-10-11 00:00:00-04:00    3.939
+2022-10-12 00:00:00-04:00    3.902
+2022-10-13 00:00:00-04:00    3.952
+2022-10-14 00:00:00-04:00    4.010
+Name: Close, Length: 702, dtype: float64
+
+
+
+            Crude Oil      S&P 500         Gold  10-Year Bond Yield
+Date                                                               
+2020-01-03  63.049999  3234.850098  1549.199951               1.788
+2020-01-06  63.270000  3246.280029  1566.199951               1.811
+2020-01-07  62.700001  3237.179932  1571.800049               1.827
+2020-01-08  59.610001  3253.050049  1557.400024               1.874
+2020-01-09  59.560001  3274.699951  1551.699951               1.858
+...               ...          ...          ...                 ...
+2022-10-10  91.129997  3612.389893  1667.300049               3.888
+2022-10-11  89.349998  3588.840088  1678.699951               3.939
+2022-10-12  87.269997  3577.030029  1670.300049               3.902
+2022-10-13  89.110001  3669.909912  1670.000000               3.952
+2022-10-14  85.610001  3583.070068  1641.699951               4.010
+
+[702 rows x 4 columns]
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.348931
+2020-01-07 00:00:00-05:00   -0.900900
+2020-01-08 00:00:00-05:00   -4.928230
+2020-01-09 00:00:00-05:00   -0.083877
+2020-01-10 00:00:00-05:00   -0.873070
+                               ...   
+2022-10-10 00:00:00-04:00   -1.629968
+2022-10-11 00:00:00-04:00   -1.953252
+2022-10-12 00:00:00-04:00   -2.327926
+2022-10-13 00:00:00-04:00    2.108404
+2022-10-14 00:00:00-04:00   -3.927730
+Name: Close, Length: 701, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.353337
+2020-01-07 00:00:00-05:00   -0.280324
+2020-01-08 00:00:00-05:00    0.490245
+2020-01-09 00:00:00-05:00    0.665526
+2020-01-10 00:00:00-05:00   -0.285518
+                               ...   
+2022-10-10 00:00:00-04:00   -0.749246
+2022-10-11 00:00:00-04:00   -0.651918
+2022-10-12 00:00:00-04:00   -0.329077
+2022-10-13 00:00:00-04:00    2.596564
+2022-10-14 00:00:00-04:00   -2.366266
+Name: Close, Length: 701, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    1.097341
+2020-01-07 00:00:00-05:00    0.357560
+2020-01-08 00:00:00-05:00   -0.916149
+2020-01-09 00:00:00-05:00   -0.365999
+2020-01-10 00:00:00-05:00    0.373787
+                               ...   
+2022-10-10 00:00:00-04:00   -1.952364
+2022-10-11 00:00:00-04:00    0.683734
+2022-10-12 00:00:00-04:00   -0.500381
+2022-10-13 00:00:00-04:00   -0.017964
+2022-10-14 00:00:00-04:00   -1.694614
+Name: Close, Length: 701, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    1.286354
+2020-01-07 00:00:00-05:00    0.883492
+2020-01-08 00:00:00-05:00    2.572519
+2020-01-09 00:00:00-05:00   -0.853784
+2020-01-10 00:00:00-05:00   -1.776103
+                               ...   
+2022-10-10 00:00:00-04:00    0.128769
+2022-10-11 00:00:00-04:00    1.311725
+2022-10-12 00:00:00-04:00   -0.939323
+2022-10-13 00:00:00-04:00    1.281393
+2022-10-14 00:00:00-04:00    1.467620
+Name: Close, Length: 701, dtype: float64
+
+
+
+            Crude Oil (% Change)  S&P 500 (% Change)  Gold (% Change)  \
+Date                                                                    
+2020-01-06              0.348931            0.353337         1.097341   
+2020-01-07             -0.900900           -0.280324         0.357560   
+2020-01-08             -4.928230            0.490245        -0.916149   
+2020-01-09             -0.083877            0.665526        -0.365999   
+2020-01-10             -0.873070           -0.285518         0.373787   
+...                          ...                 ...              ...   
+2022-10-10             -1.629968           -0.749246        -1.952364   
+2022-10-11             -1.953252           -0.651918         0.683734   
+2022-10-12             -2.327926           -0.329077        -0.500381   
+2022-10-13              2.108404            2.596564        -0.017964   
+2022-10-14             -3.927730           -2.366266        -1.694614   
+
+            10-Year Bond Yield (% Change)  
+Date                                       
+2020-01-06                       1.286354  
+2020-01-07                       0.883492  
+2020-01-08                       2.572519  
+2020-01-09                      -0.853784  
+2020-01-10                      -1.776103  
+...                                   ...  
+2022-10-10                       0.128769  
+2022-10-11                       1.311725  
+2022-10-12                      -0.939323  
+2022-10-13                       1.281393  
+2022-10-14                       1.467620  
+
+[701 rows x 4 columns]
+
+
+
+       Date Reported Country Code      Country WHO Region  New Cases  \
+0         2020-01-03           AF  Afghanistan       EMRO          0   
+1         2020-01-04           AF  Afghanistan       EMRO          0   
+2         2020-01-05           AF  Afghanistan       EMRO          0   
+3         2020-01-06           AF  Afghanistan       EMRO          0   
+4         2020-01-07           AF  Afghanistan       EMRO          0   
+...              ...          ...          ...        ...        ...   
+314968    2023-08-19           ZW     Zimbabwe       AFRO          0   
+314969    2023-08-20           ZW     Zimbabwe       AFRO          0   
+314970    2023-08-21           ZW     Zimbabwe       AFRO          0   
+314971    2023-08-22           ZW     Zimbabwe       AFRO          0   
+314972    2023-08-23           ZW     Zimbabwe       AFRO          0   
+
+        Cumulative Cases  New Deaths  Cumulative Deaths  
+0                      0           0                  0  
+1                      0           0                  0  
+2                      0           0                  0  
+3                      0           0                  0  
+4                      0           0                  0  
+...                  ...         ...                ...  
+314968            265716           0               5713  
+314969            265716           0               5713  
+314970            265716           0               5713  
+314971            265716           0               5713  
+314972            265716           0               5713  
+
+[314973 rows x 8 columns]
+
+
+
+       Date Reported Country Code                   Country WHO Region  \
+300354    2020-01-03           US  United States of America       AMRO   
+300355    2020-01-04           US  United States of America       AMRO   
+300356    2020-01-05           US  United States of America       AMRO   
+300357    2020-01-06           US  United States of America       AMRO   
+300358    2020-01-07           US  United States of America       AMRO   
+...              ...          ...                       ...        ...   
+301678    2023-08-19           US  United States of America       AMRO   
+301679    2023-08-20           US  United States of America       AMRO   
+301680    2023-08-21           US  United States of America       AMRO   
+301681    2023-08-22           US  United States of America       AMRO   
+301682    2023-08-23           US  United States of America       AMRO   
+
+        New Cases  Cumulative Cases  New Deaths  Cumulative Deaths  
+300354          0                 0           0                  0  
+300355          0                 0           0                  0  
+300356          0                 0           0                  0  
+300357          0                 0           0                  0  
+300358          0                 0           0                  0  
+...           ...               ...         ...                ...  
+301678          0         103436829           0            1127152  
+301679          0         103436829           0            1127152  
+301680          0         103436829           0            1127152  
+301681          0         103436829           0            1127152  
+301682          0         103436829           0            1127152  
+
+[1329 rows x 8 columns]
+
+
+
+300354    2020-01-03
+300355    2020-01-04
+300356    2020-01-05
+300357    2020-01-06
+300358    2020-01-07
+             ...    
+301678    2023-08-19
+301679    2023-08-20
+301680    2023-08-21
+301681    2023-08-22
+301682    2023-08-23
+Name: Date Reported, Length: 1329, dtype: object
+
+
+
+              Country Code                   Country WHO Region  New Cases  \
+Date Reported                                                                
+2020-01-03              US  United States of America       AMRO          0   
+2020-01-06              US  United States of America       AMRO          0   
+2020-01-07              US  United States of America       AMRO          0   
+2020-01-08              US  United States of America       AMRO          0   
+2020-01-09              US  United States of America       AMRO          0   
+...                    ...                       ...        ...        ...   
+2022-10-10              US  United States of America       AMRO      11333   
+2022-10-11              US  United States of America       AMRO      13220   
+2022-10-12              US  United States of America       AMRO      24419   
+2022-10-13              US  United States of America       AMRO      38156   
+2022-10-14              US  United States of America       AMRO      57464   
+
+               Cumulative Cases  New Deaths  Cumulative Deaths  
+Date Reported                                                   
+2020-01-03                    0           0                  0  
+2020-01-06                    0           0                  0  
+2020-01-07                    0           0                  0  
+2020-01-08                    0           0                  0  
+2020-01-09                    0           0                  0  
+...                         ...         ...                ...  
+2022-10-10             95396455          72            1051681  
+2022-10-11             95409675          78            1051759  
+2022-10-12             95434094         169            1051928  
+2022-10-13             95472250         398            1052326  
+2022-10-14             95529714         652            1052978  
+
+[702 rows x 7 columns]
+
+
+
+Date Reported
+2020-01-06     0.000000
+2020-01-07     0.000000
+2020-01-08     0.000000
+2020-01-09     0.000000
+2020-01-10     0.000000
+                ...    
+2022-10-10   -82.345427
+2022-10-11    16.650490
+2022-10-12    84.712557
+2022-10-13    56.255375
+2022-10-14    50.602789
+Name: New Cases, Length: 701, dtype: float64
+
+
+
+Date Reported
+2020-01-06      0.000000
+2020-01-07      0.000000
+2020-01-08      0.000000
+2020-01-09      0.000000
+2020-01-10      0.000000
+                 ...    
+2022-10-10    -90.612777
+2022-10-11      8.333333
+2022-10-12    116.666667
+2022-10-13    135.502959
+2022-10-14     63.819095
+Name: New Deaths, Length: 701, dtype: float64
+
+
+
+               New Cases (% Change)  New Deaths (% Change)
+Date Reported                                             
+2020-01-06                 0.000000               0.000000
+2020-01-07                 0.000000               0.000000
+2020-01-08                 0.000000               0.000000
+2020-01-09                 0.000000               0.000000
+2020-01-10                 0.000000               0.000000
+...                             ...                    ...
+2022-10-10               -82.345427             -90.612777
+2022-10-11                16.650490               8.333333
+2022-10-12                84.712557             116.666667
+2022-10-13                56.255375             135.502959
+2022-10-14                50.602789              63.819095
+
+[701 rows x 2 columns]
+
+
+
+           Ticker                    Company Name  \
+Company ID                                          
+0              AE  Adams Resources & Energy, Inc.   
+1              AM    Antero Midstream Corporation   
+2            AMPY            Amplify Energy Corp.   
+3            AMTX                   Aemetis, Inc.   
+4             APA                 APA Corporation   
+...           ...                             ...   
+212           WMB    The Williams Companies, Inc.   
+213           WTI              W&T Offshore, Inc.   
+214           XOM         Exxon Mobil Corporation   
+215          XPRO       Expro Group Holdings N.V.   
+216           YPF            YPF Sociedad Anónima   
+
+                                  Industry  \
+Company ID                                   
+0           Oil & Gas Refining & Marketing   
+1                      Oil & Gas Midstream   
+2                            Oil & Gas E&P   
+3           Oil & Gas Refining & Marketing   
+4                            Oil & Gas E&P   
+...                                    ...   
+212                    Oil & Gas Midstream   
+213                          Oil & Gas E&P   
+214                   Oil & Gas Integrated   
+215         Oil & Gas Equipment & Services   
+216                   Oil & Gas Integrated   
+
+                                                      Address  \
+Company ID                                                      
+0           17 South Briar Hollow Lane, Houston, TX, 77027...   
+1           1615 Wynkoop Street, Denver, CO, 80202, United...   
+2           500 Dallas Street, Houston, TX, 77002, United ...   
+3           20400 Stevens Creek Boulevard, Cupertino, CA, ...   
+4           2000 Post Oak Boulevard, Houston, TX, 77056-40...   
+...                                                       ...   
+212         One Williams Center, Tulsa, OK, 74172, United ...   
+213         5718 Westheimer Road, Houston, TX, 77057-5745,...   
+214         5959 Las Colinas Boulevard, Irving, TX, 75039-...   
+215         1311 Broadfield Boulevard, Houston, TX, 77084,...   
+216              Macacha GUeemes 515, Buenos Aires, Argentina   
+
+            Market Cap (Min)  Market Cap (Max)  Market Cap (Mean)  \
+Company ID                                                          
+0               7.380701e+07      1.479064e+08       1.277287e+08   
+1               6.154161e+08      2.364165e+09       1.334669e+09   
+2               1.987944e+07      3.289919e+08       1.265423e+08   
+3               1.175680e+07      2.940153e+07       1.869010e+07   
+4               1.390684e+09      1.474709e+10       6.443573e+09   
+...                      ...               ...                ...   
+212             9.962444e+09      2.518319e+10       1.990798e+10   
+213             1.551800e+08      8.365224e+08       4.613033e+08   
+214             1.166814e+11      2.588377e+11       1.909896e+11   
+215             2.301264e+09      3.330824e+09       2.631213e+09   
+216             1.297933e+09      6.818712e+09       3.300999e+09   
+
+            Market Cap (Median)  Market Cap (Var)  Market Cap (Stdev)  \
+Company ID                                                              
+0                  1.330726e+08      3.299997e+14        1.816589e+07   
+1                  1.362405e+09      2.551318e+17        5.051057e+08   
+2                  1.408349e+08      7.983307e+15        8.934935e+07   
+3                  1.791199e+07      1.098368e+13        3.314163e+06   
+4                  4.225448e+09      1.555754e+19        3.944304e+09   
+...                         ...               ...                 ...   
+212                2.155938e+10      1.745362e+19        4.177753e+09   
+213                4.704182e+08      4.179447e+16        2.044370e+08   
+214                1.878772e+11      1.902985e+21        4.362322e+10   
+215                2.556175e+09      7.714667e+16        2.777529e+08   
+216                3.392442e+09      1.529530e+18        1.236742e+09   
+
+            Market Cap (SEM)   Latitude   Longitude  
+Company ID                                           
+0               2.543734e+06  29.751085  -95.449306  
+1               5.994502e+07  39.752137 -105.001000  
+2               1.045755e+07  29.757892  -95.370349  
+3               3.493435e+05  37.321626 -122.030389  
+4               4.134755e+08  29.744713  -95.461592  
+...                      ...        ...         ...  
+212             5.066270e+08  36.072575  -95.888641  
+213             2.479162e+07  29.737701  -95.477719  
+214             4.817378e+09  32.890255  -96.949441  
+215             5.071051e+07  29.788715  -95.659914  
+216             1.179187e+08 -34.607357  -58.454595  
+
+[217 rows x 13 columns]
+
+
+
+Industry
+Oil & Gas Drilling                 7
+Oil & Gas E&P                     80
+Oil & Gas Equipment & Services    45
+Oil & Gas Integrated              16
+Oil & Gas Midstream               50
+Oil & Gas Refining & Marketing    19
+Name: Ticker, dtype: int64
+
+
+
+Industry
+Oil & Gas Drilling                 3.225806
+Oil & Gas E&P                     36.866359
+Oil & Gas Equipment & Services    20.737327
+Oil & Gas Integrated               7.373272
+Oil & Gas Midstream               23.041475
+Oil & Gas Refining & Marketing     8.755760
+Name: Ticker, dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                1.988410e+10
+Oil & Gas E&P                     3.263515e+11
+Oil & Gas Equipment & Services    1.115525e+11
+Oil & Gas Integrated              9.380830e+11
+Oil & Gas Midstream               3.736408e+11
+Oil & Gas Refining & Marketing    1.160454e+11
+Name: Market Cap (Mean), dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                 1.054548
+Oil & Gas E&P                     17.307961
+Oil & Gas Equipment & Services     5.916155
+Oil & Gas Integrated              49.750968
+Oil & Gas Midstream               19.815933
+Oil & Gas Refining & Marketing     6.154436
+Name: Market Cap (Mean), dtype: float64
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    7.207928e+08    2.634731e+09   
+1                   Oil & Gas E&P    9.790175e+07    2.184842e+09   
+2  Oil & Gas Equipment & Services    1.252223e+08    1.084834e+09   
+3            Oil & Gas Integrated    1.234893e+10    8.817845e+10   
+4             Oil & Gas Midstream    6.059798e+08    8.176926e+09   
+5  Oil & Gas Refining & Marketing    4.425640e+08    4.045335e+09   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         1.913938e+09   -2.150114e+09    3.591699e+09  2.840586e+09   
+1         2.086940e+09   -3.032509e+09    3.228312e+09  4.079394e+09   
+2         9.596118e+08   -1.314195e+09    1.564640e+09  2.478944e+09   
+3         7.582952e+10   -1.013954e+11    1.260932e+11  5.863019e+10   
+4         7.570946e+09   -1.075044e+10    1.196240e+10  7.472815e+09   
+5         3.602771e+09   -4.961592e+09    5.846720e+09  6.107653e+09   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  1.698725e+09      0.401981                    7                   1  
+1  4.808747e+08      0.882121                   80                  16  
+2  6.386807e+08      0.742358                   45                   8  
+3  3.524187e+10      0.398912                   16                   3  
+4  1.411852e+09      0.811068                   50                  11  
+5  1.797146e+09      0.705755                   19                   4  
+
+
+
+Industry
+Oil & Gas Drilling                8.531591e+09
+Oil & Gas E&P                     3.353112e+11
+Oil & Gas Equipment & Services    1.159652e+11
+Oil & Gas Integrated              9.101744e+11
+Oil & Gas Midstream               3.954430e+11
+Oil & Gas Refining & Marketing    1.249012e+11
+Name: Market Cap (Median), dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                 0.451329
+Oil & Gas E&P                     17.738269
+Oil & Gas Equipment & Services     6.134666
+Oil & Gas Integrated              48.149055
+Oil & Gas Midstream               20.919294
+Oil & Gas Refining & Marketing     6.607387
+Name: Market Cap (Median), dtype: float64
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    4.486223e+08    1.598505e+09   
+1                   Oil & Gas E&P    8.725378e+07    1.794216e+09   
+2  Oil & Gas Equipment & Services    9.593208e+07    1.264984e+09   
+3            Oil & Gas Integrated    1.217956e+10    8.862731e+10   
+4             Oil & Gas Midstream    5.319521e+08    7.895773e+09   
+5  Oil & Gas Refining & Marketing    4.582462e+08    3.538027e+09   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         1.149883e+09   -1.276202e+09    2.173446e+09  1.218799e+09   
+1         1.706962e+09   -2.473190e+09    2.647697e+09  4.191390e+09   
+2         1.169052e+09   -1.657645e+09    1.849510e+09  2.577005e+09   
+3         7.644775e+10   -1.024921e+11    1.268512e+11  5.688590e+10   
+4         7.363821e+09   -1.051378e+10    1.157768e+10  7.908860e+09   
+5         3.079781e+09   -4.161425e+09    5.077917e+09  6.573748e+09   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  5.963866e+08      0.510677                    7                   2  
+1  4.856175e+08      0.884139                   80                  15  
+2  4.723541e+08      0.816704                   45                   8  
+3  3.510352e+10      0.382914                   16                   3  
+4  1.416186e+09      0.820937                   50                  11  
+5  1.828701e+09      0.721818                   19                   4  
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    2.403599e+17    3.039651e+18   
+1                   Oil & Gas E&P    1.035115e+15    1.128571e+18   
+2  Oil & Gas Equipment & Services    5.675270e+15    1.946008e+17   
+3            Oil & Gas Integrated    2.509190e+19    3.234317e+20   
+4             Oil & Gas Midstream    2.222955e+16    6.127268e+18   
+5  Oil & Gas Refining & Marketing    9.714729e+15    1.269289e+18   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         2.799291e+18   -3.958577e+18    4.439297e+18  6.299060e+19   
+1         1.127536e+18   -1.690269e+18    1.692339e+18  1.466022e+19   
+2         1.889255e+17   -2.777130e+17    2.890636e+17  5.828737e+18   
+3         2.983398e+20   -4.224178e+20    4.726016e+20  3.954386e+20   
+4         6.105039e+18   -9.135329e+18    9.179788e+18  1.093730e+19   
+5         1.259575e+18   -1.879647e+18    1.899077e+18  1.214228e+19   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  1.322321e+18      0.979008                    7                   2  
+1  3.648779e+16      0.997511                   80                  16  
+2  5.743427e+16      0.990146                   45                  10  
+3  8.925283e+19      0.774294                   16                   3  
+4  2.461880e+17      0.977491                   50                  10  
+5  2.487322e+17      0.979515                   19                   4  
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    4.849881e+08    1.684231e+09   
+1                   Oil & Gas E&P    3.193481e+07    1.061732e+09   
+2  Oil & Gas Equipment & Services    7.533439e+07    4.411358e+08   
+3            Oil & Gas Integrated    4.614082e+09    1.786685e+10   
+4             Oil & Gas Midstream    1.487902e+08    2.473465e+09   
+5  Oil & Gas Refining & Marketing    9.691045e+07    1.124631e+09   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         1.199243e+09   -1.313877e+09    2.283853e+09  3.799230e+09   
+1         1.029797e+09   -1.512760e+09    1.576630e+09  1.667504e+09   
+2         3.658014e+08   -4.733678e+08    6.240365e+08  9.326092e+08   
+3         1.325277e+10   -1.526508e+10    2.449324e+10  1.409291e+10   
+4         2.324674e+09   -3.338221e+09    3.635802e+09  1.828626e+09   
+5         1.027721e+09   -1.444670e+09    1.638491e+09  1.802963e+09   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  1.149922e+09      0.697328                    7                   1  
+1  1.910129e+08      0.885450                   80                  16  
+2  2.396545e+08      0.743028                   45                   9  
+3  9.437423e+09      0.330343                   16                   3  
+4  4.960915e+08      0.728708                   50                   8  
+5  4.987306e+08      0.723383                   19                   4  
+
+
+
+                         Industry  Lower Quartile  Upper Quartile  \
+0              Oil & Gas Drilling    4.853873e+07    1.410193e+08   
+1                   Oil & Gas E&P    3.974884e+06    1.221879e+08   
+2  Oil & Gas Equipment & Services    6.841973e+06    5.738786e+07   
+3            Oil & Gas Integrated    2.287601e+08    9.381414e+08   
+4             Oil & Gas Midstream    1.316047e+07    2.478335e+08   
+5  Oil & Gas Refining & Marketing    1.056609e+07    1.338671e+08   
+
+   Interquartile Range  Lower Boundary  Upper Boundary          Mean  \
+0         9.248053e+07   -9.018207e+07    1.872595e+08  3.972676e+08   
+1         1.182130e+08   -1.733446e+08    1.812944e+08  1.723068e+08   
+2         5.054589e+07   -6.897686e+07    8.266081e+07  1.002159e+08   
+3         7.093812e+08   -8.353117e+08    1.292832e+09  1.054302e+09   
+4         2.346731e+08   -3.388491e+08    3.651701e+08  1.821995e+08   
+5         1.233010e+08   -1.743855e+08    1.955176e+08  2.137050e+08   
+
+         Median  % Difference  Number of Companies  Number of Outliers  
+0  9.127765e+07      0.770236                    7                   1  
+1  2.162489e+07      0.874498                   80                  17  
+2  2.817597e+07      0.718847                   45                   7  
+3  3.840680e+08      0.635714                   16                   3  
+4  5.327180e+07      0.707618                   50                   8  
+5  5.269286e+07      0.753432                   19                   4  
+
+
+
+Company ID
+0      0.000070
+1      0.000721
+2      0.000075
+3      0.000009
+4      0.002235
+         ...   
+212    0.011405
+213    0.000249
+214    0.099389
+215    0.001352
+216    0.001795
+Name: Market Cap (Median), Length: 217, dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    45.802440
+2020-01-06 00:00:00-05:00    46.232022
+2020-01-07 00:00:00-05:00    46.074435
+2020-01-08 00:00:00-05:00    45.485374
+2020-01-09 00:00:00-05:00    45.678508
+                               ...    
+2022-10-10 00:00:00-04:00    66.879913
+2022-10-11 00:00:00-04:00    66.526417
+2022-10-12 00:00:00-04:00    66.796007
+2022-10-13 00:00:00-04:00    69.399260
+2022-10-14 00:00:00-04:00    67.053237
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.937901
+2020-01-07 00:00:00-05:00   -0.340862
+2020-01-08 00:00:00-05:00   -1.278497
+2020-01-09 00:00:00-05:00    0.424606
+2020-01-10 00:00:00-05:00   -0.655233
+                               ...   
+2022-10-10 00:00:00-04:00   -1.793160
+2022-10-11 00:00:00-04:00   -0.528554
+2022-10-12 00:00:00-04:00    0.405238
+2022-10-13 00:00:00-04:00    3.897319
+2022-10-14 00:00:00-04:00   -3.380473
+Name: Close, Length: 701, dtype: float64
+
+
+
+Industry
+Oil & Gas Drilling                3.801494e+09
+Oil & Gas E&P                     5.763540e+10
+Oil & Gas Equipment & Services    3.886553e+10
+Oil & Gas Integrated              1.878772e+11
+Oil & Gas Midstream               6.885676e+10
+Oil & Gas Refining & Marketing    3.112308e+10
+Name: Market Cap (Median), dtype: float64
+
+
+
+  Ticker                    Company Name                        Industry  \
+0    COP                  ConocoPhillips                   Oil & Gas E&P   
+1    ENB                   Enbridge Inc.             Oil & Gas Midstream   
+2     HP         Helmerich & Payne, Inc.              Oil & Gas Drilling   
+3    MPC  Marathon Petroleum Corporation  Oil & Gas Refining & Marketing   
+4    SLB            Schlumberger Limited  Oil & Gas Equipment & Services   
+5    XOM         Exxon Mobil Corporation            Oil & Gas Integrated   
+
+                                             Address  Market Cap (Min)  \
+0  925 North Eldridge Parkway, Houston, TX, 77079...      2.786214e+10   
+1  200, Fifth Avenue Place, Calgary, AB, T2P 3L8,...      3.956467e+10   
+2  1437 South Boulder Avenue, Tulsa, OK, 74119, U...      1.196714e+09   
+3  539 South Main Street, Findlay, OH, 45840-3229...      8.455855e+09   
+4  5599 San Felipe, Houston, TX, 77056, United St...      1.624968e+10   
+5  5959 Las Colinas Boulevard, Irving, TX, 75039-...      1.166814e+11   
+
+   Market Cap (Max)  Market Cap (Mean)  Market Cap (Median)  Market Cap (Var)  \
+0      7.754101e+10       5.255242e+10         5.763540e+10      1.841776e+20   
+1      9.499559e+10       6.834231e+10         6.885676e+10      1.679968e+20   
+2      4.504686e+09       3.131173e+09         3.801494e+09      1.521912e+18   
+3      3.628629e+10       2.532897e+10         3.112308e+10      1.081163e+20   
+4      5.816301e+10       3.560477e+10         3.886553e+10      1.740781e+20   
+5      2.588377e+11       1.909896e+11         1.878772e+11      1.902985e+21   
+
+   Market Cap (Stdev)  Market Cap (SEM)   Latitude   Longitude  
+0        1.357120e+10      1.517307e+09  29.783352  -95.617801  
+1        1.296136e+10      5.327085e+08  51.046246 -114.066516  
+2        1.233658e+09      1.474503e+08  36.141235  -95.987877  
+3        1.039790e+10      1.279893e+09  41.036497  -83.650163  
+4        1.319387e+10      1.544225e+09  29.749650  -95.473350  
+5        4.362322e+10      4.817378e+09  32.890255  -96.949441  
+
+
+
+388159487285.40967
+
+
+
+0    0.148484
+1    0.177393
+2    0.009794
+3    0.080181
+4    0.100128
+5    0.484021
+Name: Market Cap (Median), dtype: float64
+
+
+
+Date
+2020-01-03 00:00:00-05:00    49.940961
+2020-01-06 00:00:00-05:00    50.339755
+2020-01-07 00:00:00-05:00    50.112462
+2020-01-08 00:00:00-05:00    49.356185
+2020-01-09 00:00:00-05:00    49.807967
+                               ...    
+2022-10-10 00:00:00-04:00    81.938357
+2022-10-11 00:00:00-04:00    81.060281
+2022-10-12 00:00:00-04:00    81.436520
+2022-10-13 00:00:00-04:00    84.774699
+2022-10-14 00:00:00-04:00    82.029491
+Name: Close, Length: 702, dtype: float64
+
+
+
+Date
+2020-01-06 00:00:00-05:00    0.798530
+2020-01-07 00:00:00-05:00   -0.451517
+2020-01-08 00:00:00-05:00   -1.509159
+2020-01-09 00:00:00-05:00    0.915350
+2020-01-10 00:00:00-05:00   -0.515421
+                               ...   
+2022-10-10 00:00:00-04:00   -1.789752
+2022-10-11 00:00:00-04:00   -1.071631
+2022-10-12 00:00:00-04:00    0.464148
+2022-10-13 00:00:00-04:00    4.099118
+2022-10-14 00:00:00-04:00   -3.238239
+Name: Close, Length: 701, dtype: float64
+
+
+
+  Ticker                    Company Name                        Industry  \
+0    COP                  ConocoPhillips                   Oil & Gas E&P   
+1    ENB                   Enbridge Inc.             Oil & Gas Midstream   
+2     HP         Helmerich & Payne, Inc.              Oil & Gas Drilling   
+3    MPC  Marathon Petroleum Corporation  Oil & Gas Refining & Marketing   
+4    SLB            Schlumberger Limited  Oil & Gas Equipment & Services   
+5    XOM         Exxon Mobil Corporation            Oil & Gas Integrated   
+
+                                             Address   Latitude   Longitude  \
+0  925 North Eldridge Parkway, Houston, TX, 77079...  29.783352  -95.617801   
+1  200, Fifth Avenue Place, Calgary, AB, T2P 3L8,...  51.046246 -114.066516   
+2  1437 South Boulder Avenue, Tulsa, OK, 74119, U...  36.141235  -95.987877   
+3  539 South Main Street, Findlay, OH, 45840-3229...  41.036497  -83.650163   
+4  5599 San Felipe, Houston, TX, 77056, United St...  29.749650  -95.473350   
+5  5959 Las Colinas Boulevard, Irving, TX, 75039-...  32.890255  -96.949441   
+
+   Marker Size  
+0   576.353980  
+1   688.567602  
+2    38.014944  
+3   311.230763  
+4   388.655300  
+5  1878.772284  
+
+
+
+           Ticker                    Company Name  \
+Company ID                                          
+0              AE  Adams Resources & Energy, Inc.   
+1              AM    Antero Midstream Corporation   
+2            AMPY            Amplify Energy Corp.   
+3            AMTX                   Aemetis, Inc.   
+4             APA                 APA Corporation   
+...           ...                             ...   
+212           WMB    The Williams Companies, Inc.   
+213           WTI              W&T Offshore, Inc.   
+214           XOM         Exxon Mobil Corporation   
+215          XPRO       Expro Group Holdings N.V.   
+216           YPF            YPF Sociedad Anónima   
+
+                                  Industry  \
+Company ID                                   
+0           Oil & Gas Refining & Marketing   
+1                      Oil & Gas Midstream   
+2                            Oil & Gas E&P   
+3           Oil & Gas Refining & Marketing   
+4                            Oil & Gas E&P   
+...                                    ...   
+212                    Oil & Gas Midstream   
+213                          Oil & Gas E&P   
+214                   Oil & Gas Integrated   
+215         Oil & Gas Equipment & Services   
+216                   Oil & Gas Integrated   
+
+                                                      Address   Latitude  \
+Company ID                                                                 
+0           17 South Briar Hollow Lane, Houston, TX, 77027...  29.751085   
+1           1615 Wynkoop Street, Denver, CO, 80202, United...  39.752137   
+2           500 Dallas Street, Houston, TX, 77002, United ...  29.757892   
+3           20400 Stevens Creek Boulevard, Cupertino, CA, ...  37.321626   
+4           2000 Post Oak Boulevard, Houston, TX, 77056-40...  29.744713   
+...                                                       ...        ...   
+212         One Williams Center, Tulsa, OK, 74172, United ...  36.072575   
+213         5718 Westheimer Road, Houston, TX, 77057-5745,...  29.737701   
+214         5959 Las Colinas Boulevard, Irving, TX, 75039-...  32.890255   
+215         1311 Broadfield Boulevard, Houston, TX, 77084,...  29.788715   
+216              Macacha GUeemes 515, Buenos Aires, Argentina -34.607357   
+
+             Longitude  Marker Size  
+Company ID                           
+0           -95.449306     1.330726  
+1          -105.001000    13.624047  
+2           -95.370349     1.408349  
+3          -122.030389     0.179120  
+4           -95.461592    42.254479  
+...                ...          ...  
+212         -95.888641   215.593806  
+213         -95.477719     4.704182  
+214         -96.949441  1878.772284  
+215         -95.659914    25.561754  
+216         -58.454595    33.924425  
+
+[217 rows x 7 columns]
+
+
+
+            OES (Top) Index  OES (All) Index
+Date                                        
+2020-01-03        49.940961        45.802440
+2020-01-06        50.339755        46.232022
+2020-01-07        50.112462        46.074435
+2020-01-08        49.356185        45.485374
+2020-01-09        49.807967        45.678508
+...                     ...              ...
+2022-10-10        81.938357        66.879913
+2022-10-11        81.060281        66.526417
+2022-10-12        81.436520        66.796007
+2022-10-13        84.774699        69.399260
+2022-10-14        82.029491        67.053237
+
+[702 rows x 2 columns]
+
+
+
+            OES (Top) Index (% Change)  OES (All) Index (% Change)
+Date                                                              
+2020-01-06                    0.798530                    0.937901
+2020-01-07                   -0.451517                   -0.340862
+2020-01-08                   -1.509159                   -1.278497
+2020-01-09                    0.915350                    0.424606
+2020-01-10                   -0.515421                   -0.655233
+...                                ...                         ...
+2022-10-10                   -1.789752                   -1.793160
+2022-10-11                   -1.071631                   -0.528554
+2022-10-12                    0.464148                    0.405238
+2022-10-13                    4.099118                    3.897319
+2022-10-14                   -3.238239                   -3.380473
+
+[701 rows x 2 columns]
+
