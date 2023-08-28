@@ -1,44 +1,25 @@
 # Project #1, Group #4
----
-### Attached files :
-* One jupyter notebook file for presentation (file name: presentation_group4_final.ipynb )
-* Three jupyter notebook files for coding
-* One REDME file
----
-### file name: effect_oilPrice_covid_on_oilStockMarket.ipynb
-### Question : How much does US gasoline prices affect the stock market in the US oil industry?
-* Use the library 'yfinance' to retrieve oil companies information such as address, market capitalization and gross profits and stock prices trend.
-* Filtered  the companies out to the Unites States and the United Kingdom, and sort them by gross profits.
-* Use geoapify_key to create maps that plot 30 major companies in the world and 6 selected companies.
-* Create a scatter plot to show the relation between gas prices and stock prices for selected top 6 oil companies.
-* Compute r-values and linear regression for each relationship.
-
-### Question : How much does COVID-19 affect the stock market in the US oil industry?
-* Extract US data from COVID-19 data worldwide and clean them. 
-* Create a figure that displays new COVID-19 cases trend.
-* Create a scatter plot to show the relation between weekly cumulated new COVID-19 cases and stock prices for selected 6 oil companies.
-* Compute r-values and linear regression for each relationship.
-----
-### file name: PyOilStockAnalysis.ipynb
-* Prepare the data
-* Oil industry mmarket capitalization mean/median analysis
-* Oil industry stock index
-* Analysis of the effects of various factors on the oil industry
----- 
-### file name: energy_stock.ipynb
-### Correlation between the Demand for Oil and Stock Prices
 ![maksym-kaharlytskyi-u13zBF4r56A-unsplash](https://github.com/SIWhang213/Project-1-group-4/assets/137141385/500f11cf-8bc1-478b-837d-383e914413e9)
+The oil industry has always been a topic of interest to many due to the very nature of its business: a commodity that virtually everyone must frequently purchase either directly or indirectly to conduct the vagaries of daily life.  Thus, what factors affect, drive, or influence the oil industry is more than a mere topic of curiosity, as any unexpected disruptions can carry far reaching effects for individuals, groups, countries, or even the world.  For this project, we delve into this topic during the COVID-19 pandemic to answer these questions.
 
-Gathering data from the Energy Information Administration's open data server through the use of an API key, we find that the demand for oil in the U.S. (i.e., total consumption) dropped significantly during the first four months of 2020. In fact, this decline closely follows the timeline of the pandemic. Following the detection of a novel coronavirus in Wuhan, China in December 2019, the World Health Organization (WHO) formally announced this revelation in January 9th, 2020 (AJMC, 2021). In the same month, the first case of the virus is detected in the U.S., and by the end of the month the WHO issues a global health emergency. Consequently, global air travel is restricted. By early March, the WHO declares a COVID-19 pandemic, effectively bringing our globalized world to a standstill. 
+•	How strong was the relationship between the prices of oil company shares and the price of crude oil?
 
-<img width="1388" alt="oil_trend" src="https://github.com/SIWhang213/Project-1-group-4/assets/137141385/322298b7-e501-4008-8f44-4d7d3e56e821">
+•	Was there a relationship between the number of daily COVID-19 cases or deaths and the prices of crude oil or oil company shares?
 
-As seen here, the impact of the pandemic is most evident in the line representing the year 2020. By 2022, the consumption of oil returns to pre-pandemic levels as travel restrictions and social distancing rules were either relaxed or lifted completely. How did this fluctuation in oil consumption in the U.S. affect the stock prices of oil companies? In other words, is there a correlation between oil consumption and oil stock prices? In an attempt to answer this, the average stock price of four oil companies were calculated based on the month for the years 2019-2022. Using these data, four scatterplots were created with the x-axis as the oil consumption (in thousand barrels) and the y-axis as the average stock price (in USD). 
+•	If there was no significant relationship between COVID-19 numbers and these prices, was there a significant relationship among other economic metrics in this study?
 
-<img width="880" alt="Screenshot 2023-08-17 at 17 01 11" src="https://github.com/SIWhang213/Project-1-group-4/assets/137141385/4adf064a-754f-43e9-89b5-61ee17a9e16f">
+To this end, we focused our efforts on assembling a sample space sufficient to produce valid results.  Throughout this undertaking, the sample space shrank significantly due to unavoidable circumstances.  Our initial analysis period extended daily from January 1, 2020, to December 31, 2022, for 1,095 days.  Due to holidays precluding trading at the beginning and end, the period shortened to 1,092 days ( January 2, 2020, to December 29, 2022).  A review of closing share price data through Yahoo Finance’s application programming interface (API) showed that trading days did not include weekends and holidays: this factor reduced the number of days to 755.  Moreover, an inspection of World Health Organization (WHO) API data for the United States showed that COVID-19 numbers did not begin until January 3, 2020, and daily numbers changed to weekly numbers after October 16, 2022.  These conditions reduced the number of daily sample points to 702 ( January 3, 2020, to October 14, 2022).  Although difficult, these decisions were a trade-off between decreased validity from fewer sample points and increased integrity from compatible datasets: we made the necessary choices to strike the correct balance.
 
-The r-values in the ranges of 0.47 - 0.55 indicate that there is a low positive correlation between the two variables. Stated differently, while there are other factors that may influence the price of oil stocks, there is still a small tendency of the two variables to move together in a positive/upward direction. The equation of the linear regression reflects the large difference in the scale range between the two variables. Likewise, the line appears to be an upward slope when in fact it should be more or less horizontal. Lastly, what is particularly interesting is the way in which the markers of the scatterplot are visually distributed in roughly the same manner. This would indicate that these four particular stocks generally move together. 
+This inquiry continued with data collection.  The World Health Organization’s (WHO’s) API provided us with a full worldwide COVID-19 pandemic dataset, which we narrowed down to the appropriate country, details, and dates.  This data complemented the Yahoo Finance download of daily prices for crude oil, the S&P 500, gold, and U.S. Treasury 10-Year Bond Yields.  For all that, after completing these tasks, we were faced with a dilemma: how to construct a benchmark to best represent oil energy sector equities.  To this end, our fundamental question in this matter became, “What is the most accurate representation of a company’s value,” and we found our solution through the Efficient Market Hypothesis, which states that share prices reflect all information; therefore, market capitalization, the product of a share price and the number of outstanding shares, should be the best way to establish a company’s value.  
 
----
+To find all publicly traded oil companies, a download of available tickers from Yahoo Finance, over 11,000, began the process; a Python script then extracted only those tickers belonging to companies in one of six oil industries whose share trading began prior to the analysis period: the operation also included calculating each oil company’s minimum, maximum, mean, median, variance, standard deviation, and standard error of the mean (SEM) market capitalization.  
 
+Side-by-side pie charts of each oil industry share from number of companies, mean market capitalization, and median market capitalization disclosed some insights.  Although the industry shares were about the same for mean and median values, the industry, Oil & Gas Integrated, held the most mean and median market values while possessing  the next to smallest number of companies.  Although ostensibly similar from these diagrams, the mean and median market capitalizations are not and required further investigation.
 
+Statistical analysis of the mean and median market capitalizations by industry revealed the same situation: significant margins between mean and median values, numerous outliers, and heavily left-skewed distributions.  Under normal circumstances, the mean best represents central tendency, but is sensitive to skewed data and extreme values.  Under these circumstances, the median becomes the more suitable measure and better summarizes the metric.  As a result, we decided to use the median market capitalization in the modeling of oil energy sector indices.  
+
+To represent the oil energy sector, we created indices from two portfolios, one with all the oil companies and one with only the top six oil companies; each top company has the highest median market capitalization in one of six oil industries: ConocoPhillips (Oil & Gas E&P), Enbridge Inc. (Oil & Gas Midstream), Helmerich & Payne, Inc. (Oil & Gas Drilling), Marathon Petroleum Corporation (Oil & Gas Refining & Marketing), Schlumberger Limited (Oil & Gas Equipment & Services), and Exxon Mobil Corporation (Oil & Gas Integrated).  For these indices, we calculate an index weight for each oil company equal to that company’s median market capitalization divided by the total median market capitalization for the portfolio: a daily index price is the sum of each company’s share price times its index weight.  Because of the high correlation between the two indices (0.996/0.976) and the reduced computational labor, we chose to use the top company index, Oil Energy Sector (Top) Index, as opposed to the all-company index, Oil Energy Sector (All) Index.
+
+In conclusion, the analysis provided contrasting answers to our initial questions.  From the numbers themselves, the relationship between the prices of oil company shares and the price of crude oil remains strong at a 0.929 correlation.  Not only is there no relationship between COVID-19 numbers and those from the oil industry, but also there is no relationship between COVID-19 numbers and any other point of reference in this study although these metrics, especially crude oil, suffered an immediate but temporary drop in prices at the pandemic’s onset in March 2020.  The only strong relationship outside those within the oil industry and among COVID-19 numbers is between crude oil prices and 10-Year Bond Yields with a 0.838 correlation; the economic indicator that remained most insulated from any effects was gold.  What’s more, the analysis of percent changes in numbers produced relatively different results: there are no significant correlations between any metric, but, except for crude oil prices, all the economic benchmarks suffered a substantial increase in volatility at the pandemic’s onset followed by lower but increased volatility; with crude oil prices, the sudden volatility occurred followed by normal volatility.  Ultimately, and generally speaking, the uncertainty created by the COVID-19 pandemic caused a sudden drop in prices and a substantial increase in volatility followed by increased volatility, but the number and change in COVID-19 numbers had no discernable effect.
+
+![Uploading image.png…]()
