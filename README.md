@@ -1,4 +1,4 @@
-# Project-1-group-4
+# Project #1, Group #4
 ---
 ### Attached files :
 * One jupyter notebook file for presentation (file name: presentation_group4_final.ipynb )
