@@ -51,6 +51,8 @@ import PyLogSubRoutines as log_subroutine
 
 import PyLogConstants as log_constant
 
+import hvplot
+import hvplot.pandas
 import numpy as np
 import pandas as pd
 
@@ -65,7 +67,7 @@ CONSTANT_LOCAL_FILE_NAME \
     = 'PyFunctions.py'
 
 
-# In[1]:
+# In[3]:
 
 
 #*******************************************************************************************
@@ -1727,6 +1729,9 @@ def ReturnCorrelationTableStandardFormat \
  #          inputDataFrameParameter
  #                          This parameter is the input DataFrame
  #  String
+ #          captionStringParameter
+ #                          This parameter is the plot's title.
+ #  String
  #          colorKeyStringParameter
  #                          This parameter is the key to the DataFrame column 
  #                          of colors.
@@ -1761,6 +1766,7 @@ def ReturnCorrelationTableStandardFormat \
 
 def DisplayHVPlotFromDataFrame \
         (inputDataFrameParameter,
+         captionStringParameter,
          colorKeyStringParameter,
          sizeKeyStringParameter,
          xlimitTupleParameter \
@@ -1779,11 +1785,11 @@ def DisplayHVPlotFromDataFrame \
         inputDataFrame \
             = inputDataFrameParameter.copy()
         
-        
+
         if hoverColumnsListOfStringsParameter == None:
-            
-            return \
-                inputDataFrame \
+
+            hvPlotOverlayObject \
+                = inputDataFrame \
                     .hvplot \
                     .points \
                         ('Longitude', 
@@ -1806,9 +1812,9 @@ def DisplayHVPlotFromDataFrame \
                             = tilesStringParameter)
         
         else:
-            
-            return \
-                inputDataFrame \
+
+            hvPlotOverlayObject \
+                = inputDataFrame \
                     .hvplot \
                     .points \
                         ('Longitude', 
@@ -1832,6 +1838,16 @@ def DisplayHVPlotFromDataFrame \
                          hover_cols \
                             = hoverColumnsListOfStringsParameter)
     
+    
+        log_subroutine \
+            .SaveHVPlotImageToHTMLFile \
+                (hvPlotOverlayObject,
+                 captionStringParameter)
+    
+    
+        return \
+            hvPlotOverlayObject
+    
     except:
         
         log_subroutine \
@@ -1842,4 +1858,10 @@ def DisplayHVPlotFromDataFrame \
         
         return \
             None
+
+
+# In[ ]:
+
+
+
 
