@@ -162,7 +162,7 @@ def DebugReturnObjectWriteObject \
                     (messageStringVariable)
 
 
-# In[6]:
+# In[1]:
 
 
 #*******************************************************************************************
@@ -209,7 +209,7 @@ def ReturnTimePointMessage \
         timePointMessageStringVariable
 
 
-# In[1]:
+# In[2]:
 
 
 #*******************************************************************************************
@@ -243,26 +243,16 @@ def ReturnImageFilePathString \
         (captionStringParameter \
             = 'test',
          imageFormatStringParameter \
-            = ''):
+            = 'png'):
     
     tempCaptionStringVariable \
         = ''.join(filter(str.isalnum, captionStringParameter))
     
-    
     imageFilePathStringVariable \
         = log_constant.IMAGES_DIRECTORY_PATH \
-            + '/' \
-            + log_constant.PROGRAM_DESIGNATION \
-            + tempCaptionStringVariable
-    
-    
-    if imageFormatStringParameter != '' \
-        and imageFormatStringParameter != None:
-    
-        imageFilePathStringVariable \
-            = imageFilePathStringVariable \
-              + '.' \
-              + imageFormatStringParameter
+          + '/' \
+          + log_constant.PROGRAM_DESIGNATION \
+          + tempCaptionStringVariable
     
     return \
         imageFilePathStringVariable
