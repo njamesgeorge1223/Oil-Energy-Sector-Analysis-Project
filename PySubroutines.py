@@ -1314,6 +1314,10 @@ def DisplayStackedSubplots \
                             legendYOffsetFloatParameter))
         
         
+        log_subroutine \
+            .SavePlotImage \
+                (captionStringParameter)
+        
         plt \
             .show()
             
@@ -1837,6 +1841,7 @@ def DisplayTwoByTwoHistograms \
             .SavePlotImage \
                 (figureTitleStringParameter)
 
+        
         plt.show()
 
     except:
