@@ -23,18 +23,21 @@ PySubroutines.py
 If the computer has Anaconda and a recent version of Python, the Jupyter notebook already has the following dependencies 
 installed: datetime, io, json, pandas, pathlib, os, pandas, requests.
 
-In addition to those modules, the Jupyter Notebook needs the following to execute: hvplot, numpy, matplotlib, requests_html,
-yahoo_fin, yfinance.  
+In addition to those modules, the Jupyter Notebook needs the following to execute: hvplot, numpy, matplotlib, numpy, panel, requests_html, scipy, yahoo_fin, yfinance.  
 
 Here are the requisite Terminal commands for installation of these peripheral modules:
 
 python3 -m pip install hvplot
 
-python3 -m pip install numpy
-
 python3 -m pip install matplotlib
 
+python3 -m pip install numpy
+
+python3 -m pip install panel
+
 python3 -m pip install requests_html
+
+python3 -m pip install scipy
 
 python3 -m pip install yahoo_fin
 
