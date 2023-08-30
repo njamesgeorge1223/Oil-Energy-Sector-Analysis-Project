@@ -1,4 +1,4 @@
-The Jupyter Notebook, PyOilSectorAnalysis.ipynb, only requires the following Python scripts in the same folder with it:
+The Jupyter Notebook, PyOilSectorAnalysis.ipynb, requires the following Python scripts with it in the same folder:
 
 PyConstants.py
 
@@ -20,28 +20,35 @@ PyOilSectorAnalysisFunctions.py
 
 PySubroutines.py
 
-If the computer has Anaconda and a recent version of Python, the Jupyter notebook already has the following dependencies 
-installed: datetime, io, json, pandas, pathlib, os, pandas, requests.
+If the computer has Anaconda, JUpyter Notebook, and a recent version of Python, the Jupyter notebook already has the 
+following dependencies installed: datetime, io, json, matplotlib, numpy, pandas, pathlib, os, pandas, requests, 
+requests_html, and scipy.
 
-In addition to those modules, the Jupyter Notebook needs the following to execute: hvplot, numpy, matplotlib, numpy, panel, requests_html, scipy, yahoo_fin, yfinance.  
+In addition to those modules, the Jupyter Notebook needs the following to execute: yfinance, yahoo_fin, hvplot, panel.
 
 Here are the requisite Terminal commands for installation of these peripheral modules:
 
-python3 -m pip install hvplot
-
-python3 -m pip install matplotlib
-
-python3 -m pip install numpy
-
-python3 -m pip install panel
-
-python3 -m pip install requests_html
-
-python3 -m pip install scipy
+python3 -m pip install yfinance
 
 python3 -m pip install yahoo_fin
 
-python3 -m pip install yfinance
+python3 -m pip install hvplot
+
+python3 -m pip install panel
+
+For the conda environment, these are the requisite Terminal commands:
+
+conda install yfinance
+
+conda install yahoo_fin
+
+conda install hvplot
+
+conda install panel
+
+WARNING: When an inexplicable Yahoo Finance API warning concerning delisted tickers appeared during the calculation of the
+OES (All) Index, I resolved the issue by upgrading the python version to 3.11.5, uninstalling the following modules:
+phantomJS, selenium, and holoviews, and reinstalling yfinance, yahoo_fin, hvplot, and panel (in that order).  
 
 If the folders, Resources, Logs, and Images are not present, the Jupyter Notebook will create them.  If the CSV file, 
 AllOilCompanies.csv, is not present in the Resources folder, the program will use APIs to generate the CSV file.  
