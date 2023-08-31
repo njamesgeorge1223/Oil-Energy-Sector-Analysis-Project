@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 #*******************************************************************************************
@@ -39,6 +39,7 @@
  #      ReturnCorrelationTableStandardFormat
  #      DisplayHVPlotFromDataFrame
  #      ReturnSeriesWithDateObjectIndices
+ #      ReturnSeriesWithUniqueIndicesLastValues
  #
  #
  #  Date            Description                             Programmer
@@ -60,14 +61,14 @@ from datetime import datetime
 from pathlib import Path
 
 
-# In[ ]:
+# In[2]:
 
 
 CONSTANT_LOCAL_FILE_NAME \
     = 'PyFunctions.py'
 
 
-# In[ ]:
+# In[3]:
 
 
 #*******************************************************************************************
@@ -151,7 +152,7 @@ def ReturnCSVFileAsDataFrame \
             None
 
 
-# In[ ]:
+# In[4]:
 
 
 #*******************************************************************************************
@@ -229,7 +230,7 @@ def ReturnMergedDataFrame \
             None
 
 
-# In[ ]:
+# In[5]:
 
 
 #*******************************************************************************************
@@ -351,7 +352,7 @@ def ReturnStylerObjectStandardFormat \
             None
 
 
-# In[ ]:
+# In[6]:
 
 
 #********************************************************************************************
@@ -437,7 +438,7 @@ def ReturnStylerObjectPercentChangeStandardFormat \
             None
 
 
-# In[ ]:
+# In[7]:
 
 
 #*******************************************************************************************
@@ -519,7 +520,7 @@ def ReturnStylerObjectBackgroundGradientFormat \
             None
 
 
-# In[ ]:
+# In[8]:
 
 
 #*******************************************************************************************
@@ -574,7 +575,7 @@ def ReturnNumberOfUniqueElementsInColumn \
             None
 
 
-# In[ ]:
+# In[9]:
 
 
 #*******************************************************************************************
@@ -633,7 +634,7 @@ def ReturnDuplicateRowsAsDataFrame \
             None
 
 
-# In[ ]:
+# In[10]:
 
 
 #*******************************************************************************************
@@ -700,7 +701,7 @@ def ReturnDataFrameRowsWithValue \
             None
 
 
-# In[ ]:
+# In[11]:
 
 
 #*******************************************************************************************
@@ -768,7 +769,7 @@ def ReturnDataFrameRowsWithoutValue \
             None
 
 
-# In[ ]:
+# In[12]:
 
 
 #*******************************************************************************************
@@ -881,7 +882,7 @@ def ReturnSummaryStatisticsAsDataFrame \
             None
 
 
-# In[ ]:
+# In[13]:
 
 
 #*******************************************************************************************
@@ -946,7 +947,7 @@ def ReturnRegressionModelEquationList \
             None
 
 
-# In[ ]:
+# In[14]:
 
 
 #*******************************************************************************************
@@ -1007,7 +1008,7 @@ def ReturnPolynomialLineSeries \
             None
 
 
-# In[ ]:
+# In[15]:
 
 
 #*******************************************************************************************
@@ -1101,7 +1102,7 @@ def ReturnRSquaredValue \
             None
 
 
-# In[ ]:
+# In[16]:
 
 
 #*******************************************************************************************
@@ -1199,7 +1200,7 @@ def ReturnEquationAsString \
             None
 
 
-# In[ ]:
+# In[17]:
 
 
 #*******************************************************************************************
@@ -1260,7 +1261,7 @@ def ReturnPearsonCorrelation \
             None
 
 
-# In[ ]:
+# In[18]:
 
 
 #*******************************************************************************************
@@ -1344,7 +1345,7 @@ def ConvertSeriesValuesToPercentChange \
             None
 
 
-# In[ ]:
+# In[19]:
 
 
 #******************************************************************************************
@@ -1417,7 +1418,7 @@ def ConvertSeriesTimestampIndexesToDateObjects \
             None
 
 
-# In[ ]:
+# In[20]:
 
 
 #******************************************************************************************
@@ -1471,7 +1472,7 @@ def ConvertSeriesFromDateStringsToDateObjects \
             None
 
 
-# In[ ]:
+# In[21]:
 
 
 #******************************************************************************************
@@ -1519,7 +1520,7 @@ def ReturnNumberOfRedundanciesInSeries \
             None
 
 
-# In[ ]:
+# In[22]:
 
 
 #******************************************************************************************
@@ -1630,7 +1631,7 @@ def DisplaySummaryStatistics \
             .hide()
 
 
-# In[ ]:
+# In[23]:
 
 
 #******************************************************************************************
@@ -1710,7 +1711,7 @@ def ReturnCorrelationTableStandardFormat \
             None
 
 
-# In[1]:
+# In[24]:
 
 
 #******************************************************************************************
@@ -1860,7 +1861,7 @@ def DisplayHVPlotFromDataFrame \
             None
 
 
-# In[ ]:
+# In[25]:
 
 
 #******************************************************************************************
@@ -1920,8 +1921,104 @@ def ReturnSeriesWithDateObjectIndices \
             None
 
 
-# In[ ]:
+# In[26]:
 
 
+#******************************************************************************************
+ #
+ #  Function Name:  ReturnSeriesWithUniqueIndicesLastValues
+ #
+ #  Function Description:
+ #      This function receives a Series and removes all redundant rows with the same index
+ #      but leaves one instance of that index with the last value.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          inputSeriesParameter
+ #                          This parameter is the input Series.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/31/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
+def ReturnSeriesWithUniqueIndicesLastValues \
+        (sharesSeriesParameter):
+    
+    try:
+        sharesSeries \
+            = sharesSeriesParameter.copy()
+    
+        sharesSeries \
+            .dropna \
+                (inplace \
+                     = True)
+    
+    
+        lastIndexIntegerVariable \
+            = len \
+                (sharesSeries) - 1
+    
+    
+        indexList \
+            = []
+    
+        valueList \
+            = []
+    
+        for sharesIndex, shares in enumerate(sharesSeries):
+        
+            if sharesIndex < lastIndexIntegerVariable:
+            
+                if (sharesSeries.index[sharesIndex]).date() != (sharesSeries.index[sharesIndex+1]).date():
+            
+                    indexList \
+                        .append \
+                            (sharesSeries \
+                                 .index \
+                                     [sharesIndex])
+            
+                    valueList \
+                        .append \
+                            (sharesSeries[sharesIndex])
+        
+            elif sharesIndex == lastIndexIntegerVariable:
+            
+                if (sharesSeries.index[sharesIndex]).date() != (sharesSeries.index[sharesIndex-1]).date():
+                
+                    indexList \
+                        .append \
+                            (sharesSeries \
+                                 .index \
+                                     [sharesIndex])
+            
+                    valueList \
+                        .append \
+                            (sharesSeries \
+                                 [sharesIndex])
+    
+    
+        return \
+            pd \
+                .Series \
+                    (valueList, 
+                     index \
+                         = indexList)         
+
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, ReturnSeriesWithUniqueIndicesLastValues, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return a Series with last values from unique indices.')
+        
+        return \
+            None
 

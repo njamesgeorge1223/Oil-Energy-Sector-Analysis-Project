@@ -22,6 +22,8 @@
  #      ReturnOilCompanyStylerObjectStandardFormat
  #      ReturnOilSectorIndicesStandardFormat
  #      ConvertOilCompanyToGeoDataFrame
+ #      ReturnSharesSeriesAlignedWithPrices
+ #      ReturnNormalizedOutstandingSharesToPricesSeries
  #
  #
  #  Date            Description                             Programmer
@@ -1238,6 +1240,302 @@ def ConvertOilCompanyToGeoDataFrame \
         
         return \
             None 
+
+
+# In[12]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ConvertOilCompanyToGeoDataFrame
+ #
+ #  Function Description:
+ #      This function receives an inputDataFrame, and creates a geoDataFrame from it.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          pricesSeriesParameter
+ #                          This parameter is a the Series with the reference indices
+ #  Series
+ #          sharesSeriesParameter
+ #                          This parameter is the Series with the requisite values.
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/31/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnSharesSeriesAlignedWithPrices \
+        (pricesSeriesParameter,
+         sharesSeriesParameter):
+    
+    try:
+        
+        pricesFirstIndexDateObject \
+            = pricesSeriesParameter.index[0]
+    
+        sharesFirstIndexDateObject \
+            = sharesSeriesParameter.index[0]
+    
+    
+        indexList \
+            = []
+    
+        valueList \
+            = []
+    
+    
+        pricesIndex = 0
+    
+        sharesIndex = 0
+    
+    
+        if pricesFirstIndexDateObject < sharesFirstIndexDateObject:
+        
+            while pricesSeriesParameter.index[pricesIndex] < sharesFirstIndexDateObject:
+                
+                indexList \
+                    .append \
+                        (pricesSeriesParameter \
+                             .index \
+                                 [pricesIndex])
+                
+                valueList \
+                    .append \
+                        (sharesSeriesParameter \
+                            [sharesIndex])
+                
+                pricesIndex += 1
+        
+        
+            if pricesFirstIndexDateObject in sharesSeriesParameter.index:
+            
+                indexList \
+                    .append \
+                        (pricesSeriesParameter \
+                             .index \
+                                 [pricesIndex])
+                
+                valueList \
+                    .append \
+                        (sharesSeriesParameter \
+                             [sharesIndex])
+            
+                pricesIndex += 1
+        
+        elif pricesFirstIndexDateObject > sharesFirstIndexDateObject:
+        
+            while sharesSeriesParameter.index[sharesIndex] < pricesFirstIndexDateObject:
+ 
+                sharesIndex += 1
+               
+                
+            indexList \
+                .append \
+                    (pricesSeriesParameter \
+                         .index \
+                             [pricesIndex])
+                
+            valueList \
+                .append \
+                    (sharesSeriesParameter \
+                         [sharesIndex])
+        
+            pricesIndex += 1
+        
+        
+        pricesSeriesSizeIntegerVariable \
+            = pricesSeriesParameter \
+                .count()
+    
+        sharesSeriesSizeIntegerVariable \
+            = sharesSeriesParameter \
+                .count()
+    
+
+        for loopIndex in range (pricesIndex, pricesSeriesSizeIntegerVariable):     
+
+            if loopIndex == pricesIndex \
+                and sharesIndex < sharesSeriesSizeIntegerVariable:
+            
+                if pricesSeriesParameter.index[pricesIndex] == sharesSeriesParameter.index[sharesIndex]:
+                
+                    indexList \
+                        .append \
+                            (pricesSeriesParameter \
+                                 .index \
+                                     [pricesIndex])
+                
+                    valueList \
+                        .append \
+                            (sharesSeriesParameter \
+                                 [sharesIndex])
+                
+                
+                    if pricesIndex < pricesSeriesSizeIntegerVariable - 1:
+                
+                        pricesIndex += 1
+                
+                    if sharesIndex < sharesSeriesSizeIntegerVariable - 1:
+                
+                        sharesIndex += 1
+                
+                elif sharesIndex == sharesSeriesSizeIntegerVariable - 1:
+                
+                    while pricesIndex < pricesSeriesSizeIntegerVariable:
+                        
+                        indexList \
+                            .append \
+                                (pricesSeriesParameter \
+                                     .index \
+                                         [pricesIndex])
+                
+                        valueList \
+                            .append \
+                                (sharesSeriesParameter \
+                                     [sharesIndex])
+                    
+                        pricesIndex += 1    
+            
+                elif pricesSeriesParameter.index[pricesIndex] < sharesSeriesParameter.index[sharesIndex]:
+                
+                    while pricesIndex < pricesSeriesSizeIntegerVariable \
+                            and pricesSeriesParameter.index[pricesIndex] < sharesSeriesParameter.index[sharesIndex]:
+
+                        indexList \
+                            .append \
+                                (pricesSeriesParameter \
+                                     .index \
+                                         [pricesIndex])
+                
+                        valueList \
+                            .append \
+                                (sharesSeriesParameter \
+                                     [sharesIndex - 1])
+                    
+                        pricesIndex += 1
+            
+                else:
+                    
+                    if pricesIndex < pricesSeriesSizeIntegerVariable \
+                            and sharesIndex < sharesSeriesSizeIntegerVariable:
+                        
+                        indexList \
+                            .append \
+                                (pricesSeriesParameter \
+                                     .index \
+                                         [pricesIndex])
+                
+                        valueList \
+                            .append \
+                                (sharesSeriesParameter \
+                                     [sharesIndex])
+                        
+                    while sharesIndex < sharesSeriesSizeIntegerVariable \
+                            and sharesSeriesParameter.index[sharesIndex] < pricesSeriesParameter.index[pricesIndex]:
+
+                        sharesIndex += 1
+                    
+                    
+                if sharesIndex < sharesSeriesSizeIntegerVariable \
+                    and sharesSeriesParameter.index[sharesIndex] not in pricesSeriesParameter.index:
+                
+                    while sharesIndex < sharesSeriesSizeIntegerVariable - 1\
+                            and sharesSeriesParameter.index[sharesIndex] not in pricesSeriesParameter.index:
+
+                        sharesIndex += 1
+    
+    
+        return \
+            pd \
+                .Series \
+                    (valueList, 
+                     index \
+                         = indexList)
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                ('The function, ReturnSharesSeriesAlignedWithPrices, ' \
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, ' \
+                 + 'was unable to convert extrapolate share values ' \
+                 + 'a Series with historical prices indices.')
+        
+        return \
+            None
+
+
+# In[13]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnNormalizedOutstandingSharesToPricesSeries
+ #
+ #  Function Description:
+ #      This function receives a full shares Series, extrapolates its values to fit
+ #      a historical price Series, and returns the new Series to the caller.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          pricesSeriesParameter
+ #                          This parameter is a the Series with the reference indices
+ #  Series
+ #          sharesSeriesParameter
+ #                          This parameter is the Series with the requisite values.
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/31/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnNormalizedOutstandingSharesToPricesSeries \
+        (pricesSeriesParameter,
+         sharesSeriesParameter):
+    
+    if sharesSeriesParameter.count() == 0:
+        
+        print('The length of the shares Series is zero.')
+        
+        return None
+    
+    
+    firstPricesSeries \
+        = function \
+            .ReturnSeriesWithUniqueIndicesLastValues \
+                (pricesSeriesParameter)
+
+    firstSharesSeries \
+        = function \
+            .ReturnSeriesWithUniqueIndicesLastValues \
+                (sharesSeriesParameter)
+    
+    
+    pricesSeries \
+        = function \
+            .ReturnSeriesWithDateObjectIndices \
+                (firstPricesSeries)
+    
+    sharesSeries \
+        = function \
+            .ReturnSeriesWithDateObjectIndices \
+                (firstSharesSeries)
+    
+    return \
+        ReturnSharesSeriesAlignedWithPrices \
+            (pricesSeries,
+             sharesSeries)     
 
 
 # In[ ]:
