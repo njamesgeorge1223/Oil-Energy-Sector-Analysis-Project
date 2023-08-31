@@ -1055,7 +1055,9 @@ def DisplayMatplotlibScatterPlotFromXYSeries \
                      .name,
                  fontdict \
                      = {'fontsize': 
-                            12.0})
+                            12.0},
+                 labelpad \
+                    = 10)
 
         plt \
             .ylabel \
@@ -1433,7 +1435,7 @@ def DisplaySummaryStatisticsBoxPlot \
                  + f'was unable to create a horizontal box plot.')
 
 
-# In[13]:
+# In[1]:
 
 
 #*******************************************************************************************
@@ -1495,7 +1497,9 @@ def DisplayOneLineGraphFromSeries \
                  legend \
                      = False, 
                  fontsize \
-                     = 12)
+                     = 12,
+                 rot \
+                    = 90.0)
 
 
         plt \
@@ -1510,7 +1514,9 @@ def DisplayOneLineGraphFromSeries \
             .xlabel \
                 (xLabelStringParameter, 
                     fontsize \
-                        = 12)
+                        = 12,
+                 labelpad \
+                    = 10)
     
         plt \
             .ylabel \
@@ -1623,7 +1629,9 @@ def DisplayLinesGraph \
             .xlabel \
                 (xlabelStringParameter, 
                  fontsize \
-                    = 12)
+                    = 12,
+                 labelpad \
+                    = 10)
 
         plt \
             .ylabel \

@@ -41,8 +41,8 @@ import datetime
 import json
 import requests
 
-from io import StringIO
 from PyOilSectorAnalysisConfig import geoapify_key
+from io import StringIO
 
 
 # In[2]:
@@ -274,7 +274,7 @@ def ReturnAllCovidDataFromWHO():
             None
 
 
-# In[6]:
+# In[12]:
 
 
 #*******************************************************************************************
@@ -339,29 +339,28 @@ def ReturnOilEnergySectorCompanies \
     standardErrorOfMeanList \
         = []
     
-     
+    
     log_subroutine \
         .PrintAndLogWriteText \
             (f'\nBegin retrieving oil company information...\n\n')
-
-  
-
+    
+    
     for ticker in tickerListParameter:
     
         try:
-            
+            print('1')
             if ticker == None \
                 or ticker == '':
             
                 continue
-                
-
+            
+            print('2')            
             stockYahooFinanceObject \
                 = yf \
                     .Ticker \
                         (ticker)
             
-            
+            print('3')            
             firstTradingDateTime \
                 = datetime \
                     .datetime \
@@ -369,14 +368,14 @@ def ReturnOilEnergySectorCompanies \
                             (stockYahooFinanceObject \
                                 .info \
                                      ['firstTradeDateEpochUtc'])
-            
+            print('4')            
             anaylysisStartDateTime \
                 = datetime \
                     .datetime \
                         .strptime \
                             (local_constant.START_DATE, 
                              '%Y-%m-%d')
-            
+            print('5')              
             if anaylysisStartDateTime < firstTradingDateTime:
                 
                 log_subroutine \
@@ -386,43 +385,73 @@ def ReturnOilEnergySectorCompanies \
                 
                 continue
             
-            
-        
+            print('6')              
             industryStringVariable \
                 = stockYahooFinanceObject \
                     .info \
                         ['industry']
-
+            print('7')  
             if industryStringVariable.find('Oil') != -1 \
                and industryStringVariable != 'Independent Oil & Gas':      
-
+                print('8')  
                 companyNameStringVariable \
                     = stockYahooFinanceObject \
                         .info \
                             ['longName']
-                
+                print('9')                 
                 addressStringVariable \
                     = ReturnFormattedAddressString \
                         (stockYahooFinanceObject)
                 
-                
-                outstandingSharesList \
+                print('10')                   
+                outstandingSharesSeries \
                     = stockYahooFinanceObject \
                         .get_shares_full \
                             (start = local_constant.START_DATE, 
-                             end = local_constant.END_DATE) \
-                        .astype \
-                            (float) \
-                        .tolist()
-                
-                closingStockPriceList \
+                             end = local_constant.END_DATE)
+                print('11')                   
+                closingStockPriceSeries \
                     = stockYahooFinanceObject \
                         .history \
                             (start = local_constant.START_DATE, 
                              end = local_constant.END_DATE) \
-                                ['Close'] \
-                        .tolist()
+                                ['Close']
+
+                print('12')
+                print(len(outstandingSharesSeries))
+                if len(outstandingSharesSeries) == 0 \
+                        or (outstandingSharesSeries == 0).all() == True:
+                    
+                    log_subroutine \
+                        .PrintAndLogWriteText \
+                            (f'This ticker, {ticker}, does not have historical outstanding shares information.'
+                             + '  Skipping...\n')
+                    
+                    continue
+                print('13')  
+                print(len(closingStockPriceSeries))
+                if len(closingStockPriceSeries) == 0 \
+                        or (closingStockPriceSeries == 0).all() == True:
+                    
+                    log_subroutine \
+                        .PrintAndLogWriteText \
+                            (f'This ticker, {ticker}, does not have historical share price information.'
+                             + '  Skipping...\n')
+                    
+                    continue
                 
+                print('14')                
+                outstandingSharesList \
+                    = outstandingSharesSeries \
+                        .astype(float) \
+                            .tolist()
+                print('15')                
+                closingStockPriceList \
+                    = closingStockPriceSeries \
+                        .astype(float) \
+                            .tolist()
+                
+                print('16')                
                 marketCapList \
                     = list \
                         (map \
@@ -430,65 +459,65 @@ def ReturnOilEnergySectorCompanies \
                                  outstandingSharesList, 
                                  closingStockPriceList))
                 
-                
+                print('17')                
                 tickerList \
                     .append \
                         (ticker)
-                
+                print('18')                
                 companyNameList \
                     .append \
                         (companyNameStringVariable)
-                
+                print('19')                
                 industryList \
                     .append \
                         (industryStringVariable)
-                
+                print('20')                
                 addressList \
                     .append \
                         (addressStringVariable)
-                
+                print('21')                
                 minimumMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .min())
-    
+                print('22')    
                 maximumMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .max())
-
+                print('23')
                 meanMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                  (marketCapList) \
                             .mean())
-    
+                print('24')    
                 medianMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .median())
-        
+                print('25')        
                 varianceMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .var())
-    
+                print('26')    
                 standardDeviationMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .std())
-            
+                print('27')            
                 standardErrorOfMeanList \
                     .append \
                         (pd \
@@ -496,12 +525,20 @@ def ReturnOilEnergySectorCompanies \
                                 (marketCapList) \
                             .sem())
                 
-                
+                print('28')                
                 log_subroutine \
                     .PrintAndLogWriteText \
                         (f'\nRetrieved information for {ticker} in the ' \
                          + f'{industryStringVariable} industry.\n\n')
-        
+                print('29')     
+                
+            else:
+                
+                log_subroutine \
+                    .PrintAndLogWriteText \
+                        (f'\nThis ticker, {ticker}, belongs to a company that ' \
+                         + f'is not in the oil industry.  Skipping...\n\n')
+            
         except:
         
             log_subroutine \
@@ -514,7 +551,7 @@ def ReturnOilEnergySectorCompanies \
         .PrintAndLogWriteText \
             (f'\nThe retrievel of oil company information is complete.\n')
     
-   
+    print('30')
     companyDataFrame \
         = pd \
             .DataFrame \
@@ -544,7 +581,7 @@ def ReturnOilEnergySectorCompanies \
                                'Market Cap (Stdev)',
                                'Market Cap (SEM)'])
     
-    
+    print('31')    
     return \
         ReturnGeographicDataFrame \
             (companyDataFrame,
@@ -738,13 +775,23 @@ def ReturnOilSectorMarketIndexSeries \
                 = stockYahooFinanceObject \
                     .history \
                         (start \
-                             = local_constant \
-                                 .START_DATE, 
+                            = local_constant \
+                                .START_DATE, 
                          end \
-                             = local_constant \
-                                 .END_DATE) \
-                            ['Close']
-
+                            = local_constant \
+                                .END_DATE) \
+                                    ['Close']
+            
+            if len(temporarySeries) == 0 \
+                    or (temporarySeries == 0).all() == True:
+                    
+                log_subroutine \
+                    .PrintAndLogWriteText \
+                        (f'This ticker, {ticker}, does not have historical share price information.'
+                         + '  Skipping...\n')
+                    
+                continue
+            
             
             if firstSeriesFlagBooleanValue == True:
                 
@@ -759,6 +806,7 @@ def ReturnOilSectorMarketIndexSeries \
                 marketIndexSeries \
                     = marketIndexSeries \
                         + (temporarySeries * indexWeightListParameter[index])
+            
             
             log_subroutine \
                 .PrintAndLogWriteText \

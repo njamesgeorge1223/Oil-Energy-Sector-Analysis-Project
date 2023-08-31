@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -38,6 +38,7 @@
  #      DisplaySummaryStatistics
  #      ReturnCorrelationTableStandardFormat
  #      DisplayHVPlotFromDataFrame
+ #      ReturnSeriesWithDateObjectIndices
  #
  #
  #  Date            Description                             Programmer
@@ -51,6 +52,7 @@ import PyLogSubRoutines as log_subroutine
 
 import PyLogConstants as log_constant
 
+import hvplot.pandas
 import numpy as np
 import pandas as pd
 
@@ -58,14 +60,14 @@ from datetime import datetime
 from pathlib import Path
 
 
-# In[2]:
+# In[ ]:
 
 
 CONSTANT_LOCAL_FILE_NAME \
     = 'PyFunctions.py'
 
 
-# In[1]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -149,7 +151,7 @@ def ReturnCSVFileAsDataFrame \
             None
 
 
-# In[4]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -227,7 +229,7 @@ def ReturnMergedDataFrame \
             None
 
 
-# In[5]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -349,7 +351,7 @@ def ReturnStylerObjectStandardFormat \
             None
 
 
-# In[6]:
+# In[ ]:
 
 
 #********************************************************************************************
@@ -435,7 +437,7 @@ def ReturnStylerObjectPercentChangeStandardFormat \
             None
 
 
-# In[7]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -517,7 +519,7 @@ def ReturnStylerObjectBackgroundGradientFormat \
             None
 
 
-# In[8]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -572,7 +574,7 @@ def ReturnNumberOfUniqueElementsInColumn \
             None
 
 
-# In[9]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -631,7 +633,7 @@ def ReturnDuplicateRowsAsDataFrame \
             None
 
 
-# In[10]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -698,7 +700,7 @@ def ReturnDataFrameRowsWithValue \
             None
 
 
-# In[11]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -766,7 +768,7 @@ def ReturnDataFrameRowsWithoutValue \
             None
 
 
-# In[12]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -879,7 +881,7 @@ def ReturnSummaryStatisticsAsDataFrame \
             None
 
 
-# In[13]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -944,7 +946,7 @@ def ReturnRegressionModelEquationList \
             None
 
 
-# In[14]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1005,7 +1007,7 @@ def ReturnPolynomialLineSeries \
             None
 
 
-# In[15]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1099,7 +1101,7 @@ def ReturnRSquaredValue \
             None
 
 
-# In[16]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1197,7 +1199,7 @@ def ReturnEquationAsString \
             None
 
 
-# In[17]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1258,7 +1260,7 @@ def ReturnPearsonCorrelation \
             None
 
 
-# In[18]:
+# In[ ]:
 
 
 #*******************************************************************************************
@@ -1342,7 +1344,7 @@ def ConvertSeriesValuesToPercentChange \
             None
 
 
-# In[19]:
+# In[ ]:
 
 
 #******************************************************************************************
@@ -1415,7 +1417,7 @@ def ConvertSeriesTimestampIndexesToDateObjects \
             None
 
 
-# In[20]:
+# In[ ]:
 
 
 #******************************************************************************************
@@ -1469,7 +1471,7 @@ def ConvertSeriesFromDateStringsToDateObjects \
             None
 
 
-# In[21]:
+# In[ ]:
 
 
 #******************************************************************************************
@@ -1517,7 +1519,7 @@ def ReturnNumberOfRedundanciesInSeries \
             None
 
 
-# In[22]:
+# In[ ]:
 
 
 #******************************************************************************************
@@ -1628,7 +1630,7 @@ def DisplaySummaryStatistics \
             .hide()
 
 
-# In[23]:
+# In[ ]:
 
 
 #******************************************************************************************
@@ -1708,7 +1710,7 @@ def ReturnCorrelationTableStandardFormat \
             None
 
 
-# In[24]:
+# In[1]:
 
 
 #******************************************************************************************
@@ -1726,6 +1728,9 @@ def ReturnCorrelationTableStandardFormat \
  #  DataFrame
  #          inputDataFrameParameter
  #                          This parameter is the input DataFrame
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the plot's title.
  #  String
  #          colorKeyStringParameter
  #                          This parameter is the key to the DataFrame column 
@@ -1761,6 +1766,7 @@ def ReturnCorrelationTableStandardFormat \
 
 def DisplayHVPlotFromDataFrame \
         (inputDataFrameParameter,
+         captionStringParameter,
          colorKeyStringParameter,
          sizeKeyStringParameter,
          xlimitTupleParameter \
@@ -1775,15 +1781,15 @@ def DisplayHVPlotFromDataFrame \
             = None):
     
     try:
-        
+
         inputDataFrame \
             = inputDataFrameParameter.copy()
         
-        
+
         if hoverColumnsListOfStringsParameter == None:
-            
-            return \
-                inputDataFrame \
+
+            hvPlotOverlayObject \
+                = inputDataFrame \
                     .hvplot \
                     .points \
                         ('Longitude', 
@@ -1804,11 +1810,11 @@ def DisplayHVPlotFromDataFrame \
                             = alphaFloatParameter, 
                          tiles \
                             = tilesStringParameter)
-        
+       
         else:
-            
-            return \
-                inputDataFrame \
+
+            hvPlotOverlayObject \
+                = inputDataFrame \
                     .hvplot \
                     .points \
                         ('Longitude', 
@@ -1832,6 +1838,16 @@ def DisplayHVPlotFromDataFrame \
                          hover_cols \
                             = hoverColumnsListOfStringsParameter)
     
+    
+        log_subroutine \
+            .SaveHVPlotImageToHTMLFile \
+                (hvPlotOverlayObject,
+                 captionStringParameter)
+
+    
+        return \
+            hvPlotOverlayObject
+    
     except:
         
         log_subroutine \
@@ -1842,4 +1858,70 @@ def DisplayHVPlotFromDataFrame \
         
         return \
             None
+
+
+# In[ ]:
+
+
+#******************************************************************************************
+ #
+ #  Function Name:  DisplayHVPlotFromDataFrame
+ #
+ #  Function Description:
+ #      This function receives a Series with timestamps for indices, converts those
+ #      timestamps to dat object, and returns the new Series.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          inputSeriesParameter
+ #                          This parameter is the input Series.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/31/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnSeriesWithDateObjectIndices \
+        (inputSeriesParameter):
+    
+    try:
+
+        indexList \
+            = ConvertSeriesTimestampIndexesToDateObjects \
+                    (inputSeriesParameter) \
+                .tolist()
+  
+        valuesList \
+            = inputSeriesParameter \
+                .tolist()
+   
+        return \
+            pd \
+                .Series \
+                    (valuesList, 
+                     index \
+                         = indexList)
+    
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, ReturnSeriesWithDateObjectIndices, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return a Series with Date Objects as the indices.')
+        
+        return \
+            None
+
+
+# In[ ]:
+
+
+
 
