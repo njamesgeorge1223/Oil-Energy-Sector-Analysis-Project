@@ -26,7 +26,7 @@ IPython notebook already has the following dependencies installed: datetime, io,
 matplotlib, numpy, pandas, pathlib, os, pandas, requests, requests_html, and scipy.
 
 In addition to those modules, the IPython notebook needs the following to execute: 
-yfinance, yahoo_fin, hvplot, panel.
+yfinance, yahoo_fin, hvplot, panel, and geoviews.
 
 Here are the requisite Terminal commands for installation of these peripheral modules
 (in this order):
@@ -39,7 +39,12 @@ python3 -m pip install hvplot
 
 python3 -m pip install panel
 
+python3 -m pip install geoviews
+
 For the conda environment, these are the requisite Terminal commands:
+
+conda config --add channels conda-forge
+conda config --set channel_priority strict
 
 conda install yfinance
 
@@ -48,6 +53,8 @@ conda install yahoo_fin
 conda install hvplot
 
 conda install panel
+
+conda install -c conda-forge geoviews
 
 If the folders, Resources, Logs, and Images are not present, the Jupyter Notebook will 
 create them.  If the CSV file, AllOilCompanies.csv, is not present in the Resources folder, 
