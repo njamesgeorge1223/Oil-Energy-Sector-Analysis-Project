@@ -30,6 +30,7 @@
 import PyFunctions as function
 import PyLogSubRoutines as log_subroutine
 import PyOilSectorAnalysisConstants as local_constant
+import PyOilSectorAnalysisFunctions as local_function
 
 import pandas as pd
 import yahoo_fin
@@ -37,8 +38,8 @@ import yfinance as yf
 
 import yahoo_fin.stock_info as stock_info
 
+import geopy
 import datetime
-import json
 import requests
 
 from PyOilSectorAnalysisConfig import geoapify_key
@@ -274,7 +275,7 @@ def ReturnAllCovidDataFromWHO():
             None
 
 
-# In[12]:
+# In[6]:
 
 
 #*******************************************************************************************
@@ -300,6 +301,8 @@ def ReturnAllCovidDataFromWHO():
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
  #  8/14/2023           Initial Development                         N. James George
+ #  8/30/2023           Added code to handle null objects           N. James George
+ #  8/31/2023           Added code to align full shares with prices N. James George
  #
  #******************************************************************************************/
     
@@ -341,26 +344,26 @@ def ReturnOilEnergySectorCompanies \
     
     
     log_subroutine \
-        .PrintAndLogWriteText \
-            (f'\nBegin retrieving oil company information...\n\n')
+        .PrintAllWriteText \
+            (f'\nBEGIN RETRIEVING OIL COMPANY INFORMATION...\n\n')
     
     
     for ticker in tickerListParameter:
     
         try:
-            print('1')
+
             if ticker == None \
                 or ticker == '':
             
                 continue
             
-            print('2')            
+         
             stockYahooFinanceObject \
                 = yf \
                     .Ticker \
                         (ticker)
             
-            print('3')            
+            
             firstTradingDateTime \
                 = datetime \
                     .datetime \
@@ -368,48 +371,49 @@ def ReturnOilEnergySectorCompanies \
                             (stockYahooFinanceObject \
                                 .info \
                                      ['firstTradeDateEpochUtc'])
-            print('4')            
+           
             anaylysisStartDateTime \
                 = datetime \
                     .datetime \
                         .strptime \
                             (local_constant.START_DATE, 
                              '%Y-%m-%d')
-            print('5')              
+            
             if anaylysisStartDateTime < firstTradingDateTime:
                 
                 log_subroutine \
-                    .PrintAndLogWriteText \
-                        (f'Trading for the ticker, {ticker}, begins ' \
-                         + 'after the first day of the analysis period.\n')
+                    .PrintAndDebugWriteText \
+                        (f'\nTrading for the ticker, {ticker}, begins ' \
+                         + 'after the first day of the analysis period.  ' \
+                         + 'Skipping...\n')
                 
                 continue
             
-            print('6')              
+             
             industryStringVariable \
                 = stockYahooFinanceObject \
                     .info \
                         ['industry']
-            print('7')  
+
             if industryStringVariable.find('Oil') != -1 \
                and industryStringVariable != 'Independent Oil & Gas':      
-                print('8')  
+  
                 companyNameStringVariable \
                     = stockYahooFinanceObject \
                         .info \
                             ['longName']
-                print('9')                 
+               
                 addressStringVariable \
                     = ReturnFormattedAddressString \
                         (stockYahooFinanceObject)
                 
-                print('10')                   
+
                 outstandingSharesSeries \
                     = stockYahooFinanceObject \
                         .get_shares_full \
                             (start = local_constant.START_DATE, 
                              end = local_constant.END_DATE)
-                print('11')                   
+             
                 closingStockPriceSeries \
                     = stockYahooFinanceObject \
                         .history \
@@ -417,41 +421,48 @@ def ReturnOilEnergySectorCompanies \
                              end = local_constant.END_DATE) \
                                 ['Close']
 
-                print('12')
-                print(len(outstandingSharesSeries))
-                if len(outstandingSharesSeries) == 0 \
+                
+                if outstandingSharesSeries.empty == True \
+                    or outstandingSharesSeries.count() == 0 \
                         or (outstandingSharesSeries == 0).all() == True:
                     
                     log_subroutine \
-                        .PrintAndLogWriteText \
-                            (f'This ticker, {ticker}, does not have historical outstanding shares information.'
+                        .PrintAndDebugWriteText \
+                            (f'\nThis ticker, {ticker}, does not have historical outstanding shares information.'
                              + '  Skipping...\n')
                     
                     continue
-                print('13')  
-                print(len(closingStockPriceSeries))
-                if len(closingStockPriceSeries) == 0 \
-                        or (closingStockPriceSeries == 0).all() == True:
+
+                if closingStockPriceSeries.empty == True \
+                    or closingStockPriceSeries.count() == 0 \
+                        or (closingStockPriceSeries == 0.0).all() == True:
                     
                     log_subroutine \
-                        .PrintAndLogWriteText \
-                            (f'This ticker, {ticker}, does not have historical share price information.'
+                        .PrintAndDebugWriteText \
+                            (f'\nThis ticker, {ticker}, does not have historical share price information.'
                              + '  Skipping...\n')
                     
                     continue
-                
-                print('14')                
-                outstandingSharesList \
-                    = outstandingSharesSeries \
-                        .astype(float) \
-                            .tolist()
-                print('15')                
+                    
+                   
                 closingStockPriceList \
                     = closingStockPriceSeries \
                         .astype(float) \
                             .tolist()
                 
-                print('16')                
+                               
+                updatedOutstandingSharesSeries \
+                    = local_function \
+                        .ReturnNormalizedOutstandingSharesToPricesSeries \
+                            (closingStockPriceSeries, 
+                             outstandingSharesSeries)
+                              
+                outstandingSharesList \
+                    = updatedOutstandingSharesSeries \
+                        .astype(float) \
+                            .tolist()
+                
+                
                 marketCapList \
                     = list \
                         (map \
@@ -459,99 +470,100 @@ def ReturnOilEnergySectorCompanies \
                                  outstandingSharesList, 
                                  closingStockPriceList))
                 
-                print('17')                
+
                 tickerList \
                     .append \
                         (ticker)
-                print('18')                
+             
                 companyNameList \
                     .append \
                         (companyNameStringVariable)
-                print('19')                
+               
                 industryList \
                     .append \
                         (industryStringVariable)
-                print('20')                
+               
                 addressList \
                     .append \
                         (addressStringVariable)
-                print('21')                
+                
+                
                 minimumMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .min())
-                print('22')    
+
                 maximumMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .max())
-                print('23')
+
                 meanMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                  (marketCapList) \
                             .mean())
-                print('24')    
+
                 medianMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .median())
-                print('25')        
+    
                 varianceMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .var())
-                print('26')    
+
                 standardDeviationMarketCapList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .std())
-                print('27')            
+          
                 standardErrorOfMeanList \
                     .append \
                         (pd \
                             .Series \
                                 (marketCapList) \
                             .sem())
-                
-                print('28')                
+                  
+              
                 log_subroutine \
-                    .PrintAndLogWriteText \
-                        (f'\nRetrieved information for {ticker} in the ' \
-                         + f'{industryStringVariable} industry.\n\n')
-                print('29')     
+                    .PrintAndDebugWriteText \
+                        (f'\n\nSUCCESFULLY RETRIEVED INFORMATION FOR TICKER, {ticker}, IN THE ' \
+                         + f'{industryStringVariable} INDUSTRY.\n\n')
+     
                 
             else:
                 
                 log_subroutine \
-                    .PrintAndLogWriteText \
+                    .PrintAndDebugWriteText \
                         (f'\nThis ticker, {ticker}, belongs to a company that ' \
-                         + f'is not in the oil industry.  Skipping...\n\n')
+                         + f'is not in the oil industry.  Skipping...\n')
             
         except:
         
             log_subroutine \
-                .PrintAndLogWriteText \
-                    (f'This ticker, {ticker}, does not have the required information.'
+                .PrintAndDebugWriteText \
+                    (f'\nThis ticker, {ticker}, does not have the required information.'
                      + '  Skipping...\n')
         
 
     log_subroutine \
-        .PrintAndLogWriteText \
-            (f'\nThe retrievel of oil company information is complete.\n')
+        .PrintAllWriteText \
+            (f'\nTHE RETRIEVAL OF OIL COMPANY INFORMATION IS COMPLETE.\n\n')
     
-    print('30')
+
     companyDataFrame \
         = pd \
             .DataFrame \
@@ -580,12 +592,14 @@ def ReturnOilEnergySectorCompanies \
                                'Market Cap (Var)',
                                'Market Cap (Stdev)',
                                'Market Cap (SEM)'])
-    
-    print('31')    
-    return \
-        ReturnGeographicDataFrame \
+
+    geoDataFrame \
+        = ReturnGeographicDataFrame \
             (companyDataFrame,
              'Address')
+
+    return \
+        geoDataFrame
 
 
 # In[7]:
@@ -732,14 +746,11 @@ def ReturnFormattedAddressString \
 def ReturnOilSectorMarketIndexSeries \
         (tickerListParameter,
          indexWeightListParameter):
-
-    firstSeriesFlagBooleanValue = True
-    
     
     if len(tickerListParameter) != len(indexWeightListParameter):
         
         log_subroutine \
-            .PrintAndLogWriteText \
+            .PrintAndDebugWriteText \
                 (f'The number of elements in the two function parameters are not equal. Exiting...\n')
         
         return \
@@ -747,9 +758,10 @@ def ReturnOilSectorMarketIndexSeries \
     
     
     log_subroutine \
-        .PrintAndLogWriteText \
-            ('Begin calculating oil company stock index...\n\n')
+        .PrintAllWriteText \
+            ('BEGIN CALCULATING OIL COMPANY SHARE INDEX...\n\n')
 
+    firstSeriesFlagBooleanValue = True
     
     for index, ticker in enumerate(tickerListParameter):
     
@@ -759,7 +771,7 @@ def ReturnOilSectorMarketIndexSeries \
                 or ticker == '':
                 
                 log_subroutine \
-                    .PrintAndLogWriteText \
+                    .PrintAndDebugWriteText \
                         ('\nThere was no ticker. Skipping...\n')
             
                 continue
@@ -782,11 +794,12 @@ def ReturnOilSectorMarketIndexSeries \
                                 .END_DATE) \
                                     ['Close']
             
-            if len(temporarySeries) == 0 \
+            if temporarySeries.empty == True \
+                or temporarySeries.count() == 0 \
                     or (temporarySeries == 0).all() == True:
                     
                 log_subroutine \
-                    .PrintAndLogWriteText \
+                    .PrintAndDebugWriteText \
                         (f'This ticker, {ticker}, does not have historical share price information.'
                          + '  Skipping...\n')
                     
@@ -809,21 +822,21 @@ def ReturnOilSectorMarketIndexSeries \
             
             
             log_subroutine \
-                .PrintAndLogWriteText \
-                    (f"\nProcessed {ticker}'s contribution...\n")
+                .PrintAndDebugWriteText \
+                    (f"\nSUCCESSFULLY PROCESSED TICKER'S, {ticker}, CONTRIBUTION TO THE SHARE INDEX...\n")
             
             
         except:
         
             log_subroutine \
-                .PrintAndLogWriteText \
+                .PrintAndDebugWriteText \
                     (f'\nThis ticker, {ticker}, did not have historical stock prices. ' \
                      + 'Skipping...\n')
             
             
     log_subroutine \
-        .PrintAndLogWriteText \
-            (f'\nThe calculation of the oil company stock index is complete.\n')
+        .PrintAllWriteText \
+            (f'\nTHE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.\n')
     
         
     return \
@@ -877,7 +890,7 @@ def ReturnGeographicDataFrame \
     
     log_subroutine \
         .PrintAndLogWriteText \
-            ('Retrieving latitudes and longitudes for addresses...\n')
+            ('\nRETRIEVING LATITUDES AND LONGITUDES FROM ADDRESSES...\n\n')
     
     
     for index, company in inputDataFrame.iterrows():
@@ -934,6 +947,10 @@ def ReturnGeographicDataFrame \
             longitudeFloatList \
                 .append \
                     (longitudeFloatVariable)
+            
+            log_subroutine \
+                .PrintAndLogWriteText \
+                    ('\nRETRIEVAL OF LATITUDES AND LONGITUDES FROM ADDRESSES IS COMPLETE.\n\n')
 
         except:
             
@@ -964,4 +981,10 @@ def ReturnGeographicDataFrame \
                   tempDataFrame], 
                  axis \
                      = 1)
+
+
+# In[ ]:
+
+
+
 
