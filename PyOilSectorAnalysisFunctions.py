@@ -1510,6 +1510,17 @@ def ReturnNormalizedOutstandingSharesToPricesSeries \
         
         return None
     
+    elif sharesSeriesParameter.count() == 1:
+        
+        tempSeries \
+            = pricesSeriesParameter.copy()
+        
+        sharesSeries \
+            = (tempSeries.astype(int) * 0) + sharesSeriesParameter[0]
+        
+        return \
+            sharesSeries
+    
     
     firstPricesSeries \
         = function \

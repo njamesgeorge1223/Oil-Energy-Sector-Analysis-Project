@@ -443,33 +443,32 @@ def ReturnOilEnergySectorCompanies \
                              + '  Skipping...\n')
                     
                     continue
-                    
-                   
-                closingStockPriceList \
-                    = closingStockPriceSeries \
-                        .astype(float) \
-                            .tolist()
                 
-                               
+                         
                 updatedOutstandingSharesSeries \
                     = local_function \
                         .ReturnNormalizedOutstandingSharesToPricesSeries \
                             (closingStockPriceSeries, 
                              outstandingSharesSeries)
                               
-                outstandingSharesList \
-                    = updatedOutstandingSharesSeries \
-                        .astype(float) \
-                            .tolist()
-                
                 
                 marketCapList \
                     = list \
                         (map \
-                            (lambda x, y: x * y, 
-                                 outstandingSharesList, 
-                                 closingStockPriceList))
+                             (lambda x, y: x * y, 
+                              closingStockPriceSeries.tolist(), 
+                              updatedOutstandingSharesSeries.tolist()))
+                    
                 
+                marketCapSeries \
+                    = pd \
+                        .Series \
+                            (marketCapList, \
+                             index \
+                                 = updatedOutstandingSharesSeries \
+                                     .index \
+                                     .tolist())
+
 
                 tickerList \
                     .append \
@@ -490,51 +489,37 @@ def ReturnOilEnergySectorCompanies \
                 
                 minimumMarketCapList \
                     .append \
-                        (pd \
-                            .Series \
-                                (marketCapList) \
-                            .min())
+                        (marketCapSeries \
+                             .min())
 
                 maximumMarketCapList \
                     .append \
-                        (pd \
-                            .Series \
-                                (marketCapList) \
+                        (marketCapSeries \
                             .max())
 
                 meanMarketCapList \
                     .append \
-                        (pd \
-                            .Series \
-                                 (marketCapList) \
+                        (marketCapSeries \
                             .mean())
 
                 medianMarketCapList \
                     .append \
-                        (pd \
-                            .Series \
-                                (marketCapList) \
-                            .median())
+                        (marketCapSeries \
+                             .median())
     
                 varianceMarketCapList \
                     .append \
-                        (pd \
-                            .Series \
-                                (marketCapList) \
+                        (marketCapSeries \
                             .var())
 
                 standardDeviationMarketCapList \
                     .append \
-                        (pd \
-                            .Series \
-                                (marketCapList) \
+                        (marketCapSeries \
                             .std())
           
                 standardErrorOfMeanList \
                     .append \
-                        (pd \
-                            .Series \
-                                (marketCapList) \
+                        (marketCapSeries \
                             .sem())
                   
               
