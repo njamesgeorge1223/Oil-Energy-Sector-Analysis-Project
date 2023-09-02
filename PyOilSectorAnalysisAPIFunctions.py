@@ -303,6 +303,8 @@ def ReturnAllCovidDataFromWHO():
  #  8/14/2023           Initial Development                         N. James George
  #  8/30/2023           Added code to handle null objects           N. James George
  #  8/31/2023           Added code to align full shares with prices N. James George
+ #  9/01/2023           Added outstanding shares if full shares are N. James George
+ #                      not available.
  #
  #******************************************************************************************/
     
@@ -407,31 +409,13 @@ def ReturnOilEnergySectorCompanies \
                     = ReturnFormattedAddressString \
                         (stockYahooFinanceObject)
                 
-
-                outstandingSharesSeries \
-                    = stockYahooFinanceObject \
-                        .get_shares_full \
-                            (start = local_constant.START_DATE, 
-                             end = local_constant.END_DATE)
-             
+               
                 closingStockPriceSeries \
                     = stockYahooFinanceObject \
                         .history \
                             (start = local_constant.START_DATE, 
                              end = local_constant.END_DATE) \
                                 ['Close']
-
-                
-                if outstandingSharesSeries.empty == True \
-                    or outstandingSharesSeries.count() == 0 \
-                        or (outstandingSharesSeries == 0).all() == True:
-                    
-                    log_subroutine \
-                        .PrintAndDebugWriteText \
-                            (f'\nThis ticker, {ticker}, does not have historical outstanding shares information.'
-                             + '  Skipping...\n')
-                    
-                    continue
 
                 if closingStockPriceSeries.empty == True \
                     or closingStockPriceSeries.count() == 0 \
@@ -444,32 +428,54 @@ def ReturnOilEnergySectorCompanies \
                     
                     continue
                 
-                         
-                updatedOutstandingSharesSeries \
+
+                fullSharesSeries \
+                    = stockYahooFinanceObject \
+                        .get_shares_full \
+                            (start = local_constant.START_DATE, 
+                             end = local_constant.END_DATE)
+              
+                if fullSharesSeries.empty == True \
+                    or fullSharesSeries.count() == 0 \
+                        or (fullSharesSeries == 0).all() == True:
+                    
+                    outstandingSharesIntegerVariable \
+                        = stockYahooFinanceObject \
+                            .info \
+                                ['sharesOutstanding']
+                
+                    fullSharesSeries \
+                        = pd \
+                            .Series \
+                                ([outstandingSharesIntegerVariable], 
+                                 index \
+                                    = [closingStockPriceSeries.index[0]])
+                 
+                updatedFullSharesSeries \
                     = local_function \
                         .ReturnNormalizedOutstandingSharesToPricesSeries \
                             (closingStockPriceSeries, 
-                             outstandingSharesSeries)
-                              
+                             fullSharesSeries)
                 
+                   
                 marketCapList \
                     = list \
                         (map \
                              (lambda x, y: x * y, 
                               closingStockPriceSeries.tolist(), 
-                              updatedOutstandingSharesSeries.tolist()))
+                              updatedFullSharesSeries.tolist()))
                     
-                
+               
                 marketCapSeries \
                     = pd \
                         .Series \
                             (marketCapList, \
                              index \
-                                 = updatedOutstandingSharesSeries \
+                                 = updatedFullSharesSeries \
                                      .index \
                                      .tolist())
 
-
+                
                 tickerList \
                     .append \
                         (ticker)
