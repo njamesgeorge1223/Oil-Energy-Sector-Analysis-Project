@@ -45,13 +45,13 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 
 
-conda install yfinance
+conda install -c conda-forge yfinance
 
-conda install yahoo_fin
+conda install -c conda-forge yahoo_fin
 
-conda install hvplot
+conda install -c conda-forge hvplot
 
-conda install panel
+conda install -c conda-forge panel
 
 conda install -c conda-forge geoviews
 
