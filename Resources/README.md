@@ -1,1 +1,1 @@
-If the CSV file, AllOilCompanies.csv, does not exist, the Jupyter Notebook, PyOilSectorAnalysis.ipynb, generates it by sorting through the entire Yahoo Finance database.  For future runs, the Jupyter Notebook instead reads the AllOilCompanies.csv file and saves significant time.
+If the CSV file, AllOilCompanies.csv, does not exist, the IPython notebook, PyOilSectorAnalysis.ipynb, generates it by sorting through the entire Yahoo Finance database.  For future runs, this IPython notebook instead reads the AllOilCompanies.csv file and saves significant time.
