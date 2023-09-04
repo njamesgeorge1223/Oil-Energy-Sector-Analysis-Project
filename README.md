@@ -1,7 +1,5 @@
 ![maksym-kaharlytskyi-u13zBF4r56A-unsplash](https://github.com/SIWhang213/Project-1-group-4/assets/137141385/500f11cf-8bc1-478b-837d-383e914413e9)
 
------
-
 ## Project #1, Group #4: 
 
 -----
