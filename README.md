@@ -1,9 +1,8 @@
 ## Project #1, Group #4: 
 
+-----
 
 # Did the COVID-19 Pandemic Affect the Oil Energy Sector?
-
-
 
 -----
 The Oil & Gas Energy Sector has always been a topic of interest to many due to the very nature of its business: a commodity that virtually everyone must frequently purchase, either directly or indirectly, to conduct the vagaries of daily life.  Thus, what factors affect, drive, or influence the oil industry is more than a mere topic of curiosity, as any unexpected disruptions can carry far reaching effects for individuals, groups, countries, or even the world.  For this project, we delve into this topic during the COVID-19 pandemic to answer these questions.
