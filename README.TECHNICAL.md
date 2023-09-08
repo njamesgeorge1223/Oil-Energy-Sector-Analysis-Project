@@ -22,13 +22,15 @@ PySubroutines.py
 
 If the computer has Anaconda, Jupyter Notebook, and a recent version of Python, the IPython notebook already has the following dependencies installed: datetime, io, json, matplotlib, numpy, pandas, pathlib, os, pandas, requests, requests_html, and scipy.
 
-In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, hvplot, panel, geoviews, and geopy.
+In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, holoviews, hvplot, panel, geoviews, and geopy.
 
 Here are the requisite Terminal commands for installation of these peripheral modules (in this order):
 
 python3 -m pip install yfinance
 
 python3 -m pip install yahoo_fin
+
+python3 -m pip install holoviews
 
 python3 -m pip install hvplot
 
