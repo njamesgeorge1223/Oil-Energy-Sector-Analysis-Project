@@ -40,11 +40,18 @@
  #      DisplayHVPlotFromDataFrame
  #      ReturnSeriesWithDateObjectIndices
  #      ReturnSeriesWithUniqueIndicesLastValues
+ #      ReturnFormattedStatisticsDataFrameFromSeries
+ #      ReturnDateFromOneYearPriorAsString 
+ #      ReturnFormattedRowsAsStylerObject
  #
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
  #  08/20/2023      Initial Development                     N. James George
+ #  09/06/2023      Added returnFormattedStatisticsDataFrameFromSeries
+ #                                                          N. James George
+ #  09/06/2023      Added ReturnDateFromOneYearPriorAsString 
+ #                                                          N. James George
  #
  #******************************************************************************************/
 
@@ -57,7 +64,7 @@ import hvplot.pandas
 import numpy as np
 import pandas as pd
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 
@@ -1704,7 +1711,7 @@ def ReturnCorrelationTableStandardFormat \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                (f'The subroutine, DisplayFormattedCorrelationTableStandardFormat, '
+                (f'The function, DisplayFormattedCorrelationTableStandardFormat, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to display a formatted correlation table.')
         
@@ -1854,7 +1861,7 @@ def DisplayHVPlotFromDataFrame \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                (f'The subroutine, DisplayHVPlotDataFrame, '
+                (f'The function, DisplayHVPlotDataFrame, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to display a formatted HVPlot.')
         
@@ -1914,7 +1921,7 @@ def ReturnSeriesWithDateObjectIndices \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                (f'The subroutine, ReturnSeriesWithDateObjectIndices, '
+                (f'The function, ReturnSeriesWithDateObjectIndices, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to return a Series with Date Objects as the indices.')
         
@@ -2016,10 +2023,305 @@ def ReturnSeriesWithUniqueIndicesLastValues \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                (f'The subroutine, ReturnSeriesWithUniqueIndicesLastValues, '
+                (f'The function, ReturnSeriesWithUniqueIndicesLastValues, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to return a Series with last values from unique indices.')
         
         return \
             None
+
+
+# In[27]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnFormattedStatisticsDataFrameFromSeries
+ #
+ #  Function Description:
+ #      This function receives a Series, calculates its statistical values, places them
+ #      in a DataFrame, and returns the formatted DataFrame to the caller.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrameParameter
+ #                          The parameter is the input DataFrame.
+ #  String
+ #          captionStringParameter
+ #                          The parameter is the text for the caption.
+ #  Integer
+ #          precisionIntegerParameter
+ #                          This optional parameter is the decimal place 
+ #                          precision of the displayed numbers
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/06/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnFormattedStatisticsDataFrameFromSeries \
+        (inputSeriesParameter,
+         captionStringParameter \
+             = '',
+         precisionIntegerParameter \
+            = 4):
+    
+    try:
+        
+        inputSeries \
+            = inputSeriesParameter.copy()
+        
+        
+        indexList \
+            = ['Mean', 
+               'Median', 
+               'Mode', 
+               'Variance', 
+               'Std Dev', 
+               'SEM', 
+               'Minimum', 
+               '25%', 
+               '50%', 
+               '75%', 
+               'Maximum', 
+               'Count']
+
+        valueList \
+            = [inputSeries.mean(),
+               inputSeries.median(),
+               inputSeries.mode()[0],
+               inputSeries.var(),
+               inputSeries.std(),
+               inputSeries.sem(),
+               inputSeries.min(),
+               inputSeries.describe().loc['25%'],
+               inputSeries.describe().loc['50%'],
+               inputSeries.describe().loc['75%'],
+               inputSeries.max(),
+               inputSeries.count()]
+        
+        
+        statisticsDataFrame \
+            = pd \
+                .DataFrame \
+                    (valueList, 
+                     columns \
+                         = ['Precipitation'], 
+                     index \
+                         = indexList)
+    
+    
+        formattersDictionary \
+            = {'Mean': lambda x: f'{x:.4f}',
+                       'Median': lambda x: f'{x:.4f}',
+                       'Mode': lambda x: f'{x:.4f}',
+                       'Variance': lambda x: f'{x:.4f}',
+                       'Std Dev': lambda x: f'{x:.4f}',
+                       'SEM': lambda x: f'{x:.4f}',
+                       'Minimum': lambda x: f'{x:.2f}',
+                       '25%': lambda x: f'{x:.2f}',
+                       '50%': lambda x: f'{x:.2f}',
+                       '75%': lambda x: f'{x:.2f}',
+                       'Maximum': lambda x: f'{x:.2f}',
+                       'Count': lambda x: f'{x:.0f}' }
+
+        statisticsStylerObject \
+            = ReturnFormattedRowsAsStylerObject \
+                (statisticsDataFrame.style, 
+                 formattersDictionary)
+        
+        
+        statisticsStylerObject \
+            .set_caption \
+                (captionStringParameter) \
+            .set_table_styles \
+                ([{'selector': 
+                        'caption', 
+                   'props':
+                        [('color', 
+                              'black'), 
+                         ('font-size', 
+                              '16px'),
+                         ('font-style', 
+                              'bold'),
+                         ('text-align', 
+                              'center')]}]) \
+            .set_properties \
+                (**{'text-align':
+                        'center',
+                    'border':
+                        '1.3px solid red',
+                    'color':
+                        'blue'})
+            
+            
+        return \
+            statisticsStylerObject
+    
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, returnFormattedStatisticsDataFrameFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return a formatted statistics DataFrame from a Series.')
+        
+        return \
+            None
+
+
+# In[28]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnDateFromOneYearPriorAsString
+ #
+ #  Function Description:
+ #      This function receives a Series, calculates its statistical values, places them
+ #      in a DataFrame, and returns the formatted DataFrame to the caller.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  String
+ #          currentDateStringParameter
+ #                          The parameter is the input date.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/06/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+    
+def ReturnDateFromOneYearPriorAsString \
+    (currentDateStringParameter):
+    
+    
+    try:
+
+        mostRecentDateTimeObject \
+            = datetime \
+                .strptime \
+                    (currentDateStringParameter, 
+                        '%Y-%m-%d')
+
+
+        if mostRecentDateTimeObject.year % 4 != 0:
+    
+            daysInYearIntegerVariable \
+                = 365
+   
+        else:
+    
+            daysInYearIntegerVariable \
+                = 366
+  
+        oneYearPriorToMostRecentDateTimeObject \
+            = mostRecentDateTimeObject \
+                .date() \
+              - timedelta \
+                    (days \
+                        = daysInYearIntegerVariable)
+
+    
+        return \
+            datetime \
+                .strftime \
+                    (oneYearPriorToMostRecentDateTimeObject, 
+                     '%Y-%m-%d') 
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnDateFromOneYearPriorAsString, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return the date from one year prior.')
+        
+        return \
+            None
+
+
+# In[29]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnFormattedRowsAsStylerObject
+ #
+ #  Function Description:
+ #      This function formats the rows in a Styler Object and returns the Styler Object.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrameParameter
+ #                          The parameter is the input DataFrame.
+ #  String
+ #          captionStringParameter
+ #                          The parameter is the text for the caption.
+ #  Integer
+ #          precisionIntegerParameter
+ #                          This optional parameter is the decimal place 
+ #                          precision of the displayed numbers
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/07/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnFormattedRowsAsStylerObject \
+        (inputStylerObjectParameter, 
+         formatterDictionaryParameter):
+    
+    try:
+    
+        for row, rowFormatter in formatterDictionaryParameter.items():
+        
+            rowNumber \
+                = inputStylerObjectParameter \
+                    .index \
+                    .get_loc \
+                        (row)
+
+            for columnNumber in range(len(inputStylerObjectParameter.columns)):
+            
+                inputStylerObjectParameter._display_funcs[(rowNumber, columnNumber)] \
+                    = rowFormatter
+            
+            
+        return \
+            inputStylerObjectParameter
+
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnFormattedRowsAsStylerObject, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return the date from one year prior.')
+        
+        return \
+            None
+
+
+# In[ ]:
+
+
+
 

@@ -390,8 +390,12 @@ def BeginProgramExecution \
         messageStringVariable \
             = 'Program execution begins...\n'
 
-        PrintAllWriteText \
-            (messageStringVariable)
+        
+        if log_constant.DEBUG_FLAG == True \
+            or log_constant.LOG_FLAG == True:
+    
+            PrintAllWriteText \
+                (messageStringVariable)
 
     except:
         
@@ -437,8 +441,12 @@ def EndProgramExecution():
         messageStringVariable \
             = f'Program execution ends at {currentTimeStampStringVariable}.\n\n\n\n'
         
-        PrintAllWriteText \
-            (messageStringVariable)
+        
+        if log_constant.DEBUG_FLAG == True \
+            or log_constant.LOG_FLAG == True:
+            
+            PrintAllWriteText \
+                (messageStringVariable)
         
         
         if log_constant.LOG_FLAG == True:
