@@ -28,6 +28,7 @@
  #      DisplayTwoPieChartsSideBySide
  #      DisplayStackedBarChartFromDataFrame
  #      DisplayHistogramFromSeries
+ #      ReturnPlotFromXYSeries
  #
  #
  #  Date            Description                             Programmer
@@ -39,6 +40,7 @@
  #  09/11/2023      Set figure size to (9.708, 6) for all plots
  #                                                          N. James George
  #  09/12/2023      Set font sizes to 20, 16, 16, 14, 14    N. James George
+ #  09/13/2023      Added ReturnPlotFromXYSeries            N. James George
  #
  #******************************************************************************************/
 
@@ -2801,8 +2803,171 @@ def DisplayHistogramFromSeries \
                  + f'was unable to plot a histogram from a Series.')
 
 
-# In[ ]:
+# In[22]:
 
 
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  ReturnPlotFromXYSeries
+ #
+ #  Subroutine Description:
+ #      This subroutine plot two series and any peaks that are passed to it.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          xSeriesParameter
+ #                          This parameter is the Series used as x-axis 
+ #                          values.
+ #  Series
+ #          ySeriesParameter
+ #                          This parameter is the Series used as y-axis 
+ #                          values.
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the chart title.
+ #  String
+ #          xLabelStringParameter
+ #                          This parameter is the labe for the x-axis.
+ #  String
+ #          yLabelStringParameter
+ #                          This parameter is the labe for the y-axis.
+ #  String
+ #          colorStringListParameter
+ #                          This parameter is the list of colors for the line 
+ #                          and peak markers, and peak labels.
+ #  Numpy Array
+ #          peaksNumpyArrayParameter
+ #                          This parameter is the array of peak indexes for the plot.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/13/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
+def ReturnPlotFromXYSeries \
+    (xSeriesParameter,
+     ySeriesParameter,
+     captionStringParameter,
+     xLabelStringParameter,
+     yLabelStringParameter,
+     colorStringListParameter,
+     peaksNumpyArrayParameter \
+        = []):
+    
+    try:
+        
+        xSeries \
+            = xSeriesParameter.copy()
+       
+        ySeries \
+            = ySeriesParameter.copy()
+
+        plt \
+            .figure \
+                (figsize \
+                    = (9.708, 6))
+        
+        plt \
+            .plot \
+                (xSeries,
+                 ySeries,
+                 alpha \
+                    = 1.0,
+                 color \
+                    = colorStringListParameter[0])
+
+        if len(peaksNumpyArrayParameter) > 0:
+
+            plt \
+                .plot \
+                    (xSeries[peaksNumpyArrayParameter], 
+                     ySeries[peaksNumpyArrayParameter], 
+                     'x', 
+                      markersize \
+                         = 15, 
+                      color \
+                         = colorStringListParameter[1])
+
+            for i, j in zip(xSeries[peaksNumpyArrayParameter], ySeries[peaksNumpyArrayParameter]):
+
+                plt \
+                    .annotate \
+                        (i, 
+                         xy \
+                             = (i, j), 
+                         size \
+                             = 12, 
+                         color \
+                             = colorStringListParameter[2])
+
+        plt \
+            .title \
+                (captionStringParameter,
+                 fontdict \
+                     = {'fontsize': 
+                            20, 
+                        'fontstyle': 
+                            'normal'},
+                 pad \
+                    = 20)
+
+        plt \
+            .xlabel \
+                (xLabelStringParameter,
+                 fontdict \
+                     = {'fontsize': 
+                            16,
+                        'fontstyle': 
+                            'normal'},
+                 labelpad \
+                    = 10)
+
+        plt \
+            .ylabel \
+                (yLabelStringParameter,
+                 fontdict \
+                     = {'fontsize': 
+                            16,
+                        'fontstyle': 
+                            'normal'},
+                 labelpad \
+                     = 10)
+        
+        plt \
+            .xticks \
+                (fontsize \
+                     = 14)
+       
+        plt \
+            .yticks \
+                (fontsize \
+                     = 14)
+
+        plt \
+            .grid()
+        
+    
+        log_subroutine \
+            .SavePlotImage \
+                (captionStringParameter)
+
+        plt \
+            .show()
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnPlotFromXYSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return a plot from XY Series.')
+        
+        return \
+            None
 

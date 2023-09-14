@@ -73,6 +73,7 @@ CONSTANT_LOCAL_FILE_NAME \
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
  #  8/24/2023           Initial Development                         N. James George
+ #  9/13/2023           Changed 'program' to 'script' in message    N. James George
  #
  #******************************************************************************************/
 
@@ -94,7 +95,7 @@ def CreateDirectory \
                     (directoryNameStringParameter)
             
             print \
-                (f'The program created directory, {directoryNameStringParameter}.\n')
+                (f'The script created directory, {directoryNameStringParameter}.\n')
     
     except:
         

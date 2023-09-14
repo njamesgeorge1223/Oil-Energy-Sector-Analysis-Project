@@ -43,6 +43,7 @@
  #      ReturnFormattedStatisticsDataFrameFromSeries
  #      ReturnDateFromOneYearPriorAsString 
  #      ReturnFormattedRowsAsStylerObject
+ #      ReturnStylerObjectStandardFormatForSeries
  #
  #
  #  Date            Description                             Programmer
@@ -51,6 +52,8 @@
  #  09/06/2023      Added returnFormattedStatisticsDataFrameFromSeries
  #                                                          N. James George
  #  09/06/2023      Added ReturnDateFromOneYearPriorAsString 
+ #                                                          N. James George
+ #  09/13/2023      Added ReturnStylerObjectStandardFormatForSeries
  #                                                          N. James George
  #
  #******************************************************************************************/
@@ -2315,6 +2318,89 @@ def ReturnFormattedRowsAsStylerObject \
                 (f'The function, ReturnFormattedRowsAsStylerObject, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to return the date from one year prior.')
+        
+        return \
+            None
+
+
+# In[30]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnStylerObjectStandardFormatForSeries
+ #
+ #  Function Description:
+ #      This function formats a Series and returns a Styler Object in standard format.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Series
+ #          inputSeriesParameter
+ #                          The parameter is the input Series.
+ #  String
+ #          captionStringParameter
+ #                          The parameter is the text for the caption.
+ #  String
+ #          indexNameStringParameter
+ #                          The parameter is the name for Styler Object's index.
+ #  String
+ #          columnNameStringParameter
+ #                          The parameter is the name for Styler Object's column name.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/13/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnStylerObjectStandardFormatForSeries \
+        (inputSeriesParameter,
+         captionStringParameter,
+         indexNameStringParameter,
+         columnNameStringParameter):
+    
+    try:
+        
+        inputSeries \
+            = inputSeriesParameter.copy()
+        
+        
+        displayDataFrame \
+            = pd \
+                .DataFrame \
+                    (inputSeries \
+                        .tolist(), 
+                     columns \
+                         = [columnNameStringParameter],
+                     index \
+                         = inputSeries \
+                            .index \
+                                .tolist())
+        
+        displayDataFrame \
+            .index \
+                .name \
+                    = indexNameStringParameter
+
+        return \
+            ReturnStylerObjectStandardFormat \
+                (displayDataFrame,
+                 captionStringParameter, 
+                 hideFlagBooleanParameter \
+                     = False)
+
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnStylerObjectStandardFormatForSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return a formatted Series for display.')
         
         return \
             None
