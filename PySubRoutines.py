@@ -29,6 +29,8 @@
  #      DisplayStackedBarChartFromDataFrame
  #      DisplayHistogramFromSeries
  #      ReturnPlotFromXYSeries
+ #      DisplayPieChartFromXYLists
+ #      DisplayHorizontalBarChartFromXYLists
  #
  #
  #  Date            Description                             Programmer
@@ -41,6 +43,8 @@
  #                                                          N. James George
  #  09/12/2023      Set font sizes to 20, 16, 16, 14, 14    N. James George
  #  09/13/2023      Added ReturnPlotFromXYSeries            N. James George
+ #  09/15/2023      Added DisplayPieChartFromXYLists        N. James George
+ #                  and DisplayHorizontalBarChartFromXYLists                               
  #
  #******************************************************************************************/
 
@@ -2970,4 +2974,413 @@ def ReturnPlotFromXYSeries \
         
         return \
             None
+
+
+# In[23]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayPieChartFromXYLists
+ #
+ #  Subroutine Description:
+ #      This subroutine takes a list for values and a list for labels 
+ #      with formatting parameters and plots a pie chart.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  List
+ #          valueList
+ #                          This parameter is the list of values for the pie chart.
+ #  List
+ #          labelList
+ #                          This parameter is the list of labels for the pie chart.
+ #  List
+ #          colorsList
+ #                          This parameter is the list of pie wedge colors.
+ #  Tuple or Float
+ #          explodeTuple
+ #                          This parameter specifies the fraction of the radius
+ #                          with which to offset each wedge.
+ #  String
+ #          captionString
+ #                          This parameter is the chart title.
+ #  String
+ #          xLabelString
+ #                          This parameter is the x-axis title.
+ #  String
+ #          yLabelString
+ #                          This parameter is the y-axis title.
+ #  Float
+ #          startAngleFloat
+ #                          This parameter is the angle by which the start 
+ #                          of the pie is rotated, counterclockwise from 
+ #                          the x-axis.
+ #  String
+ #          autoPercentString
+ #                          This parameter is the format of the wedge label.
+ #  Float
+ #          percentDistanceFloat
+ #                          This parameter is the percent distance from the center 
+ #                          for wedge value labels.
+ #  Float
+ #          labelDistanceFloat
+ #                          This parameter is the percent distance from the center 
+ #                          for wedge labels.
+ #  Float
+ #          chartFontSize
+ #                          This parameter is the chart font size.
+ #  Float
+ #          titleFontSize
+ #                          This parameter is the chart title font size.
+ #  Float
+ #          labelFontSize
+ #                          This parameter is the chart axis font size.
+ #  Float
+ #          titlePad
+ #                          This parameter is the title padding from the chart.
+ #  Float
+ #          labelPad
+ #                          This parameter is the axis label padding from the chart.
+ #  
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/15/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayPieChartFromXYLists \
+        (valueList,
+         labelList,
+         colorsList,
+         explodeTuple,
+         captionString \
+             = '',
+         xLabelString \
+             = '',
+         yLabelString \
+             = '',
+         startAngleFloat \
+            = 0.0,
+         autoPercentString \
+            = '%1.1f%%',
+         percentDistanceFloat \
+            = 2.0/3.0,
+         labelDistanceFloat \
+            = 1.1,
+         chartFontSizeFloat \
+             = 14,
+         titleFontSizeFloat \
+            = 20,
+         labelFontSizeFloat \
+            = 16,
+         titlePadFloat \
+            = 5,
+         labelPadFloat \
+            = 10):
+    
+    try:
+
+        inputSeries \
+            = pd \
+                .Series \
+                    (valueList,
+                     index \
+                         = labelList)
+        
+        plt \
+            .figure \
+                (figsize \
+                     = (9.708, 6))
+        
+        plt \
+            .pie \
+                (inputSeries,
+                 labels \
+                     = inputSeries.index, 
+                 colors \
+                     = colorsList,        
+                 explode \
+                     = explodeTuple, 
+                 shadow \
+                     = True,
+                 pctdistance \
+                     = percentDistanceFloat,
+                 labeldistance \
+                     = labelDistanceFloat,
+                 startangle \
+                     = startAngleFloat,
+                 autopct \
+                     = autoPercentString,
+                 textprops \
+                     = {'fontsize':
+                           chartFontSizeFloat})
+        
+        plt \
+            .title \
+                (captionString,
+                 fontdict \
+                     = {'fontsize': 
+                            titleFontSizeFloat, 
+                        'fontstyle': 
+                            'normal'},
+                 pad \
+                    = titlePadFloat)
+        
+        plt \
+            .xlabel \
+                (xLabelString,
+                 fontdict \
+                     = {'fontsize': 
+                            labelFontSizeFloat,
+                        'fontstyle': 
+                            'normal'},
+                 labelpad \
+                    = labelPadFloat)
+
+        plt \
+            .ylabel \
+                (yLabelString,
+                 fontdict \
+                     = {'fontsize': 
+                            labelFontSizeFloat,
+                        'fontstyle': 
+                            'normal'},
+                 labelpad \
+                     = labelPadFloat)
+        
+        log_subroutine \
+            .SavePlotImage \
+                (captionString)
+        
+        plt \
+            .show()
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayMatplotlibPieChartFromSeries, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionString},\n'
+                 + f'was unable to plot a pie chart using Matplotlib.')
+
+
+# In[24]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayHorizontalBarChartFromXYLists
+ #
+ #  Subroutine Description:
+ #      This subroutine receives a Series and formatting parameters 
+ #      and plots a bar chart using the Matplotlib pyplot method.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  List
+ #          valueList
+ #                          This parameter is the list of values for the horizontal 
+ #                          bar chart.
+ #  List
+ #          labelList
+ #                          This parameter is the list of labels for the horizontal 
+ #                          bar chart.
+ #  List
+ #          barColorsList
+ #                          This parameter is the list of bar colors.
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the chart title.
+ #  String
+ #          xLabelString
+ #                          This parameter is the x-axis title.
+ #  String
+ #          yLabelString
+ #                          This parameter is the y-axis title.
+ #  String
+ #          edgeColorString
+ #                          This parameter is the bar edge color.
+ #  Float
+ #          edgeLineWidthFloat
+ #                          This parameter is the bar edge line width.
+ #  Float
+ #          barHeightFloat
+ #                          This parameter is the width of a bar.
+ #  Float
+ #          alphaFloat
+ #                          This parameter is the transparency value
+ #                          for the bars (0.0-1.0).
+ #  Float
+ #          xAxisTickLabelRotationFloatParameter
+ #                          This parameter is the rotation of the x-axis 
+ #                          tick labels.
+ #  Float
+ #          yAxisTickLabelRotationFloatParameter
+ #                          This parameter is the rotation of the y-axis 
+ #                          tick labels.
+ #  Float
+ #          chartFontSize
+ #                          This parameter is the chart font size.
+ #  Float
+ #          titleFontSize
+ #                          This parameter is the chart title font size.
+ #  Float
+ #          labelFontSize
+ #                          This parameter is the chart axis font size.
+ #  Float
+ #          titlePad
+ #                          This parameter is the title padding from the chart.
+ #  Float
+ #          labelPad
+ #                          This parameter is the axis label padding from the chart.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/15/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayHorizontalBarChartFromXYLists \
+        (valueList,
+         labelList,
+         barColorsList \
+             = 'steelblue',
+         captionString \
+             = '',
+         xLabelString \
+             = '',
+         yLabelString \
+             = '',
+         edgeColorString \
+            = 'black',
+         edgeLineWidthFloat \
+            = 1.75,
+         barHeightFloat \
+            = 0.5,
+         alphaFloat \
+            = 1.0,
+         xAxisTickLabelRotationFloat \
+            = 0.0,
+         yAxisTickLabelRotationFloat \
+            = 0.0,
+         chartFontSizeFloat \
+             = 14,
+         titleFontSizeFloat \
+            = 20,
+         labelFontSizeFloat \
+            = 16,
+         titlePadFloat \
+            = 20,
+         labelPadFloat \
+            = 10):         
+    
+    try:
+             
+        plt \
+            .figure \
+                (figsize \
+                     = (9.708, 6))
+
+        plt \
+            .barh \
+                (labelList,
+                 valueList,
+                 height \
+                     = barHeightFloat,
+                 align \
+                     = 'center',
+                 color \
+                     = barColorsList,
+                 edgecolor \
+                     = edgeColorString,
+                 linewidth \
+                     = edgeLineWidthFloat,
+                 alpha \
+                     = alphaFloat)
+       
+        plt \
+            .title \
+                (captionString,
+                 fontdict \
+                     = {'fontsize': 
+                            titleFontSizeFloat, 
+                        'fontstyle': 
+                            'normal'},
+                 pad \
+                    = titlePadFloat)
+
+        plt \
+            .xlabel \
+                (xLabelString,
+                 fontdict \
+                     = {'fontsize': 
+                            labelFontSizeFloat, 
+                        'fontstyle': 
+                            'normal'},
+                 labelpad \
+                    = labelPadFloat)
+        
+        plt \
+            .ylabel \
+                (yLabelString,
+                 fontdict \
+                    = {'fontsize': 
+                            labelFontSizeFloat, 
+                       'fontstyle': 
+                            'normal'},
+                 labelpad \
+                    = labelPadFloat)
+        
+        plt \
+            .xticks \
+                (rotation \
+                     = xAxisTickLabelRotationFloat,
+                 fontsize \
+                     = chartFontSizeFloat)
+        
+        plt \
+            .yticks \
+                (rotation \
+                     = yAxisTickLabelRotationFloat,
+                 fontsize \
+                     = chartFontSizeFloat)
+
+        plt \
+            .grid \
+                (axis \
+                    = 'x')
+        
+        
+        log_subroutine \
+            .SavePlotImage \
+                (captionString)
+        
+        plt \
+            .show()
+
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayHorizontalBarChartFromXYLists, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'with the caption, {captionString},\n'
+                 + f'was unable to plot a horizontal bar chart using Matplotlib.')
+
+
+# In[ ]:
+
+
+
 
