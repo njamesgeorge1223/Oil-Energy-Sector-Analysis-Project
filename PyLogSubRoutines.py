@@ -36,8 +36,9 @@
 import PyLogConstants as log_constant
 import PyLogFunctions as log_function
 
+from bokeh.io import export_svgs
+import holoviews as hv
 import matplotlib.pyplot as plt
-import panel as pn
 
 import os
 import copy
@@ -711,6 +712,7 @@ def SavePlotImage \
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
  #  8/29/2023           Initial Development                         N. James George
+ #  9/16/2023           Changed HTML output files to svg            N. James George
  #
  #******************************************************************************************/
 
@@ -727,7 +729,7 @@ def SaveHVPlotImageToHTMLFile \
                 = copy \
                     .copy \
                         (hvPlotOverlayParameter)
-        
+    
             hvPlotOverlay \
                 .opts \
                     (width \
@@ -735,27 +737,34 @@ def SaveHVPlotImageToHTMLFile \
                      height \
                          = 550)
         
-            imageFilePathStringVariable \
+            svgFilePathStringVariable \
                 = log_function \
                     .ReturnImageFilePathString \
                         (captionStringParameter,
-                            'html')
-
-            pn \
-                .pane \
-                    .HoloViews \
+                            'svg')
+            
+            plotBokehFigureStateObject \
+                = hv \
+                    .renderer \
+                        ('bokeh') \
+                    .get_plot \
                         (hvPlotOverlay) \
-                            .save \
-                                (imageFilePathStringVariable, 
-                                 title \
-                                     = captionStringParameter)
-    
+                    .state
+            
+            plotBokehFigureStateObject \
+                .output_backend \
+                    = 'svg'
+            
+            export_svgs \
+                (plotBokehFigureStateObject, 
+                 filename \
+                     = svgFilePathStringVariable)
+            
     except:
         
         print \
             (f'The subroutine, SaveHVPlotImageToHTMLFile, in file {CONSTANT_LOCAL_FILE_NAME}, ' \
              + f'could not save an hvplot to an HTML file for caption, {captionStringParameter}.') 
-    
 
 
 # In[ ]:

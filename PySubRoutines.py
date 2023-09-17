@@ -31,6 +31,7 @@
  #      ReturnPlotFromXYSeries
  #      DisplayPieChartFromXYLists
  #      DisplayHorizontalBarChartFromXYLists
+ #      DisplayTwoScatterPlotsSideBySide
  #
  #
  #  Date            Description                             Programmer
@@ -44,7 +45,8 @@
  #  09/12/2023      Set font sizes to 20, 16, 16, 14, 14    N. James George
  #  09/13/2023      Added ReturnPlotFromXYSeries            N. James George
  #  09/15/2023      Added DisplayPieChartFromXYLists        N. James George
- #                  and DisplayHorizontalBarChartFromXYLists                               
+ #                  and DisplayHorizontalBarChartFromXYLists      
+ #  09/16/2023      Added DisplayTwoScatterPlotsSideBySide  N. James George
  #
  #******************************************************************************************/
 
@@ -685,11 +687,15 @@ def DisplayMatplotlibPieChartFromSeries \
  #          verticalFlagBooleanParameter
  #                          This parameter indicates whether the box
  #                          plots are vertical or horizontal.
+ #  Float
+ #          xTicksRotationFloat
+ #                          This parameter sets the rotation angle for the x-ticks labels.
  #
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
  #  8/19/2023           Initial Development                         N. James George
+ #  9/15/2023           Added parameter,  xTicksRotationFloat       N. James George
  #
  #******************************************************************************************/
         
@@ -700,7 +706,9 @@ def DisplayMatplotlibBoxPlotFromSeriesList \
          yLabelStringParameter,
          captionStringParameter,
          verticalFlagBooleanParameter \
-             = True):
+             = True,
+         xTicksRotationFloat \
+            = 0.0):
     
     try:
         
@@ -772,12 +780,24 @@ def DisplayMatplotlibBoxPlotFromSeriesList \
                 (ticksIndexList, 
                  xTicksLabelListParameter,
                  fontsize \
-                    = 14)
+                    = 14,
+                 rotation \
+                    = xTicksRotationFloat)
         
-        plt \
-            .grid \
-                (axis \
-                    = "y")
+        if verticalFlagBooleanParameter == True:
+        
+            plt \
+                .grid \
+                    (axis \
+                        = 'y')
+        
+        else:
+            
+            plt \
+                .grid \
+                    (axis \
+                        = 'x')
+        
         
         
         log_subroutine \
@@ -2321,7 +2341,7 @@ def DisplayLinearRegressionLine \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                ('r-squared:   {:.4f}'.format(rSquaredFloatVariable))
+                ('r-squared:   {:.4f}\n'.format(rSquaredFloatVariable))
         
     except:
         
@@ -2535,14 +2555,14 @@ def DisplayStackedBarChartFromDataFrame \
          yLabelStringParameter \
              = '',
          barColorsListParameter \
-             = ['green', 
-                'blue',
+             = ['darkgreen', 
+                'steelblue',
                 'purple',
-                'red'],
+                'firebrick'],
          edgeColorStringParameter \
             = 'black',
          lineWidthFloatParameter \
-            = 1.0,
+            = 1.5,
          alphaFloatParameter \
             = 1.0,
          widthFloatParameter \
@@ -2715,7 +2735,7 @@ def DisplayHistogramFromSeries \
          colorStringParameter \
              = 'red',
          lineWidthFloatParameter \
-            = 1.0,
+            = 1.5,
          edgeColorStringParameter \
             = 'black'):
     
@@ -3377,6 +3397,201 @@ def DisplayHorizontalBarChartFromXYLists \
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
                  + f'with the caption, {captionString},\n'
                  + f'was unable to plot a horizontal bar chart using Matplotlib.')
+
+
+# In[25]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayTwoScatterPlotsSideBySide
+ #
+ #  Subroutine Description:
+ #      This subroutine receives a Frame Dictionary with two Series and formatting 
+ #      parameters and plots a pie chart using the Pandas DataFrame.plot() method.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  Dictionary
+ #          frameDictionaryParameter
+ #                          This parameter is the Dictionary used as input.
+ #  List
+ #          colorsListParameter
+ #                          This parameter is the list of bar colors.
+ #  List
+ #          explodeTupleParameter
+ #                          This parameter specifies the fraction of the 
+ #                          radius with which to offset each wedge.
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the chart title.
+ #  Float
+ #          startAngleFloatParameter
+ #                          This parameter is the angle by which the start 
+ #                          of the pie is rotated, counterclockwise from 
+ #                          the x-axis.
+ #  Float
+ #          autoPercentStringParameter
+ #                          This parameter is the format of the wedge label.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/28/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayTwoScatterPlotsSideBySide \
+        (xSeriesList,
+         ySeriesList,
+         titleStringList,
+         captionString \
+             = '',
+         xLabelString \
+             = '',
+         yLabelString \
+             = '',
+         polynomialDegreeInteger \
+             = 0,
+         equationXCoordinateFloatList \
+            = [],
+         equationYCoordinateFloatList \
+            = []):
+
+    try:
+        
+        plt \
+            .subplots \
+                (figsize \
+                     = (15, 5.5181))
+
+        plt \
+            .clf()
+
+        for index in range(2):
+    
+            plt \
+                .subplot \
+                    (1, 2, index+1)
+    
+            plt \
+                .scatter \
+                    (xSeriesList \
+                         [index], 
+                     ySeriesList \
+                         [index], 
+                     marker \
+                        = 'o',
+                     s \
+                        = 80,
+                     color 
+                        = 'lime', 
+                     linewidth \
+                        = 1.5,
+                     edgecolors \
+                        = 'black',
+                     alpha \
+                        = 0.8)
+    
+            plt \
+                .title \
+                    (titleStringList \
+                         [index], 
+                     fontdict \
+                        = {'fontsize': 
+                                20, 
+                           'fontstyle': 
+                                'normal'},
+                     pad \
+                        = 10)
+    
+            plt \
+                .xlabel \
+                    (xLabelString,
+                     fontdict \
+                        = {'fontsize': 
+                                16, 
+                           'fontstyle': 
+                                'normal'},
+                     labelpad \
+                        = 10)
+
+            plt \
+                .ylabel \
+                    (yLabelString,
+                     fontdict \
+                        = {'fontsize': 
+                                16, 
+                           'fontstyle': 
+                                'normal'},
+                     labelpad \
+                        = 10)
+    
+            plt \
+                .xticks \
+                    (fontsize \
+                        = 14)
+       
+            plt \
+                .yticks \
+                    (fontsize \
+                        = 14)
+    
+            plt \
+                .grid()
+    
+            if polynomialDegreeInteger == 1:
+                
+                DisplayLinearRegressionLine \
+                    (xSeriesList \
+                         [index],
+                     ySeriesList \
+                         [index],
+                     equationXCoordinateFloatList \
+                         [index],
+                     equationYCoordinateFloatList \
+                         [index])
+            
+            elif polynomialDegreeInteger > 1:
+        
+                DisplayRegressionLine \
+                    (xSeries,
+                     ySeries,
+                     polynomialDegreeInteger,
+                     equationXCoordinateFloatList[index],
+                     equationYCoordinateFloatList[index])
+
+            plt \
+                .tight_layout \
+                    (pad \
+                         = 3.0)
+    
+        plt \
+            .suptitle \
+                (captionString, 
+                 fontsize \
+                    = 20.0, 
+                 y \
+                    = 1.0)
+
+        log_subroutine \
+            .SavePlotImage \
+                (captionString)
+
+        plt \
+            .show()
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayTwoScatterPlotsSideBySide, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'was unable to display two scatter charts side-by-side\n'
+                 + f'for the caption, {captionString}.')
 
 
 # In[ ]:
