@@ -1,1 +1,7 @@
 If the CSV file, AllOilCompanies.csv, does not exist, the IPython notebook, PyOilSectorAnalysis.ipynb, generates it by sorting through the entire Yahoo Finance database: this process usually takes one hour.  For future runs, this IPython notebook instead reads the AllOilCompanies.csv file: this process usually takes 1.5 minutes.
+
+----
+
+## Copyright
+
+N. James George © 2023. All Rights Reserved.
