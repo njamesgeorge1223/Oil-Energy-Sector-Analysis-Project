@@ -32,6 +32,7 @@
  #      DisplayPieChartFromXYLists
  #      DisplayHorizontalBarChartFromXYLists
  #      DisplayTwoScatterPlotsSideBySide
+ #      DisplayPlotFromDataFrame
  #
  #
  #  Date            Description                             Programmer
@@ -47,6 +48,7 @@
  #  09/15/2023      Added DisplayPieChartFromXYLists        N. James George
  #                  and DisplayHorizontalBarChartFromXYLists      
  #  09/16/2023      Added DisplayTwoScatterPlotsSideBySide  N. James George
+ #  09/17/2023      Added DisplayPlotFromDataFrame          N. James George
  #
  #******************************************************************************************/
 
@@ -3591,6 +3593,188 @@ def DisplayTwoScatterPlotsSideBySide \
                 (f'The subroutine, DisplayTwoScatterPlotsSideBySide, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
                  + f'was unable to display two scatter charts side-by-side\n'
+                 + f'for the caption, {captionString}.')
+
+
+# In[26]:
+
+
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  DisplayPlotFromDataFrame
+ #
+ #  Subroutine Description:
+ #      This subroutine receives a DataFrame and formatting parameters 
+ #      and plots it.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrame
+ #                          This parameter is the input DataFrame for the subroutine.
+ #                          bar chart.
+ #  String
+ #          colorString
+ #                          This parameter is the color of the plot.
+ #  String
+ #          captionString
+ #                          This parameter is the chart title.
+ #  String
+ #          xLabelString
+ #                          This parameter is the x-axis title.
+ #  String
+ #          yLabelString
+ #                          This parameter is the y-axis title.
+ #  Float
+ #          alphaFloat
+ #                          This parameter is the transparency value
+ #                          for the bars (0.0-1.0).
+ #  Float
+ #          xAxisTickLabelRotationFloat
+ #                          This parameter is the rotation of the x-axis 
+ #                          tick labels.
+ #  Float
+ #          yAxisTickLabelRotationFloat
+ #                          This parameter is the rotation of the y-axis 
+ #                          tick labels.
+ #  Float
+ #          titleFontSizeFloat
+ #                          This parameter is the chart title font size.
+ #  Float
+ #          labelFontSizeFloat
+ #                          This parameter is the chart axis font size.
+ #  Float
+ #          tickFontSizeFloat
+ #                          This parameter is the font size for x and y axis ticks.
+ #  Float
+ #          titlePadFloat
+ #                          This parameter is the title padding from the chart.
+ #  Float
+ #          labelPadFloat
+ #                          This parameter is the axis label padding from the chart.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/17/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayPlotFromDataFrame \
+        (inputDataFrame,
+         colorString \
+            = 'steelblue',
+         captionString \
+            = '',
+         xLabelString \
+            = '',
+         yLabelString \
+            = '',
+         alphaFloat \
+            = 1.0,
+         xAxisTickLabelRotationFloat \
+            = 90.0,
+         yAxisTickLabelRotationFloat \
+            = 0.0,
+         titleFontSizeFloat \
+            = 20.0,
+         labelFontSizeFloat \
+            = 16.0,
+         tickFontSize \
+            = 14.0,
+         titlePadFloat \
+            = 20.0,
+         labelPadFloat \
+            = 10.0):
+    
+    try:
+        
+        plt \
+            .figure \
+                (figsize \
+                    = (9.708132, 6.0))
+
+        plt \
+            .clf()
+
+        inputDataFrame \
+            .plot \
+                (color \
+                     = colorString,
+                 alpha \
+                     = alphaFloat,
+                 legend \
+                     = False)
+
+        plt \
+            .title \
+                (captionString,
+                 fontdict \
+                    = {'fontsize': 
+                            titleFontSizeFloat, 
+                       'fontstyle': 
+                            'normal'},
+                 pad \
+                    = titlePadFloat)
+        
+        plt \
+            .xlabel \
+                (xLabelString,
+                 fontdict \
+                    = {'fontsize': 
+                            labelFontSizeFloat,
+                       'fontstyle': 
+                            'normal'},
+                 labelpad \
+                    = labelPadFloat)
+
+        plt \
+            .ylabel \
+                (yLabelString,
+                 fontdict \
+                    = {'fontsize': 
+                            labelFontSizeFloat,
+                       'fontstyle': 
+                            'normal'},
+                 labelpad \
+                    = labelPadFloat)
+        
+        plt \
+            .xticks \
+                (fontsize \
+                    = tickFontSize,
+                 rotation \
+                    = xAxisTickLabelRotationFloat)
+       
+        plt \
+            .yticks \
+                (fontsize \
+                    = tickFontSize,
+                 rotation \
+                    = yAxisTickLabelRotationFloat)
+    
+        plt \
+            .grid \
+                (axis \
+                    = 'x')
+
+        log_subroutine \
+            .SavePlotImage \
+                (captionString)
+
+        plt \
+            .show()
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The subroutine, DisplayPlotFromDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME},\n'
+                 + f'was unable to display a plot from a DataFrame\n'
                  + f'for the caption, {captionString}.')
 
 

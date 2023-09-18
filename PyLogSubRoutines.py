@@ -24,18 +24,24 @@
  #      SetImageMode
  #      SetProgramDesignation
  #      SavePlotImage
- #      SaveHVPlotImageToHTMLFile
+ #      SaveHVPlotImageToPNGFile
+ #      ConvertSVGFileToPNG
  #
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
  #  08/24/2023      Initial Development                     N. James George
+ #  09/16/2023      Changed output file format from html to svg in SaveHVPlotImageToPNGFile
+ #                                                          N. James George
+ #  09/17/2023      Changed output file format from svg to png in SaveHVPlotImageToPNGFile
+ #                                                          N. James George
  #
  #******************************************************************************************/
 
 import PyLogConstants as log_constant
 import PyLogFunctions as log_function
 
+import aspose.words as aw
 from bokeh.io import export_svgs
 import holoviews as hv
 import matplotlib.pyplot as plt
@@ -691,7 +697,7 @@ def SavePlotImage \
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  SaveHVPlotImageToHTMLFile
+ #  Subroutine Name:  SaveHVPlotImageToPNGFile
  #
  #  Subroutine Description:
  #      This subroutine sets the value for the global program designation String.
@@ -712,11 +718,12 @@ def SavePlotImage \
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
  #  8/29/2023           Initial Development                         N. James George
- #  9/16/2023           Changed HTML output files to svg            N. James George
+ #  09/16/2023      Changed output file format from html to svg     N. James George
+ #  09/17/2023      Changed output file format from svg to png      N. James George
  #
  #******************************************************************************************/
 
-def SaveHVPlotImageToHTMLFile \
+def SaveHVPlotImageToPNGFile \
         (hvPlotOverlayParameter,
          captionStringParameter \
             = ''):
@@ -737,12 +744,6 @@ def SaveHVPlotImageToHTMLFile \
                      height \
                          = 550)
         
-            svgFilePathStringVariable \
-                = log_function \
-                    .ReturnImageFilePathString \
-                        (captionStringParameter,
-                            'svg')
-            
             plotBokehFigureStateObject \
                 = hv \
                     .renderer \
@@ -750,16 +751,40 @@ def SaveHVPlotImageToHTMLFile \
                     .get_plot \
                         (hvPlotOverlay) \
                     .state
-            
+        
             plotBokehFigureStateObject \
                 .output_backend \
                     = 'svg'
+        
+        
+            svgFilePathStringVariable \
+                = log_function \
+                    .ReturnImageFilePathString \
+                        (captionStringParameter,
+                            'svg')           
             
             export_svgs \
                 (plotBokehFigureStateObject, 
                  filename \
                      = svgFilePathStringVariable)
+
             
+            pngFilePathStringVariable \
+                = log_function \
+                    .ReturnImageFilePathString \
+                        (captionStringParameter,
+                            'png')
+            
+            ConvertSVGFileToPNG \
+                (svgFilePathStringVariable,
+                 pngFilePathStringVariable,
+                 captionStringParameter)
+     
+            
+            os \
+                .remove \
+                    (svgFilePathStringVariable)
+    
     except:
         
         print \
@@ -767,8 +792,98 @@ def SaveHVPlotImageToHTMLFile \
              + f'could not save an hvplot to an HTML file for caption, {captionStringParameter}.') 
 
 
-# In[ ]:
+# In[16]:
 
 
+#*******************************************************************************************
+ #
+ #  Subroutine Name:  ConvertSVGFileToPNG
+ #
+ #  Subroutine Description:
+ #      This subroutine converts an svg file to a png file.
+ #
+ #
+ #  Subroutine Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  String
+ #          svgFilePathString
+ #                          This parameter is the path for the input svg file. 
+ #  String
+ #          pngFilePathString
+ #                          This parameter is the path for the output png file.
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the text for the plot title.
+ #
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/17/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
+def ConvertSVGFileToPNG \
+        (svgFilePathString,
+         pngFilePathString,
+         captionString):
+    
+    try:
+
+        asposeDocumentObject \
+            = aw \
+                .Document()
+        
+        asposeDocumentBuilderObject \
+            = aw \
+                .DocumentBuilder \
+                    (asposeDocumentObject)
+        
+        asposeShapeObject \
+            = asposeDocumentBuilderObject \
+                .insert_image \
+                    (svgFilePathString)
+        
+        
+        asposePageSetupObject \
+                = asposeDocumentBuilderObject \
+                    .page_setup
+        
+        asposePageSetupObject \
+            .page_width \
+                = asposeShapeObject \
+                    .width
+        asposePageSetupObject \
+            .page_height \
+                = asposeShapeObject \
+                    .height
+
+        asposePageSetupObject \
+            .top_margin \
+                = 0
+        
+        asposePageSetupObject \
+            .left_margin \
+                = 0
+        
+        asposePageSetupObject \
+            .bottom_margin \
+                = 0
+        
+        asposePageSetupObject \
+            .right_margin \
+                = 0
+        
+        
+        asposeDocumentObject \
+            .save \
+                (pngFilePathString)
+        
+    except:
+        
+        print \
+            (f'The subroutine, ConvertSVGFileToPNG, in file {CONSTANT_LOCAL_FILE_NAME}, ' \
+             + f'could not convert an svg file to a png file for caption, {captionString}.')
 

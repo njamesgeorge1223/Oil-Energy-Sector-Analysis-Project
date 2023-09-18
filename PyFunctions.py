@@ -55,6 +55,8 @@
  #                                                          N. James George
  #  09/13/2023      Added ReturnStylerObjectStandardFormatForSeries
  #                                                          N. James George
+ #  9/17/2023       Added title to plot to DisplayHVPlotFromDataFrame
+ #                                                          N. James George
  #
  #******************************************************************************************/
 
@@ -1773,6 +1775,7 @@ def ReturnCorrelationTableStandardFormat \
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
  #  8/25/2023           Initial Development                         N. James George
+ #  9/17/2023           Added title to plot                         N. James George
  #
  #******************************************************************************************/
 
@@ -1821,7 +1824,9 @@ def DisplayHVPlotFromDataFrame \
                          alpha \
                             = alphaFloatParameter, 
                          tiles \
-                            = tilesStringParameter)
+                            = tilesStringParameter,
+                         title \
+                            = captionStringParameter)
        
         else:
 
@@ -1847,12 +1852,14 @@ def DisplayHVPlotFromDataFrame \
                             = alphaFloatParameter, 
                          tiles \
                             = tilesStringParameter,
+                         title \
+                            = captionStringParameter,
                          hover_cols \
                             = hoverColumnsListOfStringsParameter)
     
     
         log_subroutine \
-            .SaveHVPlotImageToHTMLFile \
+            .SaveHVPlotImageToPNGFile \
                 (hvPlotOverlayObject,
                  captionStringParameter)
 
@@ -1864,7 +1871,7 @@ def DisplayHVPlotFromDataFrame \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                (f'The function, DisplayHVPlotDataFrame, '
+                (f'The function, DisplayHVPlotFromDataFrame, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to display a formatted HVPlot.')
         
