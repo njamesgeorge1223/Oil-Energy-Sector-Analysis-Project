@@ -1,0 +1,239 @@
+
+Timepoint: 09/18/2023 10:13:13
+Program execution begins...
+
+
+
+Timepoint: 09/18/2023 10:13:18
+r-value:     0.5010
+
+
+Timepoint: 09/18/2023 10:13:18
+r-squared:   0.2510
+
+
+
+Timepoint: 09/18/2023 10:13:19
+r-value:     0.7840
+
+
+Timepoint: 09/18/2023 10:13:19
+r-squared:   0.6146
+
+
+
+Timepoint: 09/18/2023 10:13:24
+There are 11,298 tickers in the complete Yahoo Finance ticker List.
+
+
+Timepoint: 09/18/2023 10:13:24
+There are now 217 oil companies in the Dataframe.
+
+
+
+Timepoint: 09/18/2023 10:13:24
+There are 217 publically traded oil companies in the Oil Energy Sector.
+
+
+Timepoint: 09/18/2023 10:13:25
+There is $2,363,655,990,908.54 in total market capitalization (mean) for the Oil Energy Sector.
+
+
+Timepoint: 09/18/2023 10:13:25
+There is $2,282,532,113,095.21 in total market capitalization (median) for the Oil Energy Sector.
+
+
+Timepoint: 09/18/2023 10:13:30
+BEGIN CALCULATING OIL COMPANY SHARE INDEX...
+
+
+
+
+Timepoint: 09/18/2023 10:14:17
+
+THE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.
+
+
+
+Timepoint: 09/18/2023 10:14:18
+BEGIN CALCULATING OIL COMPANY SHARE INDEX...
+
+
+
+
+Timepoint: 09/18/2023 10:14:20
+
+THE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.
+
+
+
+Timepoint: 09/18/2023 10:14:44
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 3.4.1: OES (Top) Index and OES (All) Index (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:45
+r-value:     0.9869
+
+
+Timepoint: 09/18/2023 10:14:45
+r-squared:   0.9741
+
+
+
+Timepoint: 09/18/2023 10:14:46
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 3.4.4: OES (Top) Index and OES (All) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:46
+r-value:     0.9674
+
+
+Timepoint: 09/18/2023 10:14:46
+r-squared:   0.9360
+
+
+
+Timepoint: 09/18/2023 10:14:47
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.1.1: Crude Oil Prices and OES (Top) Index (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:47
+r-value:     0.9264
+
+
+Timepoint: 09/18/2023 10:14:47
+r-squared:   0.8583
+
+
+
+Timepoint: 09/18/2023 10:14:48
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.1.4: Crude Oil Prices and OES (Top) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:49
+r-value:     0.2175
+
+
+Timepoint: 09/18/2023 10:14:49
+r-squared:   0.0473
+
+
+Timepoint: 09/18/2023 10:14:50
+r-value:     0.7381
+
+
+Timepoint: 09/18/2023 10:14:50
+r-squared:   0.5448
+
+
+Timepoint: 09/18/2023 10:14:51
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.2.4: S&P 500 and OES (Top) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:52
+r-value:     0.6437
+
+
+Timepoint: 09/18/2023 10:14:52
+r-squared:   0.4143
+
+
+Timepoint: 09/18/2023 10:14:53
+r-value:     0.2980
+
+
+Timepoint: 09/18/2023 10:14:53
+r-squared:   0.0888
+
+
+Timepoint: 09/18/2023 10:14:54
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.3.4: Gold and OES (Top) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:55
+r-value:     0.2854
+
+
+Timepoint: 09/18/2023 10:14:55
+r-squared:   0.0814
+
+
+Timepoint: 09/18/2023 10:14:56
+r-value:     0.9228
+
+
+Timepoint: 09/18/2023 10:14:56
+r-squared:   0.8516
+
+
+Timepoint: 09/18/2023 10:14:57
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.4.4: 10-Year Bond Yield and OES (Top) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:14:58
+r-value:     0.3100
+
+
+Timepoint: 09/18/2023 10:14:58
+r-squared:   0.0961
+
+
+Timepoint: 09/18/2023 10:14:59
+r-value:     0.1958
+
+
+Timepoint: 09/18/2023 10:14:59
+r-squared:   0.0384
+
+
+Timepoint: 09/18/2023 10:15:01
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.5.4: New COVID-19 Cases and OES (Top) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:15:01
+r-value:     -0.0205
+
+
+Timepoint: 09/18/2023 10:15:01
+r-squared:   0.0004
+
+
+
+Timepoint: 09/18/2023 10:15:02
+r-value:     0.2567
+
+
+Timepoint: 09/18/2023 10:15:02
+r-squared:   0.0659
+
+
+Timepoint: 09/18/2023 10:15:04
+The subroutine, DisplayLinesGraph, in source file, PySubroutines.py,
+with the caption, Figure 4.6.4: New COVID-19 Deaths and OES (Top) Index (% Change) (Combined),
+was unable to create a line graph.
+
+
+Timepoint: 09/18/2023 10:15:04
+r-value:     -0.0111
+
+
+Timepoint: 09/18/2023 10:15:04
+r-squared:   0.0001
+
+
