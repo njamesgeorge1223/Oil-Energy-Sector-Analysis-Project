@@ -28,7 +28,7 @@
  #      DisplayTwoPieChartsSideBySide
  #      DisplayStackedBarChartFromDataFrame
  #      DisplayHistogramFromSeries
- #      ReturnPlotFromXYSeries
+ #      DisplayPlotFromXYSeries
  #      DisplayPieChartFromXYLists
  #      DisplayHorizontalBarChartFromXYLists
  #      DisplayTwoScatterPlotsSideBySide
@@ -49,8 +49,10 @@
  #                  and DisplayHorizontalBarChartFromXYLists      
  #  09/16/2023      Added DisplayTwoScatterPlotsSideBySide  N. James George
  #  09/17/2023      Added DisplayPlotFromDataFrame          N. James George
- #  09/23/2023      Added parameter, labelYOffsetFloat,     N. James George
- #.                 to ReturnPlotFromXYSeries
+ #  09/22/2023      Added parameter, labelYOffsetFloat,     N. James George
+ #                  to ReturnPlotFromXYSeries
+ #  09/23/2023      Renamed ReturnPlotFromXYSeries to DisplayPlotFromXYSeries
+ #                                                          N. James George
  #
  #******************************************************************************************/
 
@@ -2879,10 +2881,11 @@ def DisplayHistogramFromSeries \
  #  ---------------     ------------------------------------        ------------------
  #  09/13/2023          Initial Development                         N. James George
  #  09/23/2023          Added parameter, labelYOffsetFloat          N. James George
+ #                      and renamed subroutine
  #
  #******************************************************************************************/
 
-def ReturnPlotFromXYSeries \
+def DisplayPlotFromXYSeries \
     (xSeriesParameter,
      ySeriesParameter,
      captionStringParameter,
@@ -3002,12 +3005,9 @@ def ReturnPlotFromXYSeries \
         
         log_subroutine \
             .PrintAndLogWriteText \
-                (f'The function, ReturnPlotFromXYSeries, '
+                (f'The function, DisplayPlotFromXYSeries, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-                 + f'was unable to return a plot from XY Series.')
-        
-        return \
-            None
+                 + f'was unable to display a plot from XY Series.')
 
 
 # In[23]:
