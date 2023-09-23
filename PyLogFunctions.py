@@ -17,15 +17,19 @@
  #      DebugReturnObjectWriteObject
  #      ReturnTimePointMessage
  #      ReturnImageFilePathString
+ #      ReturnStylerObjectSavePNGImage
  #
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
  #  08/24/2023      Initial Development                     N. James George
+ #  09/22/2023      Added ReturnStylerObjectSavePNGImage    N. James George
  #
  #******************************************************************************************/
 
 import PyLogConstants as log_constant
+
+import dataframe_image as dfi
 
 from datetime import date
 from datetime import datetime
@@ -266,8 +270,66 @@ def ReturnImageFilePathString \
         imageFilePathStringVariable
 
 
-# In[ ]:
+# In[8]:
 
 
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnStylerObjectSavePNGImage
+ #
+ #  Function Description:
+ #      This function takes a captions for a matplotlib plot and returns 
+ #      the image file path.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  String
+ #          captionStringParameter
+ #                          This parameter is the plot title.
+ #  String
+ #          imageFormatStringParameter
+ #                          This parameter is the image format file suffix.    
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  8/27/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
 
+def ReturnStylerObjectSavePNGImage \
+        (inputStylerObject,
+         captionString):
+    
+    try:
+        
+        if log_constant.IMAGE_FLAG == True:
+
+            imageFilePathStringVariable \
+                = ReturnImageFilePathString \
+                    (captionString,
+                        'png')
+        
+            dfi \
+                .export \
+                    (inputStylerObject, 
+                     imageFilePathStringVariable)
+        
+        return \
+            inputStylerObject
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnObjectSaveImage, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + 'cannot save an image of a DataFrame or StylerObject ' \
+                 + 'then return it to the caller.')
+        
+        return \
+            None
 

@@ -44,6 +44,11 @@
  #      ReturnDateFromOneYearPriorAsString 
  #      ReturnFormattedRowsAsStylerObject
  #      ReturnStylerObjectStandardFormatForSeries
+ #      ReturnExcelFileAsDataFrame
+ #      DisplayDataFrameDescription
+ #      DisplayDataFrameMemoryUsage
+ #      DisplayDataFrameDataTypes
+ # 
  #
  #
  #  Date            Description                             Programmer
@@ -55,8 +60,12 @@
  #                                                          N. James George
  #  09/13/2023      Added ReturnStylerObjectStandardFormatForSeries
  #                                                          N. James George
- #  9/17/2023       Added title to plot to DisplayHVPlotFromDataFrame
+ #  9/17/2023       Added title to plot for DisplayHVPlotFromDataFrame
  #                                                          N. James George
+ #  9/21/2023       Added ReturnExcelFileAsDataFrame,       N. James George
+ #                        DisplayDataFrameDescription,
+ #                        DisplayDataFrameMemoryUsage,
+ #                        DisplayDataFrameDataTypes
  #
  #******************************************************************************************/
 
@@ -88,7 +97,7 @@ CONSTANT_LOCAL_FILE_NAME \
  #  Function Name:  ReturnCSVFileAsDataFrame
  #
  #  Function Description:
- #      This function receives a file path yo a csv file as a parameter, 
+ #      This function receives a file path to a csv file as a parameter, 
  #      reads the csv file into a DataFrame, and returns the DataFrame
  #      to the caller.  If the operation fails, the function returns
  #      None.
@@ -157,7 +166,7 @@ def ReturnCSVFileAsDataFrame \
             .PrintAndLogWriteText \
                 (f'The function, ReturnCSVFileAsDataFrame, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
-                 + f'was unable to open file path, '
+                 + f'was unable to return0 a CSV file as a DataFrame, '
                  + f'{filePathStringParameter}.')
     
         return \
@@ -2408,6 +2417,338 @@ def ReturnStylerObjectStandardFormatForSeries \
                 (f'The function, ReturnStylerObjectStandardFormatForSeries, '
                  + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
                  + f'was unable to return a formatted Series for display.')
+        
+        return \
+            None
+
+
+# In[31]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  ReturnExcelFileAsDataFrame
+ #
+ #  Function Description:
+ #      This function receives a file path to an Excel file as a parameter, 
+ #      reads the Excel file into a DataFrame, and returns the DataFrame
+ #      to the caller.  If the operation fails, the function returns
+ #      None.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  String
+ #          filePathString
+ #                          The parameter is name of the path to the Excel Workbook.
+ #  String
+ #          sheetNameString
+ #                          The parameter is name of the Worksheet in the the Excel 
+ #                          Workbook.
+ #  Integer
+ #          headerRowInteger
+ #                          This parameter is the Worksheet's row index for the column 
+ #                          headers.
+ #  Integer
+ #          indexColumnInteger
+ #                          This parameter is the Worksheet's column index for the indices.
+ #  Dictionary
+ #          dataTypeDictionary
+ #                          This parameter is the Dictionary of the Worksheet's column data 
+ #                          types.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/21/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def ReturnExcelFileAsDataFrame \
+        (filePathString,
+         sheetNameString \
+            = None,
+         headerRowInteger \
+            = None,
+         indexColumnInteger \
+            = None,
+         dataTypeDictionary \
+            = None):
+    
+    try:
+
+        return \
+            pd \
+                .read_excel \
+                    (open \
+                        (filePathString, 'rb'),
+                     sheet_name \
+                        = sheetNameString,
+                     header \
+                        = headerRowInteger,
+                     index_col \
+                        = indexColumnInteger,
+                     dtype \
+                        = dataTypeDictionary) 
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, ReturnExcelFileAsDataFrame, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f'was unable to return an Excel file as a DataFrame, '
+                 + f'{filePathStringParameter}.')
+    
+        return \
+            None
+
+
+# In[32]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  DisplayDataFrameDescription
+ #
+ #  Function Description:
+ #      This function takes a DataFrame and returns the formatted description.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrame
+ #                          The parameter is input DataFrame.
+ #  String
+ #          captionString
+ #                          The parameter is the text for the caption.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/21/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayDataFrameDescription \
+        (inputDataFrame,
+         captionString):
+    
+    try:
+        
+        descriptionDataFrame \
+            = inputDataFrame \
+                .describe()
+    
+    
+        formattersDictionary \
+            = {'count': lambda x: f'{x:,.0f}',
+               'mean': lambda x: f'{x:,.2f}',
+               'std': lambda x: f'{x:,.2f}',
+               'min': lambda x: f'{x:,.0f}',
+               '25%': lambda x: f'{x:,.2f}',
+               '50%': lambda x: f'{x:,.2f}',
+               '75%': lambda x: f'{x:,.2f}',
+               'max': lambda x: f'{x:,.0f}'}
+
+        descriptionStylerObject \
+            = ReturnFormattedRowsAsStylerObject \
+                (descriptionDataFrame \
+                     .style, 
+                 formattersDictionary)
+        
+        descriptionStylerObject \
+            .set_caption \
+                (captionString) \
+            .set_table_styles \
+                ([{'selector': 
+                        'caption', 
+                   'props':
+                        [('color', 
+                              'black'), 
+                         ('font-size', 
+                              '16px'),
+                         ('font-style', 
+                              'bold'),
+                         ('text-align', 
+                              'center')]}]) \
+            .set_properties \
+                (**{'text-align':
+                        'center',
+                    'border':
+                        '1.3px solid red',
+                    'color':
+                        'blue'})
+            
+            
+        return \
+            descriptionStylerObject
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, DisplayDataFrameDescription, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f"cannot display the DataFrame's description.")
+        
+        return \
+            None 
+
+
+# In[33]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  DisplayDataFrameMemoryUsage
+ #
+ #  Function Description:
+ #      This function takes a DataFrame and returns the formatted memory usage.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrame
+ #                          The parameter is input DataFrame.
+ #  String
+ #          captionString
+ #                          The parameter is the text for the caption.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/21/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayDataFrameMemoryUsage \
+        (inputDataFrame,
+         captionString):
+    
+    try:
+        
+        memoryUsageDataFrame \
+            = inputDataFrame \
+                .memory_usage() \
+                .to_frame()
+
+        memoryUsageDataFrame \
+            .columns \
+                = memoryUsageDataFrame \
+                    .iloc[0]
+
+        memoryUsageDataFrame \
+            .drop \
+                (index \
+                     = memoryUsageDataFrame \
+                         .index[0], 
+                 axis \
+                     = 0, 
+                 inplace \
+                     = True)
+
+        memoryUsageDataFrame \
+            .rename \
+                (columns \
+                     = {memoryUsageDataFrame.keys()[0]: 
+                            'Memory (bytes)'},
+                 inplace \
+                    = True)
+
+        return \
+            ReturnStylerObjectStandardFormat \
+                (memoryUsageDataFrame,
+                 captionString,
+                 hideFlagBooleanParameter = False)
+        
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, DisplayDataFrameMemoryUsage, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f"cannot display the DataFrame's memory usage.")
+        
+        return \
+            None
+
+
+# In[34]:
+
+
+#*******************************************************************************************
+ #
+ #  Function Name:  DisplayDataFrameDataTypes
+ #
+ #  Function Description:
+ #      This function takes a DataFrame and returns the formatted column data types.
+ #
+ #
+ #  Function Parameters:
+ #
+ #  Type    Name            Description
+ #  -----   -------------   ----------------------------------------------
+ #  DataFrame
+ #          inputDataFrame
+ #                          The parameter is input DataFrame.
+ #  String
+ #          captionString
+ #                          The parameter is the text for the caption.
+ #
+ #
+ #  Date                Description                                 Programmer
+ #  ---------------     ------------------------------------        ------------------
+ #  9/21/2023           Initial Development                         N. James George
+ #
+ #******************************************************************************************/
+
+def DisplayDataFrameDataTypes \
+        (inputDataFrame,
+         captionString):
+    
+    try:
+        
+        dataTypesDataFrame \
+            = inputDataFrame \
+                .dtypes \
+                .to_frame()
+
+        dataTypesDataFrame \
+            .rename \
+                (columns \
+                     = {dataTypesDataFrame.keys()[0]: 
+                            'Data Type'},
+                 inplace \
+                    = True)
+        
+        dataTypesDataFrame \
+            .index.name \
+                = 'Columns'
+
+
+        return \
+            ReturnStylerObjectStandardFormat \
+                (dataTypesDataFrame,
+                 captionString,
+                 hideFlagBooleanParameter = False)
+        
+    except:
+        
+        log_subroutine \
+            .PrintAndLogWriteText \
+                (f'The function, DisplayDataFrameDataTypes, '
+                 + f'in source file, {CONSTANT_LOCAL_FILE_NAME}, '
+                 + f"cannot display the DataFrame's column data types.")
         
         return \
             None
