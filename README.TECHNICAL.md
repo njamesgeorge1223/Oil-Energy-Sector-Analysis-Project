@@ -22,7 +22,7 @@ PySubroutines.py
 
 If the computer has Anaconda, Jupyter Notebook, and a recent version of Python, the IPython notebook already has the following dependencies installed: datetime, io, json, matplotlib, numpy, pandas, pathlib, os, pandas, requests, requests_html, scipy.
 
-In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, holoviews, hvplot, panel, geoviews, geopy, aspose-words.
+In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, holoviews, hvplot, panel, geoviews, geopy, aspose-words, dataframe-image.
 
 Here are the requisite Terminal commands for installation of these peripheral modules (in this order):
 
@@ -41,6 +41,8 @@ python3 -m pip install geoviews
 python3 -m pip install geopy
 
 python3 -m pip install aspose-words
+
+python3 -m pip install dataframe-image
 
 If the folders, Resources, Logs, and Images are not present, the IPython notebook will create them.  If the CSV file, AllOilCompanies.csv, is not present in the Resources folder, the program will use APIs to generate the CSV file.  Without the CSV file, execution time is an hour; with it, execution time is approximately 1.5 minutes.
 
