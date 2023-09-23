@@ -49,6 +49,8 @@
  #                  and DisplayHorizontalBarChartFromXYLists      
  #  09/16/2023      Added DisplayTwoScatterPlotsSideBySide  N. James George
  #  09/17/2023      Added DisplayPlotFromDataFrame          N. James George
+ #  09/23/2023      Added parameter, labelYOffsetFloat,     N. James George
+ #.                 to ReturnPlotFromXYSeries
  #
  #******************************************************************************************/
 
@@ -2857,10 +2859,10 @@ def DisplayHistogramFromSeries \
  #                          This parameter is the chart title.
  #  String
  #          xLabelStringParameter
- #                          This parameter is the labe for the x-axis.
+ #                          This parameter is the label for the x-axis.
  #  String
  #          yLabelStringParameter
- #                          This parameter is the labe for the y-axis.
+ #                          This parameter is the label for the y-axis.
  #  String
  #          colorStringListParameter
  #                          This parameter is the list of colors for the line 
@@ -2868,11 +2870,15 @@ def DisplayHistogramFromSeries \
  #  Numpy Array
  #          peaksNumpyArrayParameter
  #                          This parameter is the array of peak indexes for the plot.
+ #  Float
+ #          labelYOffsetFloat
+ #                          This parameter is y coordinate offset for the peak label.
  #
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  9/13/2023           Initial Development                         N. James George
+ #  09/13/2023          Initial Development                         N. James George
+ #  09/23/2023          Added parameter, labelYOffsetFloat          N. James George
  #
  #******************************************************************************************/
 
@@ -2884,7 +2890,9 @@ def ReturnPlotFromXYSeries \
      yLabelStringParameter,
      colorStringListParameter,
      peaksNumpyArrayParameter \
-        = []):
+        = [],
+     labelYOffsetFloat \
+        = 0.0):
     
     try:
         
@@ -2921,12 +2929,16 @@ def ReturnPlotFromXYSeries \
                          = colorStringListParameter[1])
 
             for i, j in zip(xSeries[peaksNumpyArrayParameter], ySeries[peaksNumpyArrayParameter]):
-
+                
+                yCoordinateFloat \
+                    = j+labelYOffsetFloat
+                
                 plt \
                     .annotate \
                         (i, 
                          xy \
-                             = (i, j), 
+                             = (i, 
+                                yCoordinateFloat), 
                          size \
                              = 12, 
                          color \
