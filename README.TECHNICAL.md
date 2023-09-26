@@ -8,7 +8,7 @@
 
 If the computer has Anaconda, Jupyter Notebook, and a recent version of Python, the IPython notebook already has the following dependencies installed: datetime, io, json, matplotlib, numpy, pandas, pathlib, os, pandas, requests, requests_html, scipy.
 
-In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, holoviews, hvplot, panel, geoviews, geopy, aspose-words, dataframe-image.
+In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, holoviews, hvplot, geoviews, geopy, aspose-words, dataframe-image.
 
 Here are the requisite Terminal commands for installation of these peripheral modules (in this order):
 
@@ -19,8 +19,6 @@ python3 -m pip install yahoo_fin
 python3 -m pip install holoviews
 
 python3 -m pip install hvplot
-
-python3 -m pip install panel
 
 python3 -m pip install geoviews
 
@@ -60,7 +58,7 @@ PySubroutines.py
 
 If the folders, Resources, Logs, and Images are not present, the IPython notebook will create them.  If the CSV file, AllOilCompanies.csv, is not present in the Resources folder, the program will use APIs to generate the CSV file.  Without the CSV file, execution time is an hour; with it, execution time is approximately 1.5 minutes.
 
-To place the IPython notebook in log mode, debug mode, or image mode set the parameter for the appropriate subroutine in coding cell #2 to True. In debug mode, the program displays the debug information and writes it to a debug file in the Logs folder; the same is true in log mode for log information sent to a log file. If the program is in log mode but not debug mode, it displays no debug information, but writes that information to the log file. If the program is in Image mode, it writes all DataFrames, hvplot maps, and matplotlib plots to PNG files in the Images folder.
+To place the IPython notebook in Log Mode, Debug Mode, or Image Mode set the parameter for the appropriate subroutine in coding cell #2 to True. In Debug Mode, the program displays the debug information and writes it to a debug file in the Logs folder; the same is true in Log Mode for log information sent to a log file. If the program is in Log Mode but NOT Debug Mode, it displays no debug information, but writes that information to the log file. If the program is in Image Mode, it writes all DataFrames, hvplot maps, and matplotlib plots to PNG files in the Images Folder.
 
 ----
 
