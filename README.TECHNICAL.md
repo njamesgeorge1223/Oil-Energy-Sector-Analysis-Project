@@ -10,7 +10,7 @@ If the computer has Anaconda, Jupyter Notebook, and a recent version of Python, 
 
 In addition to those modules, the IPython notebook needs the following to execute: yfinance, yahoo_fin, holoviews, hvplot, geoviews, geopy, aspose-words, dataframe-image.
 
-Here are the requisite Terminal commands for the installation of these peripheral modules (in this order):
+Here are the requisite Terminal commands for the installation of these peripheral modules:
 
 python3 -m pip install yfinance
 
