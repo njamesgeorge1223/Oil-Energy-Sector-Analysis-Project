@@ -281,15 +281,15 @@ Jupyter Notebook, Python 3.11.4, Pandas, Matplotlib, Numpy
 
 ----
 
-[Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/stable/) \
+[Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/stable/)
 
-[Python Documentation](https://docs.python.org/3/contents.html) \
+[Python Documentation](https://docs.python.org/3/contents.html)
 
-[Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html) \
+[Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
 
-[Matplotlib Documentation](https://matplotlib.org/stable/index.html) \
+[Matplotlib Documentation](https://matplotlib.org/stable/index.html)
 
-[Numpy documentation](https://numpy.org/doc/1.26/) \
+[Numpy documentation](https://numpy.org/doc/1.26/)
 
 ----
 
