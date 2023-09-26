@@ -84,9 +84,9 @@ n/a
 
 #### Software
 
-Jupyter Notebook, Python 3.11.4, Pandas, Matplotlib, Numpy
+Jupyter Notebook, Matplotlib, Numpy, Pandas, Python 3.11.4
 
-![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 ----
 
@@ -281,13 +281,13 @@ Jupyter Notebook, Python 3.11.4, Pandas, Matplotlib, Numpy
 
 [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/stable/)
 
-[Python Documentation](https://docs.python.org/3/contents.html)
-
-[Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
-
 [Matplotlib Documentation](https://matplotlib.org/stable/index.html)
 
 [Numpy documentation](https://numpy.org/doc/1.26/)
+
+[Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
+
+[Python Documentation](https://docs.python.org/3/contents.html)
 
 ----
 
