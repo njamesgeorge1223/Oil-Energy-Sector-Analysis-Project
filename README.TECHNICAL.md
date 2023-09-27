@@ -12,7 +12,7 @@ In addition to those modules, the IPython notebook needs the following to execut
 
 Here are the requisite Terminal commands for the installation of these peripheral modules:
 
-python3 -m pip install yfinance1
+python3 -m pip install yfinance
 
 python3 -m pip install yahoo_fin
 
