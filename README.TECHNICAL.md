@@ -122,6 +122,8 @@ Jupyter Notebook, Matplotlib, Numpy, Pandas, Python 3.11.4
 
 |&rarr; [./README.md](./README.md)
 
+|&rarr; [./Table-Of-Contents-OESA.md](./Table-Of-Contents-OESA.md)
+
 |&rarr; [./Images/](./Images/)
 
   &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure111EconomicIndicatorPricesvsAnalysisPeriod.png](./Images/PyOilSectorAnalysisFigure111EconomicIndicatorPricesvsAnalysisPeriod.png)
