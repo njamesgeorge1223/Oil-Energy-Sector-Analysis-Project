@@ -76,5 +76,5 @@
 > ## <br> **Section 4.5: New COVID-19 Cases vs. Oil Energy Sector Index (Top)**
 > ## <br> **Section 4.6: New COVID-19 Deaths vs. Oil Energy Sector Index (Top)**
 > ## <br> **Section 4.7: Correlation Matrices**
-> ### **Merge DataFrames**
-> ### Display **Correlation Matrices**
+>> ### **Merge DataFrames**
+>> ### Display **Correlation Matrices**
