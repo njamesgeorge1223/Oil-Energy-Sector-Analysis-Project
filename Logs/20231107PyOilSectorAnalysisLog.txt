@@ -1,0 +1,370 @@
+
+Timepoint: 11/07/2023 19:55:29
+Program execution begins...
+
+
+
+Timepoint: 11/07/2023 19:55:37
+r-value:     0.5010
+
+
+Timepoint: 11/07/2023 19:55:37
+r-squared:   0.2510
+
+
+
+Timepoint: 11/07/2023 19:55:39
+r-value:     0.7840
+
+
+Timepoint: 11/07/2023 19:55:39
+r-squared:   0.6146
+
+
+
+Timepoint: 11/07/2023 19:55:44
+[1mThere are 11,273 tickers in the complete Yahoo Finance ticker List.[0m
+
+
+Timepoint: 11/07/2023 19:55:44
+[1mThere are now 217 oil companies in the Dataframe.
+[0m
+
+
+Timepoint: 11/07/2023 19:55:44
+[1mThere are 217 publically traded oil companies in the Oil Energy Sector.[0m
+
+
+Timepoint: 11/07/2023 19:55:45
+[1mThere is $2,363,655,990,908.54 in total market capitalization (mean) for the Oil Energy Sector.[0m
+
+
+Timepoint: 11/07/2023 19:55:45
+[1mThere is $2,282,532,113,095.21 in total market capitalization (median) for the Oil Energy Sector.[0m
+
+
+Timepoint: 11/07/2023 19:55:54
+BEGIN CALCULATING OIL COMPANY SHARE INDEX...
+
+
+
+
+Timepoint: 11/07/2023 19:56:43
+
+THE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.
+
+
+
+Timepoint: 11/07/2023 19:56:45
+BEGIN CALCULATING OIL COMPANY SHARE INDEX...
+
+
+
+
+Timepoint: 11/07/2023 19:56:46
+
+THE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.
+
+
+
+Timepoint: 11/07/2023 19:56:52
+r-value:     0.9870
+
+
+Timepoint: 11/07/2023 19:56:52
+r-squared:   0.9741
+
+
+
+Timepoint: 11/07/2023 19:56:54
+r-value:     0.9674
+
+
+Timepoint: 11/07/2023 19:56:54
+r-squared:   0.9358
+
+
+
+Timepoint: 11/07/2023 19:56:55
+r-value:     0.9264
+
+
+Timepoint: 11/07/2023 19:56:55
+r-squared:   0.8583
+
+
+
+Timepoint: 11/07/2023 19:56:57
+r-value:     0.2175
+
+
+Timepoint: 11/07/2023 19:56:57
+r-squared:   0.0473
+
+
+Timepoint: 11/07/2023 19:56:59
+r-value:     0.7380
+
+
+Timepoint: 11/07/2023 19:56:59
+r-squared:   0.5447
+
+
+Timepoint: 11/07/2023 19:57:01
+r-value:     0.6437
+
+
+Timepoint: 11/07/2023 19:57:01
+r-squared:   0.4143
+
+
+Timepoint: 11/07/2023 19:57:02
+r-value:     0.2980
+
+
+Timepoint: 11/07/2023 19:57:02
+r-squared:   0.0888
+
+
+Timepoint: 11/07/2023 19:57:04
+r-value:     0.2853
+
+
+Timepoint: 11/07/2023 19:57:04
+r-squared:   0.0814
+
+
+Timepoint: 11/07/2023 19:57:05
+r-value:     0.9228
+
+
+Timepoint: 11/07/2023 19:57:05
+r-squared:   0.8516
+
+
+Timepoint: 11/07/2023 19:57:07
+r-value:     0.3100
+
+
+Timepoint: 11/07/2023 19:57:07
+r-squared:   0.0961
+
+
+Timepoint: 11/07/2023 19:57:09
+r-value:     0.1958
+
+
+Timepoint: 11/07/2023 19:57:09
+r-squared:   0.0383
+
+
+Timepoint: 11/07/2023 19:57:11
+r-value:     -0.0205
+
+
+Timepoint: 11/07/2023 19:57:11
+r-squared:   0.0004
+
+
+
+Timepoint: 11/07/2023 19:57:12
+r-value:     0.2568
+
+
+Timepoint: 11/07/2023 19:57:12
+r-squared:   0.0659
+
+
+Timepoint: 11/07/2023 19:57:14
+r-value:     -0.0111
+
+
+Timepoint: 11/07/2023 19:57:14
+r-squared:   0.0001
+
+
+
+Timepoint: 11/07/2023 19:57:56
+Program execution begins...
+
+
+
+Timepoint: 11/07/2023 19:58:04
+r-value:     0.5010
+
+
+Timepoint: 11/07/2023 19:58:04
+r-squared:   0.2510
+
+
+
+Timepoint: 11/07/2023 19:58:06
+r-value:     0.7840
+
+
+Timepoint: 11/07/2023 19:58:06
+r-squared:   0.6146
+
+
+
+Timepoint: 11/07/2023 19:58:10
+[1mThere are 11,273 tickers in the complete Yahoo Finance ticker List.[0m
+
+
+Timepoint: 11/07/2023 19:58:10
+[1mThere are now 217 oil companies in the Dataframe.
+[0m
+
+
+Timepoint: 11/07/2023 19:58:11
+[1mThere are 217 publically traded oil companies in the Oil Energy Sector.[0m
+
+
+Timepoint: 11/07/2023 19:58:11
+[1mThere is $2,363,655,990,908.54 in total market capitalization (mean) for the Oil Energy Sector.[0m
+
+
+Timepoint: 11/07/2023 19:58:12
+[1mThere is $2,282,532,113,095.21 in total market capitalization (median) for the Oil Energy Sector.[0m
+
+
+Timepoint: 11/07/2023 19:58:21
+BEGIN CALCULATING OIL COMPANY SHARE INDEX...
+
+
+
+
+Timepoint: 11/07/2023 19:59:11
+
+THE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.
+
+
+
+Timepoint: 11/07/2023 19:59:13
+BEGIN CALCULATING OIL COMPANY SHARE INDEX...
+
+
+
+
+Timepoint: 11/07/2023 19:59:15
+
+THE CALCULATION OF THE OIL COMPANY SHARE INDEX IS COMPLETE.
+
+
+
+Timepoint: 11/07/2023 19:59:20
+r-value:     0.9870
+
+
+Timepoint: 11/07/2023 19:59:20
+r-squared:   0.9741
+
+
+
+Timepoint: 11/07/2023 19:59:22
+r-value:     0.9674
+
+
+Timepoint: 11/07/2023 19:59:22
+r-squared:   0.9358
+
+
+
+Timepoint: 11/07/2023 19:59:23
+r-value:     0.9264
+
+
+Timepoint: 11/07/2023 19:59:23
+r-squared:   0.8583
+
+
+
+Timepoint: 11/07/2023 19:59:25
+r-value:     0.2175
+
+
+Timepoint: 11/07/2023 19:59:25
+r-squared:   0.0473
+
+
+Timepoint: 11/07/2023 19:59:27
+r-value:     0.7380
+
+
+Timepoint: 11/07/2023 19:59:27
+r-squared:   0.5447
+
+
+Timepoint: 11/07/2023 19:59:29
+r-value:     0.6437
+
+
+Timepoint: 11/07/2023 19:59:29
+r-squared:   0.4143
+
+
+Timepoint: 11/07/2023 19:59:30
+r-value:     0.2980
+
+
+Timepoint: 11/07/2023 19:59:30
+r-squared:   0.0888
+
+
+Timepoint: 11/07/2023 19:59:32
+r-value:     0.2853
+
+
+Timepoint: 11/07/2023 19:59:32
+r-squared:   0.0814
+
+
+Timepoint: 11/07/2023 19:59:34
+r-value:     0.9228
+
+
+Timepoint: 11/07/2023 19:59:34
+r-squared:   0.8516
+
+
+Timepoint: 11/07/2023 19:59:36
+r-value:     0.3100
+
+
+Timepoint: 11/07/2023 19:59:36
+r-squared:   0.0961
+
+
+Timepoint: 11/07/2023 19:59:37
+r-value:     0.1958
+
+
+Timepoint: 11/07/2023 19:59:37
+r-squared:   0.0383
+
+
+Timepoint: 11/07/2023 19:59:40
+r-value:     -0.0205
+
+
+Timepoint: 11/07/2023 19:59:40
+r-squared:   0.0004
+
+
+
+Timepoint: 11/07/2023 19:59:41
+r-value:     0.2568
+
+
+Timepoint: 11/07/2023 19:59:41
+r-squared:   0.0659
+
+
+Timepoint: 11/07/2023 19:59:43
+r-value:     -0.0111
+
+
+Timepoint: 11/07/2023 19:59:43
+r-squared:   0.0001
+
+
