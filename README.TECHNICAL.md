@@ -213,13 +213,13 @@ Jupyter Notebook, Matplotlib, Numpy, Pandas, Python 3.11.4
 
   &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure465NewCOVID19DeathsvsOESTopIndexChangeScatterPlotwRegression.png](./Images/PyOilSectorAnalysisFigure465NewCOVID19DeathsvsOESTopIndexChangeScatterPlotwRegression.png)
 
-  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3401AllCompaniesAmericasandEuropeMap.png](./Images/PyOilSectorAnalysisFigure3401AllCompaniesAmericasandEuropeMap.png)
+  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3401AllCompaniesAmericasandEuropeMap.html](./Images/PyOilSectorAnalysisFigure3401AllCompaniesAmericasandEuropeMap.html)
 
-  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3401AllCompaniesWorldMap.png](./Images/PyOilSectorAnalysisFigure3401AllCompaniesWorldMap.png)
+  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3401AllCompaniesWorldMap.html](./Images/PyOilSectorAnalysisFigure3401AllCompaniesWorldMap.html)
 
-  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3402TopCompaniesWorldMap.png](./Images/PyOilSectorAnalysisFigure3402TopCompaniesWorldMap.png)
+  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3402TopCompaniesWorldMap.html](./Images/PyOilSectorAnalysisFigure3402TopCompaniesWorldMap.html)
 
-  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3403TopCompaniesAmericasandEuropeMap.png](./Images/PyOilSectorAnalysisFigure3403TopCompaniesAmericasandEuropeMap.png)
+  &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure3403TopCompaniesAmericasandEuropeMap.html](./Images/PyOilSectorAnalysisFigure3403TopCompaniesAmericasandEuropeMap.html)
 
   &emsp; |&rarr; [./Images/PyOilSectorAnalysisFigure44110YearBondYieldandOESTopIndex.png](./Images/PyOilSectorAnalysisFigure44110YearBondYieldandOESTopIndex.png)
 
@@ -263,9 +263,9 @@ Jupyter Notebook, Matplotlib, Numpy, Pandas, Python 3.11.4
 
 |&rarr; [./Logs/](./Logs/)
 
-  &emsp; |&rarr; [./Logs/20230922PyOilSectorAnalysisDebug.txt](./Logs/20230922PyOilSectorAnalysisDebug.txt)
+  &emsp; |&rarr; [./Logs/20231107PyOilSectorAnalysisDebug.txt](./Logs/20231107PyOilSectorAnalysisDebug.txt)
 
-  &emsp; |&rarr; [./Logs/20230922PyOilSectorAnalysisLog.txt](./Logs/20230922PyOilSectorAnalysisLog.txt)
+  &emsp; |&rarr; [./Logs/20231107PyOilSectorAnalysisLog.txt](./Logs/20231107PyOilSectorAnalysisLog.txt)
 
   &emsp; |&rarr; [./Logs/README.md](./Logs/README.md)
 
